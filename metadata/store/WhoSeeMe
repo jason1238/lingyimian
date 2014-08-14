@@ -1,0 +1,34 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "        {\r",
+            "            \"viewId\": 1234,\r",
+            "            \"viewTime\": \"2014/1/23 17:41:58\",\r",
+            "            \"enterpriseName\": \"上海创驰网络有限公司\",\r",
+            "            \"enterpriseTypeName\":\"上市企业\",\r",
+            "            \"industry\":\"互联网/电子商务\",\r",
+            "            \"viewTypeName\": \"下载\"\r",
+            "        },\r",
+            "        {\r",
+            "            \"viewId\": 1235,\r",
+            "            \"viewTime\": \"2014/1/23 17:41:58\",\r",
+            "            \"enterpriseName\": \"上海圆通速递\",\r",
+            "            \"enterpriseTypeName\":\"上市企业\",\r",
+            "            \"industry\":\"互联网/电子商务\",\r",
+            "            \"viewTypeName\": \"浏览\"\r",
+            "        }\r",
+            "    ]"
+        ],
+        "designer|userClassName": "WhoSeeMe",
+        "model": "WhoSeeMe",
+        "storeId": "WhoSeeMe"
+    },
+    "designerId": "c358a2f5-4993-4729-9d27-3642279c40ea"
+}

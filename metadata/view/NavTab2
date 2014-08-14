@@ -1,0 +1,40 @@
+{
+    "type": "Ext.navigation.View",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|animation": false,
+        "designer|userAlias": "navtab2",
+        "designer|userClassName": "NavTab2",
+        "id": "NavTab2"
+    },
+    "designerId": "dc06963b-407e-4cac-ae9b-b79f63d4aa20",
+    "cn": [
+        {
+            "type": "Ext.navigation.Bar",
+            "reference": {
+                "name": "navigationBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "disabled": false,
+                "docked": null,
+                "height": null,
+                "hidden": true,
+                "hideOnMaskTap": false,
+                "id": null,
+                "itemId": null,
+                "ui": "zjs"
+            },
+            "designerId": "7806df54-06ba-4c90-a32e-76eca5ab303a"
+        }
+    ]
+}

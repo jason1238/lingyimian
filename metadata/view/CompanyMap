@@ -1,0 +1,283 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CompanyMap",
+        "layout": "fit"
+    },
+    "designerId": "089d38dd-4fdf-4d66-b2c6-40d6e0c8b4a5",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "附近企业",
+                "ui": "zjs"
+            },
+            "designerId": "05425fb3-4856-4ffe-ba58-ef7592641994",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "6ff26d0d-53bd-4fb6-be02-a9d0bb868d9d",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap311",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "467a4cbf-3f61-48a4-936c-c630e16def1f"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "map_content"
+                ],
+                "designer|displayName": "Content",
+                "hidden": false,
+                "html": "<div id=\"c_near_map\" style=\"width:100%;height:100%\"></div>"
+            },
+            "designerId": "8542bc4e-c0d5-425f-b57a-c377be1c49e8"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    ""
+                ]
+            },
+            "designerId": "c88ff4f7-d852-4dc0-9de3-682314e8ee5d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "var request_data = function(){\r",
+                    "\r",
+                    "  var params = {\r",
+                    "    pageSize:100,\r",
+                    "    location:JSON.stringify(fix_location(get_location())),\r",
+                    "    distance:1000\r",
+                    "  };\r",
+                    "\r",
+                    "  //toast('Use Location '+get_location().lat+' '+get_location().lng);\r",
+                    "\r",
+                    "  send_request( {\r",
+                    "    api:'c_near',\r",
+                    "    method:'POST',\r",
+                    "    params:params,\r",
+                    "    success:function(result, request){\r",
+                    "      if( result.success ){\r",
+                    "        switch( result.code ){\r",
+                    "          case '0000':\r",
+                    "            //成功\r",
+                    "            console.log(result);\r",
+                    "            _this.build_page(result.data);\r",
+                    "            break;\r",
+                    "          case '1001':\r",
+                    "            //失败\r",
+                    "            break;\r",
+                    "          default:\r",
+                    "            toast(\"errCode:\"+result.code);\r",
+                    "            break;\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "\r",
+                    "      }\r",
+                    "    },\r",
+                    "    fail:function(result){\r",
+                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "    },\r",
+                    "    text:'加载中',\r",
+                    "    silent:false,\r",
+                    "    trigger:_this,\r",
+                    "    check_login:true\r",
+                    "  } );\r",
+                    "\r",
+                    "\r",
+                    "};\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "var geo_check = function(){\r",
+                    "\r",
+                    "  if( need_geo_update() ){\r",
+                    "    update_location(function(loc,status){\r",
+                    "\r",
+                    "      if(loc){\r",
+                    "        request_data();\r",
+                    "      }else{\r",
+                    "        toast('抱歉，无法获取您的当前位置。');\r",
+                    "      }\r",
+                    "\r",
+                    "    },{\r",
+                    "      silent:false\r",
+                    "    });\r",
+                    "\r",
+                    "  }else{\r",
+                    "    request_data();\r",
+                    "  }\r",
+                    "\r",
+                    "\r",
+                    "};\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "if( typeof BMap == 'undefined' ){\r",
+                    "  jQuery.getScript(_G.BAIDU_SCRIPT,function(data,status,xhr){\r",
+                    "    geo_check();\r",
+                    "  });\r",
+                    "}else{\r",
+                    "  geo_check();\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "9f7ecf64-3701-4a3b-91bf-b920deea3abf"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "build_page",
+                "implHandler": [
+                    "\r",
+                    "console.log('build');\r",
+                    "\r",
+                    "console.log(data);\r",
+                    "\r",
+                    "\r",
+                    "if( typeof BMap == 'undefined' ){\r",
+                    "  return;\r",
+                    "}else{\r",
+                    "  var map = new BMap.Map(\"c_near_map\");\r",
+                    "\r",
+                    "  var loc = get_location();\r",
+                    "\r",
+                    "  map.centerAndZoom(new BMap.Point(loc.lng,loc.lat), 14);\r",
+                    "  \r",
+                    "  //toast('Find Location '+loc.lng+' '+loc.lat);\r",
+                    "\r",
+                    "  var points_da = [];\r",
+                    "  \r",
+                    "  console.log(data);\r",
+                    "  \r",
+                    "  data.push({\r",
+                    "    locationX:loc.lng,\r",
+                    "    locationY:loc.lat,\r",
+                    "    companyName:'您的位置'\r",
+                    "  });  \r",
+                    "  \r",
+                    "  \r",
+                    "  console.log('loc data');\r",
+                    "  console.log(data);\r",
+                    "  \r",
+                    "  for( var i=0;i<data.length;i++ ){\r",
+                    "    //var location = JSON.parse(data[i].location);\r",
+                    "    \r",
+                    "    var lng = data[i].locationX;\r",
+                    "    var lat = data[i].locationY;\r",
+                    "\r",
+                    "    console.log( lng + ' ' + lat );\r",
+                    "\r",
+                    "    (function(){\r",
+                    "      var point = new BMap.Point(lng,lat);\r",
+                    "      var info_window = new BMap.InfoWindow(data[i].companyName);\r",
+                    "\r",
+                    "      var marker = new BMap.Marker(point);\r",
+                    "      map.addOverlay(marker);\r",
+                    "\r",
+                    "      marker.addEventListener(\"click\", function(){this.openInfoWindow(info_window);});\r",
+                    "\r",
+                    "      points_da.push(point);\r",
+                    "\r",
+                    "    })();\r",
+                    "\r",
+                    "  }\r",
+                    "  \r",
+                    "  if( points_da.length ){\r",
+                    "    map.setViewport(points_da);\r",
+                    "  }\r",
+                    "\r",
+                    "}"
+                ]
+            },
+            "designerId": "65d292c4-f645-4bac-9143-d87a8732b7a7"
+        }
+    ]
+}

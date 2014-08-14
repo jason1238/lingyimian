@@ -1,0 +1,176 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CityChooser",
+        "layout": "fit"
+    },
+    "designerId": "b6dc20bf-87d6-4262-826c-9d124808c311",
+    "cn": [
+        {
+            "type": "Ext.dataview.NestedList",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "nested_city_list",
+                "itemId": "mynestedlist3",
+                "store": "NestedCitys",
+                "title": "选择城市",
+                "useTitleAsBackText": false
+            },
+            "designerId": "8278f1b2-2b9e-4f90-8fea-fe5ce1c79d0d",
+            "cn": [
+                {
+                    "type": "Ext.TitleBar",
+                    "reference": {
+                        "name": "toolbar",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "zjs-bg-green"
+                        ],
+                        "designer|uiInterfaceName": "zjs",
+                        "title": "选择城市",
+                        "ui": "zjs"
+                    },
+                    "designerId": "215e8132-c06a-49ed-a40d-e4a6dba3523c",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|uiInterfaceName": "plain",
+                                "height": 30,
+                                "icon": "",
+                                "iconCls": "zjs-icon-back",
+                                "id": "nested_city_list_btn_pop",
+                                "itemId": "mybutton23",
+                                "text": "back",
+                                "ui": "plain",
+                                "width": 30
+                            },
+                            "designerId": "2adc8d5e-002a-42a4-97f0-c8de2cf98b36",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMybutton23Tap11",
+                                        "implHandler": [
+                                            "button.up('navigationview').pop();"
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "fccfe74f-4c3c-4430-8548-22a02936876f"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onNested_city_listActiveItemChange",
+                        "implHandler": [
+                            "\r",
+                            "\r",
+                            "x$nlist = x$('nested_city_list');\r",
+                            "x$btn_pop = x$('nested_city_list_btn_pop');\r",
+                            "\r",
+                            "\r",
+                            "var record = value.listItems[0].getRecord();\r",
+                            "\r",
+                            "\r",
+                            "if( record.data.parentId == \"NestedCitys-root\" ){\r",
+                            "  x$btn_pop.show();\r",
+                            "}else{\r",
+                            "  x$btn_pop.hide();\r",
+                            "}"
+                        ],
+                        "name": "activeitemchange"
+                    },
+                    "designerId": "709065c4-1922-4f99-b9a1-b92d607a4576"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onNested_city_listLeafItemTap",
+                        "implHandler": [
+                            "\r",
+                            "var data = record.data;\r",
+                            "\r",
+                            "change_city(data.record.areaId,data.record.areaName);\r",
+                            "nestedlist.up('navigationview').pop();\r",
+                            ""
+                        ],
+                        "name": "leafitemtap"
+                    },
+                    "designerId": "33889b16-9235-4dca-91cb-6becaea81942"
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "x$nlist = x$('nested_city_list');\r",
+                    "\r",
+                    "x$back_btn = x$nlist.getBackButton();\r",
+                    "\r",
+                    "\r",
+                    "x$back_btn.setIconCls('zjs-icon-back');\r",
+                    "x$back_btn.setUi('plain');\r",
+                    "x$back_btn.setText(null);\r",
+                    "\r",
+                    "//console.log('zzzz');\r",
+                    "\r",
+                    "//var data = _DATA_CITYS;\r",
+                    "\r",
+                    "//console.log(data);\r",
+                    "\r",
+                    "\r",
+                    "//x$nlist.getStore().setRoot(data);\r",
+                    ""
+                ]
+            },
+            "designerId": "48858bec-745c-4765-bae5-3b28cb91cb28"
+        }
+    ]
+}

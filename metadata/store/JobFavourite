@@ -1,0 +1,32 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "        {\r",
+            "            \"collectId\": 123,\r",
+            "            \"collectTime\": \"2014/1/23 11:22:07\",\r",
+            "            \"posName\": \"java高级工程师\",\r",
+            "            \"enterpriseName\": \"上海创驰网络有限公司\",\r",
+            "            \"salaryName\": \"6000-7000\"\r",
+            "        },\r",
+            "        {\r",
+            "            \"collectId\": 124,\r",
+            "            \"collectTime\": \"2014/1/23 11:22:07\",\r",
+            "            \"posName\": \"java高级工程师\",\r",
+            "            \"enterpriseName\": \"上海创驰网络有限公司\",\r",
+            "            \"salaryName\": \"6000-7000\"\r",
+            "        }\r",
+            "    ]"
+        ],
+        "designer|userClassName": "JobFavourite",
+        "model": "JobFavourite",
+        "storeId": "JobFavourite"
+    },
+    "designerId": "d2689620-81d0-4a34-93b9-e0e3fe9dd12a"
+}

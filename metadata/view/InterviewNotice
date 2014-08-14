@@ -1,0 +1,244 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userClassName": "InterviewNotice",
+        "layout": "card"
+    },
+    "designerId": "62f4bc29-c6ba-4322-93f7-0270e5a8f456",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "面试通知",
+                "ui": "zjs"
+            },
+            "designerId": "928cd5f1-0187-448e-806d-bcba6ba4bbde",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "121d31a6-2f35-4994-b091-f5a4d2edb277",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "0356379f-a649-4ff4-829f-61794ab2dd2c"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.dataview.DataView",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-listview-interview-notice"
+                ],
+                "disableSelection": true,
+                "id": "list-msg-interview",
+                "itemId": "mydataview3",
+                "minHeight": 180,
+                "scrollable": "vertical"
+            },
+            "designerId": "d914bc76-3f6a-46c5-af7b-173a811c9691",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=\"li\">\r",
+                            "  <div class=\"c\">\r",
+                            "    <h4>{companyName}</h4>\r",
+                            "    <p>  <span class=\"fl\">应聘职位：<em>{positionName}</em></span> <span class=\"fr\"><em>{date_fullyeardate}</em></span> </p>\r",
+                            "  </div>\r",
+                            "  <div class=\"i\"> <span></span> </div>\r",
+                            "</div>\r",
+                            ""
+                        ]
+                    },
+                    "designerId": "be4467bb-832a-4f08-9c66-bb28ac532c42"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMydataview2ItemTap1",
+                        "implHandler": [
+                            "var item_data = record.data;\r",
+                            "change_page('InterviewNoticeDetail',dataview,item_data);"
+                        ],
+                        "name": "itemtap"
+                    },
+                    "designerId": "74e54b88-220e-44bb-b74d-019bbdb553fb"
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();"
+                ]
+            },
+            "designerId": "271408d9-b823-41e7-b78e-2a2534250400"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "send_request( {\r",
+                    "  api:'msg.interview.list',\r",
+                    "  method:'POST',\r",
+                    "  params:{\r",
+                    "    pageSize:100\r",
+                    "  },\r",
+                    "  success:function(result, request){\r",
+                    "    if( result.success ){\r",
+                    "      switch( result.code ){\r",
+                    "        case '0000':\r",
+                    "          //成功\r",
+                    "          console.log(result);\r",
+                    "          _this.build_list(result.data);\r",
+                    "          break;\r",
+                    "        case '1001':\r",
+                    "          //失败\r",
+                    "          break;\r",
+                    "        default:\r",
+                    "          toast(\"errCode:\"+result.code);\r",
+                    "          break;\r",
+                    "      }\r",
+                    "    }else{\r",
+                    "\r",
+                    "    }\r",
+                    "  },\r",
+                    "  fail:function(result){\r",
+                    "    toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "  },\r",
+                    "  text:'加载中',\r",
+                    "  silent:false,\r",
+                    "  trigger:_this,\r",
+                    "  check_login:true\r",
+                    "} );\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "ba467a2b-7e8b-4178-89d9-4ccabc46b395"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "build_list",
+                "implHandler": [
+                    "var x$list = x$('list-msg-interview');\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "if(data && data.length){\r",
+                    "\r",
+                    "\r",
+                    "  for( var i=0;i<data.length;i++ ){\r",
+                    "    var date_ra = parse_date(data[i].auditionTime,'date_');\r",
+                    "    jQuery.extend( data[i],date_ra );\r",
+                    "  }\r",
+                    "\r",
+                    "\r",
+                    "  x$list.removeCls('zj-list-no-data');\r",
+                    "  x$list.setData(data);\r",
+                    "}else{\r",
+                    "  x$list.addCls('zj-list-no-data');\r",
+                    "  x$list.removeAll();\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "refresh_scroll(x$list);"
+                ]
+            },
+            "designerId": "3271ee68-3cb8-4a91-b957-3a108b0102f9"
+        }
+    ]
+}

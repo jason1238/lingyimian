@@ -1,0 +1,15 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defaultRootProperty": "items",
+        "designer|userClassName": "NestedDataFunction",
+        "model": "NestedData",
+        "storeId": "NestedDataFunction"
+    },
+    "designerId": "c414b099-870b-46ab-8ea2-4b189df1d7e7"
+}

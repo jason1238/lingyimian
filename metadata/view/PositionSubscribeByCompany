@@ -1,0 +1,381 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "positionsubscribebycompany",
+        "designer|userClassName": "PositionSubscribeByCompany",
+        "layout": "fit"
+    },
+    "designerId": "3386e129-1219-4259-8fcf-6a3273cc7988",
+    "cn": [
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "scrollable": "vertical"
+            },
+            "designerId": "2bb92563-2ca3-466c-a593-931769121ed7",
+            "cn": [
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 200
+                    },
+                    "designerId": "d90215b9-c37d-4b57-a6c6-5a919a7c48f4",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "pos_sub_by_co_kw",
+                                "placeHolder": "请输入企业名称或关键字"
+                            },
+                            "designerId": "79b57078-dd46-45db-ad1e-f6eb935378be"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|uiInterfaceName": "confirm",
+                                "id": "pos_sub_by_co_btn_sub",
+                                "itemId": "mybutton79",
+                                "margin": "10px",
+                                "text": "订 阅",
+                                "ui": "confirm"
+                            },
+                            "designerId": "51e2cd1c-2bd6-465e-82de-bf49b967052d",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPos_sub_by_pos_btn_subTap",
+                                        "implHandler": [
+                                            "var _this = this;\r",
+                                            "\r",
+                                            "\r",
+                                            "var $kw = x$('pos_sub_by_co_kw');\r",
+                                            "\r",
+                                            "\r",
+                                            "\r",
+                                            "var params = {\r",
+                                            "  subscriptionType:1\r",
+                                            "};\r",
+                                            "\r",
+                                            "var have_param = false;\r",
+                                            "\r",
+                                            "var value = $kw.getValue();\r",
+                                            "if( value === '' ){\r",
+                                            "}else{\r",
+                                            "  params.companyKey = fix_cn(value);\r",
+                                            "  have_param = true;\r",
+                                            "\r",
+                                            "console.log(params);\r",
+                                            "\r",
+                                            "\r",
+                                            "}\r",
+                                            "\r",
+                                            "\r",
+                                            "console.log(params);\r",
+                                            "\r",
+                                            "if( have_param ){\r",
+                                            "  send_request( {\r",
+                                            "    api:'sub_add',\r",
+                                            "    method:'POST',\r",
+                                            "    params:params,\r",
+                                            "    success:function(result, request){\r",
+                                            "      if( result.success ){\r",
+                                            "        switch( result.code ){\r",
+                                            "          case '0000':\r",
+                                            "            //成功\r",
+                                            "            toast('恭喜您，您已订阅成功。');\r",
+                                            "            _this.update_list();\r",
+                                            "            _this.reset();\r",
+                                            "            break;\r",
+                                            "          case '1001':\r",
+                                            "            //失败\r",
+                                            "            break;\r",
+                                            "          default:\r",
+                                            "            toast(\"errCode:\"+result.code);\r",
+                                            "            break;\r",
+                                            "        }\r",
+                                            "      }else{\r",
+                                            "\r",
+                                            "      }\r",
+                                            "    },\r",
+                                            "    fail:function(result){\r",
+                                            "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                                            "    },\r",
+                                            "    text:'加载中',\r",
+                                            "    silent:false,\r",
+                                            "    trigger:button,\r",
+                                            "    check_login:false\r",
+                                            "  } );\r",
+                                            "\r",
+                                            "\r",
+                                            "}else{\r",
+                                            "  toast('请输入您想订阅的企业。');\r",
+                                            "}\r",
+                                            "\r",
+                                            "\r",
+                                            "\r",
+                                            "\r",
+                                            ""
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "67bc760a-ec22-4ae0-949a-5b22c85cadb0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "detail_content content_con"
+                                ],
+                                "html": "  热门企业：百度 腾讯  阿里巴巴 奇虎360  新浪网  网易  搜狐 ",
+                                "margin": "10px"
+                            },
+                            "designerId": "ac096f81-2932-4c47-b091-91e90f6ff745"
+                        },
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "detail_content content_con"
+                                ],
+                                "html": "<h4>当前的订阅</h4>",
+                                "margin": "20px 10px 0"
+                            },
+                            "designerId": "34ad6210-427d-45fb-a47d-bfd5b84d4d3e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.dataview.DataView",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "zjs-listview-booked-position"
+                        ],
+                        "disableSelection": true,
+                        "hidden": false,
+                        "id": "pos_sub_by_co_list_sub",
+                        "itemId": "mydataview6",
+                        "scrollable": false
+                    },
+                    "designerId": "21d4d314-8c80-4b1d-9868-91db317754ef",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=\"li\">\r",
+                                    "  <div class=\"icon\">\r",
+                                    "  \t<span></span>\r",
+                                    "    已订阅\r",
+                                    "  </div>\r",
+                                    "  <div class=\"c\">\r",
+                                    "    <div class=\"cw\">\r",
+                                    "    \t{searchName}\r",
+                                    "    </div>\r",
+                                    "  </div>\r",
+                                    "  <div class=\"i i_delete\"> <span></span> </div>\r",
+                                    "</div>\r",
+                                    "\r",
+                                    "\r",
+                                    ""
+                                ]
+                            },
+                            "designerId": "5ba0e2ea-81af-4e6a-9567-6fed21cb8a8a"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMydataview5ItemTap1",
+                                "implHandler": [
+                                    "var _this = this;\r",
+                                    "\r",
+                                    "\r",
+                                    "if( event_on(e,'.i_delete') ){\r",
+                                    "\r",
+                                    "  Ext.Msg.confirm(\"删除确认\",\"您确认删除这条订阅吗？\",function(result){\r",
+                                    "    if( result=='yes' ){\r",
+                                    "      send_request( {\r",
+                                    "        api:'sub_del',\r",
+                                    "        method:'POST',\r",
+                                    "        params:{\r",
+                                    "          subscriptionId:record.data.subscriptionId\r",
+                                    "        },\r",
+                                    "        success:function(result, request){\r",
+                                    "          if( result.success ){\r",
+                                    "            switch( result.code ){\r",
+                                    "              case '0000':\r",
+                                    "                //成功\r",
+                                    "                //console.log(result);\r",
+                                    "                toast(\"订阅删除成功。\");\r",
+                                    "                _this.update_list();\r",
+                                    "                break;\r",
+                                    "              case '1001':\r",
+                                    "                //失败\r",
+                                    "                break;\r",
+                                    "              default:\r",
+                                    "                toast(\"errCode:\"+result.code);\r",
+                                    "                break;\r",
+                                    "            }\r",
+                                    "          }else{\r",
+                                    "\r",
+                                    "          }\r",
+                                    "        },\r",
+                                    "        fail:function(result){\r",
+                                    "          toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                                    "        },\r",
+                                    "        text:'加载中',\r",
+                                    "        silent:false,\r",
+                                    "        trigger:dataview,\r",
+                                    "        check_login:false\r",
+                                    "      } );\r",
+                                    "\r",
+                                    "    }\r",
+                                    "  });\r",
+                                    "\r",
+                                    "}"
+                                ],
+                                "name": "itemtap"
+                            },
+                            "designerId": "f7a47db9-3274-4535-99a8-518d5a4e4954"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update_list",
+                "implHandler": [
+                    "var $list = x$('pos_sub_by_co_list_sub');\r",
+                    "\r",
+                    "\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "send_request( {\r",
+                    "  api:'msg.job_subscribe.list',\r",
+                    "  method:'POST',\r",
+                    "  params:{\r",
+                    "    pageSize:100,\r",
+                    "    subscriptionType:1\r",
+                    "  },\r",
+                    "  success:function(result, request){\r",
+                    "    if( result.success ){\r",
+                    "      switch( result.code ){\r",
+                    "        case '0000':\r",
+                    "          //成功\r",
+                    "          set_store_data( $list,result.data );\r",
+                    "          $list.setHeight(result.data.length*59);\r",
+                    "          break;\r",
+                    "        case '1001':\r",
+                    "          //失败\r",
+                    "          break;\r",
+                    "        default:\r",
+                    "          toast(\"errCode:\"+result.code);\r",
+                    "          break;\r",
+                    "      }\r",
+                    "    }else{\r",
+                    "\r",
+                    "    }\r",
+                    "  },\r",
+                    "  fail:function(result){\r",
+                    "    toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "  },\r",
+                    "  text:'加载中',\r",
+                    "  silent:false,\r",
+                    "  trigger:_this,\r",
+                    "  check_login:false,\r",
+                    "  group:'p_s_b_p'\r",
+                    "} );\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "7c919604-5d97-4f4d-965b-8e32e1f21a18"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "\r",
+                    "this.update_list();"
+                ]
+            },
+            "designerId": "6f0dbadb-904d-4711-b2b3-b8185c93cbe2"
+        }
+    ]
+}

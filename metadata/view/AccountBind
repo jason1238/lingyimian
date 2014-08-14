@@ -1,0 +1,256 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userClassName": "AccountBind",
+        "layout": "card"
+    },
+    "designerId": "fac2ad0c-336c-47e6-8e6d-2a9c5eba8416",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "账户绑定",
+                "ui": "zjs"
+            },
+            "designerId": "6fbbf0c2-56a7-4b1b-870c-078b5e468dfb",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "7f26f7a1-f61b-4a8b-a54f-0fc83a199a21",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "018c9d7b-7c31-4c06-9e99-617c25f9f882"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "a_b_scp",
+                "scrollable": "vertical"
+            },
+            "designerId": "511728db-def4-4d50-87b3-57e2ed5051a4",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "63bef2e3-d458-460a-a0bc-b85ee9693399",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Toggle",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "toggle_ab_sina",
+                                "itemId": "toggle_ab_sina",
+                                "label": "新浪微博"
+                            },
+                            "designerId": "ef456cd6-982a-42a3-80bb-a294bdf377a1",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onToggle_ab_sinaChange",
+                                        "implHandler": [
+                                            "\r",
+                                            "\r",
+                                            "if( newValue === 1 ){\r",
+                                            "  change_page('AccountBindSinaWeibo',togglefield);\r",
+                                            "}else{\r",
+                                            "  unbind_sns(function(result,success){\r",
+                                            "    if(success){\r",
+                                            "      toast('绑定移除成功！');\r",
+                                            "    }else{\r",
+                                            "      toast('绑定移除失败，请稍候再试！');\r",
+                                            "      set_value_silent( togglefield,1 );\r",
+                                            "    }\r",
+                                            "  },'sina',false);\r",
+                                            "}\r",
+                                            ""
+                                        ],
+                                        "name": "change"
+                                    },
+                                    "designerId": "35718208-7dee-4926-a06e-36aee61d8376"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.field.Toggle",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "id": "toggle_ab_qq",
+                                "label": "腾讯微博"
+                            },
+                            "designerId": "516e7cf2-bc1b-4e67-ad42-d0e6ae1c0349"
+                        },
+                        {
+                            "type": "Ext.field.Toggle",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "id": "toggle_ab_renren",
+                                "label": "人人网"
+                            },
+                            "designerId": "3c819041-ccd4-4734-8091-61a1b7ea75bf"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "//toast('lunched 5');\r",
+                    "\r",
+                    "x$toggle_ab_sina = x$('toggle_ab_sina');\r",
+                    "x$toggle_ab_qq = x$('toggle_ab_qq');\r",
+                    "x$toggle_ab_renren = x$('toggle_ab_renren');\r",
+                    "\r",
+                    "\r",
+                    "//toast(typeof get_access_token);\r",
+                    "\r",
+                    "get_access_token(function(result,success){\r",
+                    "\r",
+                    "  _this.reset();\r",
+                    "\r",
+                    "  console.log('get_access_token');\r",
+                    "\r",
+                    "  if(success){\r",
+                    "    if(result){\r",
+                    "\r",
+                    "      if( result.sina ){\r",
+                    "        set_value_silent( x$toggle_ab_sina,1 );\r",
+                    "      }\r",
+                    "\r",
+                    "      if( result.qq ){\r",
+                    "        set_value_silent( x$toggle_ab_qq,1 );\r",
+                    "      }\r",
+                    "\r",
+                    "      if( result.renren ){\r",
+                    "        set_value_silent( x$toggle_ab_renren,1 );\r",
+                    "      }\r",
+                    "\r",
+                    "    }\r",
+                    "  }\r",
+                    "\r",
+                    "\r",
+                    "  refresh_scroll(x$('a_b_scp'));\r",
+                    "\r",
+                    "\r",
+                    "});\r",
+                    ""
+                ]
+            },
+            "designerId": "c41b9ff9-86cf-427c-ab62-09233e3db20e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "reset",
+                "implHandler": [
+                    "\r",
+                    "x$toggle_ab_sina = x$('toggle_ab_sina');\r",
+                    "x$toggle_ab_qq = x$('toggle_ab_qq');\r",
+                    "x$toggle_ab_renren = x$('toggle_ab_renren');\r",
+                    "\r",
+                    "set_value_silent( x$toggle_ab_sina,0 );\r",
+                    "set_value_silent( x$toggle_ab_qq,0 );\r",
+                    "set_value_silent( x$toggle_ab_renren,0 );"
+                ]
+            },
+            "designerId": "26b7f269-5046-4ef8-8a15-60c66101e739"
+        }
+    ]
+}

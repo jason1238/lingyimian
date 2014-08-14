@@ -1,0 +1,49 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "        {\r",
+            "            \"auditionId\": 1,\r",
+            "            \"companyName\": \"上海创驰网络科技有限公司\",\r",
+            "            \"positionName\": \"产品经理\",\r",
+            "            \"auditionContent\": \"面试通知内容\",\r",
+            "            \"auditionTime\": \"2014-02-17 16:17:00\"\r",
+            "        },{\r",
+            "            \"auditionId\": 1,\r",
+            "            \"companyName\": \"上海创驰网络科技有限公司\",\r",
+            "            \"positionName\": \"产品经理\",\r",
+            "            \"auditionContent\": \"面试通知内容\",\r",
+            "            \"auditionTime\": \"2014-02-17 16:17:00\"\r",
+            "        },{\r",
+            "            \"auditionId\": 1,\r",
+            "            \"companyName\": \"上海创驰网络科技有限公司\",\r",
+            "            \"positionName\": \"产品经理\",\r",
+            "            \"auditionContent\": \"面试通知内容\",\r",
+            "            \"auditionTime\": \"2014-02-17 16:17:00\"\r",
+            "        },{\r",
+            "            \"auditionId\": 1,\r",
+            "            \"companyName\": \"上海创驰网络科技有限公司\",\r",
+            "            \"positionName\": \"产品经理\",\r",
+            "            \"auditionContent\": \"面试通知内容\",\r",
+            "            \"auditionTime\": \"2014-02-17 16:17:00\"\r",
+            "        },{\r",
+            "            \"auditionId\": 1,\r",
+            "            \"companyName\": \"上海创驰网络科技有限公司\",\r",
+            "            \"positionName\": \"产品经理\",\r",
+            "            \"auditionContent\": \"面试通知内容\",\r",
+            "            \"auditionTime\": \"2014-02-17 16:17:00\"\r",
+            "        }\r",
+            "    ]"
+        ],
+        "designer|userClassName": "InterviewNotice",
+        "model": "InterviewNotice",
+        "storeId": "InterviewNotice"
+    },
+    "designerId": "06967325-9628-4faf-bd18-46cd9d628453"
+}

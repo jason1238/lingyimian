@@ -1,0 +1,74 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "InterviewNotice"
+    },
+    "designerId": "c3cf2788-3af8-44c3-bba1-96f95a309b1e",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "auditionId"
+            },
+            "designerId": "c66cf6c2-0242-4cf4-b5f3-e31fccccafa6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "companyName"
+            },
+            "designerId": "d600222d-6a9c-410e-b877-110332d84aac"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "positionName"
+            },
+            "designerId": "5f344261-06e2-4103-a415-f9c5f876e05f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "auditionContent"
+            },
+            "designerId": "bbf088ab-ade3-4c8c-a015-aedc7afa399b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "auditionTime"
+            },
+            "designerId": "d85f66ff-10a2-4e92-8d35-141d96bba28b"
+        }
+    ]
+}

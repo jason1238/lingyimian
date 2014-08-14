@@ -1,0 +1,32 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "        {\r",
+            "            \"recruitmentId\": 1,\r",
+            "            \"recruitmentTitle\": \"腾讯公司宣讲会\",\r",
+            "            \"place\": \"复旦大学文学楼202会议室01-08\",\r",
+            "            \"beginTime\": \"2014/2/2\"\r",
+            "         \r",
+            "        },\r",
+            "        {\r",
+            "            \"recruitmentId\": 2,\r",
+            "            \"recruitmentTitle\": \"腾讯公司宣讲会\",\r",
+            "            \"place\": \"复旦大学文学楼202会议室01-08\",\r",
+            "            \"beginTime\": \"2014/2/2\"\r",
+            "         \r",
+            "        }\r",
+            "    ]"
+        ],
+        "designer|userClassName": "recruitment",
+        "model": "recruitment",
+        "storeId": "recruitment"
+    },
+    "designerId": "acbb59b2-8677-4cb3-8ae7-6d1edc2fbf3f"
+}

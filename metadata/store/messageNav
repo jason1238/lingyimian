@@ -1,0 +1,34 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[{\r",
+            "    title: \"我的提醒\",\r",
+            "    badge: '',\r",
+            "    action: \"my_notice\"\r",
+            "}, {\r",
+            "    title: \"职位订阅\",\r",
+            "    badge: '',\r",
+            "    action: \"job_book\"\r",
+            "}, {\r",
+            "    title: \"面试通知\",\r",
+            "    badge: '',\r",
+            "    action: \"interview\"\r",
+            "}\r",
+            "/* , {\r",
+            "    title: \"跟帖回复\",\r",
+            "    badge: '20',\r",
+            "    action: \"reply\"\r",
+            "}*/]"
+        ],
+        "designer|userClassName": "messageNav",
+        "model": "messageNav",
+        "storeId": "messageNav"
+    },
+    "designerId": "87de4bb9-c03c-41c4-b355-687809f78f3c"
+}

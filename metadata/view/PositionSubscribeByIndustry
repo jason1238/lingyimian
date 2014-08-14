@@ -1,0 +1,527 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "positionsubscribebyindustry",
+        "designer|userClassName": "PositionSubscribeByIndustry",
+        "layout": "fit"
+    },
+    "designerId": "0d37377d-f137-4080-94e0-9abcc3e5704f",
+    "cn": [
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "scrollable": "vertical"
+            },
+            "designerId": "4090ff6f-0480-47dd-a9cd-1de856c4329b",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "confirm",
+                        "hidden": false,
+                        "id": "pos_sub_by_in_btn_industry",
+                        "itemId": "mybutton106",
+                        "margin": "10px",
+                        "text": "选择行业类别，一键订阅！",
+                        "ui": "confirm"
+                    },
+                    "designerId": "0e15120b-c58c-4900-9f1a-806c9dcca843",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPos_sub_by_in_btn_industryTap",
+                                "implHandler": [
+                                    "var _this = this;\r",
+                                    "\r",
+                                    "var x$pop =  _this.down('#cnl_pop_industry_sbi');\r",
+                                    "x$pop.show();\r",
+                                    "_this.CNL_industry_sbi.reset();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "6d974025-b24b-45de-8f4c-8691e3efabcb"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "detail_content content_con"
+                        ],
+                        "html": "<h4>当前的订阅</h4>",
+                        "margin": "20px 10px 0"
+                    },
+                    "designerId": "b9a5e313-0b0b-4577-adfd-dcd86c7dc6eb"
+                },
+                {
+                    "type": "Ext.dataview.DataView",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "zjs-listview-booked-position"
+                        ],
+                        "disableSelection": true,
+                        "id": "pos_sub_by_in_list_sub",
+                        "itemId": "mydataview6",
+                        "scrollable": false,
+                        "store": "Subscription"
+                    },
+                    "designerId": "066a43c8-4653-4bd0-ad10-70369d6f99a4",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=\"li\">\r",
+                                    "  <div class=\"icon\">\r",
+                                    "  \t<span></span>\r",
+                                    "    已订阅\r",
+                                    "  </div>\r",
+                                    "  <div class=\"c\">\r",
+                                    "    <div class=\"cw\">\r",
+                                    "    \t{searchName}\r",
+                                    "    </div>\r",
+                                    "  </div>\r",
+                                    "  <!--<div class=\"i i_edit\"> <span></span> </div>-->\r",
+                                    "  <div class=\"i i_delete\"> <span></span> </div>\r",
+                                    "</div>\r",
+                                    "\r",
+                                    "\r",
+                                    ""
+                                ]
+                            },
+                            "designerId": "fbd6ed95-9e6a-4f51-b98f-d347adc95cbc"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMydataview5ItemTap1",
+                                "implHandler": [
+                                    "var _this = this;\r",
+                                    "\r",
+                                    "\r",
+                                    "if( event_on(e,'.i_delete') ){\r",
+                                    "\r",
+                                    "  Ext.Msg.confirm(\"删除确认\",\"您确认删除这条订阅吗？\",function(result){\r",
+                                    "    if( result=='yes' ){\r",
+                                    "      send_request( {\r",
+                                    "        api:'sub_del',\r",
+                                    "        method:'POST',\r",
+                                    "        params:{\r",
+                                    "          subscriptionId:record.data.subscriptionId\r",
+                                    "        },\r",
+                                    "        success:function(result, request){\r",
+                                    "          if( result.success ){\r",
+                                    "            switch( result.code ){\r",
+                                    "              case '0000':\r",
+                                    "                //成功\r",
+                                    "                //console.log(result);\r",
+                                    "                toast(\"订阅删除成功。\");\r",
+                                    "                _this.update_list();\r",
+                                    "                break;\r",
+                                    "              case '1001':\r",
+                                    "                //失败\r",
+                                    "                break;\r",
+                                    "              default:\r",
+                                    "                toast(\"errCode:\"+result.code);\r",
+                                    "                break;\r",
+                                    "            }\r",
+                                    "          }else{\r",
+                                    "\r",
+                                    "          }\r",
+                                    "        },\r",
+                                    "        fail:function(result){\r",
+                                    "          toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                                    "        },\r",
+                                    "        text:'加载中',\r",
+                                    "        silent:false,\r",
+                                    "        trigger:dataview,\r",
+                                    "        check_login:false\r",
+                                    "      } );\r",
+                                    "\r",
+                                    "    }\r",
+                                    "  });\r",
+                                    "\r",
+                                    "}"
+                                ],
+                                "name": "itemtap"
+                            },
+                            "designerId": "3c05ae43-a60c-4d72-b239-457c5631bb1b"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "var $list = x$('pos_sub_by_in_list');\r",
+                    "\r",
+                    "\r",
+                    "send_request( {\r",
+                    "  api:'opt_industry',\r",
+                    "  method:'POST',\r",
+                    "  params:{\r",
+                    "    pageSize:100\r",
+                    "  },\r",
+                    "  success:function(result, request){\r",
+                    "    if( result.success ){\r",
+                    "      switch( result.code ){\r",
+                    "        case '0000':\r",
+                    "          //成功\r",
+                    "          _this.init_industry(result.data);\r",
+                    "          break;\r",
+                    "        case '1001':\r",
+                    "          //失败\r",
+                    "          break;\r",
+                    "        default:\r",
+                    "          toast(\"errCode:\"+result.code);\r",
+                    "          break;\r",
+                    "      }\r",
+                    "    }else{\r",
+                    "\r",
+                    "    }\r",
+                    "  },\r",
+                    "  fail:function(result){\r",
+                    "    toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "  },\r",
+                    "  text:'加载中',\r",
+                    "  silent:false,\r",
+                    "  trigger:_this,\r",
+                    "  check_login:false,\r",
+                    "  group:'p_s_b_p'\r",
+                    "} );\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "this.update_list();"
+                ]
+            },
+            "designerId": "925ccd69-5ffd-4b3a-83af-94dbcaba4942"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update_list",
+                "implHandler": [
+                    "var $list = x$('pos_sub_by_in_list_sub');\r",
+                    "\r",
+                    "\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "send_request( {\r",
+                    "  api:'msg.job_subscribe.list',\r",
+                    "  method:'POST',\r",
+                    "  params:{\r",
+                    "    pageSize:100,\r",
+                    "    subscriptionType:2\r",
+                    "  },\r",
+                    "  success:function(result, request){\r",
+                    "    if( result.success ){\r",
+                    "      switch( result.code ){\r",
+                    "        case '0000':\r",
+                    "          //成功\r",
+                    "          set_store_data( $list,result.data );\r",
+                    "          $list.setHeight(result.data.length*59);\r",
+                    "          break;\r",
+                    "        case '1001':\r",
+                    "          //失败\r",
+                    "          break;\r",
+                    "        default:\r",
+                    "          toast(\"errCode:\"+result.code);\r",
+                    "          break;\r",
+                    "      }\r",
+                    "    }else{\r",
+                    "\r",
+                    "    }\r",
+                    "  },\r",
+                    "  fail:function(result){\r",
+                    "    toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "  },\r",
+                    "  text:'加载中',\r",
+                    "  silent:false,\r",
+                    "  trigger:_this,\r",
+                    "  check_login:false,\r",
+                    "  group:'p_s_b_p'\r",
+                    "} );\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "abc6349c-625c-4330-96c7-80d323b9a398"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "init_industry",
+                "implHandler": [
+                    "\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "data = make_nested_data(data,0,'industryId','industryName');\r",
+                    "\r",
+                    "var x$pop =  _this.down('#cnl_pop_industry_sbi');\r",
+                    "var x$list = _this.down('#cnl_industry_sbi');\r",
+                    "\r",
+                    "\r",
+                    "_this.CNL_industry_sbi = new LD_Nested_List( x$list,data,'items',function(data){\r",
+                    "\r",
+                    "  send_request( {\r",
+                    "    api:'sub_add',\r",
+                    "    method:'POST',\r",
+                    "    params:{\r",
+                    "      subscriptionType:2,\r",
+                    "      industryId:data.record.industryId\r",
+                    "    },\r",
+                    "    success:function(result, request){\r",
+                    "      if( result.success ){\r",
+                    "        switch( result.code ){\r",
+                    "          case '0000':\r",
+                    "            //成功\r",
+                    "            toast('恭喜您，您已订阅成功。');\r",
+                    "            x$pop.hide();\r",
+                    "            _this.CNL_industry_sbi.reset();\r",
+                    "            _this.update_list();\r",
+                    "            break;\r",
+                    "          case '1001':\r",
+                    "            //失败\r",
+                    "            break;\r",
+                    "          default:\r",
+                    "            toast(\"errCode:\"+result.code);\r",
+                    "            break;\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "\r",
+                    "      }\r",
+                    "    },\r",
+                    "    fail:function(result){\r",
+                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "    },\r",
+                    "    text:'加载中',\r",
+                    "    silent:false,\r",
+                    "    trigger:_this,\r",
+                    "    check_login:false\r",
+                    "  } );\r",
+                    "  \r",
+                    "  \r",
+                    "} );\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "e49e6a0f-5219-48b4-aa83-4964ccb3f3bc"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": true,
+                "height": 250,
+                "hidden": true,
+                "itemId": "cnl_pop_industry_sbi",
+                "layout": "fit",
+                "modal": true,
+                "width": 280
+            },
+            "designerId": "af156dec-9a27-4431-9f1b-7675cef7909e",
+            "cn": [
+                {
+                    "type": "Ext.TitleBar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "top",
+                        "title": "行业"
+                    },
+                    "designerId": "cab97691-11b8-435b-b3d2-eee1f099f1f6",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "cnl_pop_back_industry_sbi",
+                                "text": "返回"
+                            },
+                            "designerId": "afc64bb4-70ac-4fc8-8beb-5e4ed8e1bb35",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMybutton23Tap31112",
+                                        "implHandler": [
+                                            "var _this = this;\r",
+                                            "\r",
+                                            "if( !_this.CNL_industry_sbi.pop() ){\r",
+                                            "  window.setTimeout(function(){\r",
+                                            "    _this.down('#cnl_pop_industry_sbi').hide();\r",
+                                            "  },120);\r",
+                                            "}\r",
+                                            ""
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "e4884f9e-d86f-416a-88b6-79cd11cc64d2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "right",
+                                "itemId": "cnl_pop_cancel_industr_sbi",
+                                "text": "取消"
+                            },
+                            "designerId": "7cdace03-6e06-4b2a-a70a-dc682bf47219",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMybutton14Tap12",
+                                        "implHandler": [
+                                            "var _this = this;\r",
+                                            "\r",
+                                            "window.setTimeout(function(){\r",
+                                            "  _this.down('#cnl_pop_industry_sbi').hide();\r",
+                                            "},120);"
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "1b30296a-42e5-4b9e-ae93-49f9221edb2e"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disableSelection": true,
+                        "itemCls": "leaf_list",
+                        "itemId": "cnl_industry_sbi"
+                    },
+                    "designerId": "a5b59ea4-39ff-4302-9d04-2e8ab0add30a",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=\"{__leaf_cls}\">{text}</div>"
+                                ]
+                            },
+                            "designerId": "77b4150c-3cd5-40e6-ad17-20fb9bf66376"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "JobFavourite"
+    },
+    "designerId": "a57bd8d0-cd2b-42c3-bc22-e7559cab827d",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "collectId"
+            },
+            "designerId": "11ef2485-91f9-4fb1-aaf2-9d5f28de2bb0"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "collectTime"
+            },
+            "designerId": "47802a0c-1c29-4697-be09-0c6aecea2941"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "posName"
+            },
+            "designerId": "51c019af-52ed-4b17-9ece-b0cb28e90e53"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "enterpriseName"
+            },
+            "designerId": "a70550f1-6493-41c1-9ea9-ae6fa2b4be79"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "salaryName"
+            },
+            "designerId": "768cc863-8cbe-4a0c-9969-45522618e45c"
+        }
+    ]
+}

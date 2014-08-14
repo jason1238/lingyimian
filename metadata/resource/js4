@@ -1,0 +1,13 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js4",
+        "url": "js/_data_citys.js"
+    },
+    "designerId": "08f92a95-7b05-4f73-8526-2aa900c89425"
+}

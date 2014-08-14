@@ -1,0 +1,364 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userAlias": "login",
+        "designer|userClassName": "Login",
+        "id": "page_login",
+        "layout": "card"
+    },
+    "designerId": "482adb87-0846-46c7-aef6-6c79e3f9102b",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "用户登录",
+                "ui": "zjs"
+            },
+            "designerId": "022a3788-9b24-4db8-b751-91131a006200",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "1a478bc5-6139-48b4-a75c-e8f344e71386",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap",
+                                "implHandler": [
+                                    "\r",
+                                    "\r",
+                                    "if( CURRENT_TAB && CURRENT_NAV ){\r",
+                                    "  var cur_tab_id = CURRENT_TAB.id;\r",
+                                    "  var cur_nav_length = CURRENT_NAV.getItems().length;\r",
+                                    "  var cur_page = CURRENT_NAV.getActiveItem();\r",
+                                    "  var is_login = cur_page.xtype == 'login';\r",
+                                    "\r",
+                                    "  //console.log('CUR PAGE');\r",
+                                    "  //console.log(cur_page);\r",
+                                    "  //console.log(cur_page.xtype);\r",
+                                    "\r",
+                                    "  switch( cur_tab_id ){\r",
+                                    "    case 'tab_home':\r",
+                                    "      if( cur_nav_length > 2 ){\r",
+                                    "        CURRENT_NAV.pop(2);\r",
+                                    "        //toast('APP POP');\r",
+                                    "      }else{\r",
+                                    "        //toast('APP KILL');\r",
+                                    "      }\r",
+                                    "      break;\r",
+                                    "    case 'tab_user':\r",
+                                    "      go_home();\r",
+                                    "      break;\r",
+                                    "    case 'tab_msg':\r",
+                                    "      go_home();\r",
+                                    "      break;\r",
+                                    "    case 'tab_more':\r",
+                                    "      if( cur_nav_length > 2 ){\r",
+                                    "        CURRENT_NAV.pop();\r",
+                                    "        //toast('APP POP');\r",
+                                    "      }else{\r",
+                                    "        //toast('APP HOME');\r",
+                                    "        go_home();\r",
+                                    "      }\r",
+                                    "      break;\r",
+                                    "  }\r",
+                                    "}else{\r",
+                                    "  //exapp;\r",
+                                    "  //toast('APP EXIT');\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "/*\r",
+                                    "//button.up('navigationview').pop();\r",
+                                    "\r",
+                                    "var nav_view = button.up('navigationview');\r",
+                                    "\r",
+                                    "var cur_active_item = Ext.Viewport.getActiveItem();\r",
+                                    "var cur_active_item_nav_view = cur_active_item.up('navigationview');\r",
+                                    "\r",
+                                    "\r",
+                                    "//console.log(nav_view);\r",
+                                    "//console.log(nav_view.pop);\r",
+                                    "var items = nav_view.getItems();\r",
+                                    "console.log(items);\r",
+                                    "\r",
+                                    "if( nav_view && nav_view.pop ){\r",
+                                    "  console.log(nav_view.getItems().length);\r",
+                                    "  if( nav_view.getItems().length <=3 ){\r",
+                                    "    go_home();\r",
+                                    "  }else{\r",
+                                    "    nav_view.pop();\r",
+                                    "  }\r",
+                                    "\r",
+                                    "}else{\r",
+                                    "  go_home();\r",
+                                    "}\r",
+                                    "*/"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "ad82e359-f218-4272-b77c-1729d34c0941"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "docked": null,
+                        "itemId": "mybutton24",
+                        "text": "注册"
+                    },
+                    "designerId": "c4c16d52-669a-4bb3-86da-90c6feea71c4",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton24Tap",
+                                "implHandler": [
+                                    "change_page('Register',button);"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "0d16dc06-752b-4bca-aa4a-22884ac6ac06"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "scrollable": "vertical"
+            },
+            "designerId": "0aced18b-8580-4d16-af28-c6f7b581b980",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": ""
+                    },
+                    "designerId": "d8fae864-eb2d-4a54-a76e-f6d0ef01d903",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "login.fe_username",
+                                "label": "账户",
+                                "name": "login.fe_username",
+                                "required": true
+                            },
+                            "designerId": "2fae2e68-daa9-40c1-aaf4-121174721d39"
+                        },
+                        {
+                            "type": "Ext.field.Password",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "login.fe_password",
+                                "label": "密码",
+                                "name": "login.fe_password",
+                                "required": true
+                            },
+                            "designerId": "1f32daa0-8dfe-46d6-97d7-6d205aa882ed"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "confirm",
+                        "itemId": "mybutton7",
+                        "margin": "0 0.5em",
+                        "text": "登录",
+                        "ui": "confirm"
+                    },
+                    "designerId": "a12c15c0-bd85-4dd4-a6ff-7fe06a20f953",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton7Tap",
+                                "implHandler": [
+                                    "var fe_username = x$('login.fe_username');\r",
+                                    "var fe_password = x$('login.fe_password');\r",
+                                    "\r",
+                                    "\r",
+                                    "var username_val = fe_username.getValue();\r",
+                                    "var password_val = fe_password.getValue();\r",
+                                    "\r",
+                                    "if(_G.DEBUG){\r",
+                                    "  username_val = username_val || 'zhaozuowen987469@126.com';\r",
+                                    "  password_val = password_val || '123456';\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "if( username_val && password_val ){\r",
+                                    "\r",
+                                    "  send_request( {\r",
+                                    "    api:'login',\r",
+                                    "    method:'POST',\r",
+                                    "    params:{\r",
+                                    "      userName:username_val,\r",
+                                    "      password:password_val\r",
+                                    "    },\r",
+                                    "    success:function(result, request){\r",
+                                    "      if( result.success ){\r",
+                                    "        switch( result.code ){\r",
+                                    "          case '0000':\r",
+                                    "            //成功\r",
+                                    "            toast(\"登录成功。欢迎回来！\");\r",
+                                    "            set_s('token',result.token);\r",
+                                    "            //reload_app();\r",
+                                    "            go_home();\r",
+                                    "            break;\r",
+                                    "          case '1001':\r",
+                                    "            //失败\r",
+                                    "            toast(\"登录失败，请输入正确的用户名和密码\");\r",
+                                    "            break;\r",
+                                    "          default:\r",
+                                    "            toast(\"errCode:\"+result.code);\r",
+                                    "            break;\r",
+                                    "        }\r",
+                                    "      }else{\r",
+                                    "\r",
+                                    "      }\r",
+                                    "    },\r",
+                                    "    fail:function(result){\r",
+                                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                                    "    },\r",
+                                    "    text:'加载中',\r",
+                                    "    silent:false,\r",
+                                    "    trigger:button,\r",
+                                    "    check_login:false\r",
+                                    "  } );\r",
+                                    "\r",
+                                    "}else{\r",
+                                    "  toast(\"请输入用户名和密码。\");\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "//Ext.Msg.alert(\"恭喜您，登录成功！\");\r",
+                                    "//button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "c4d254c0-ee23-40ee-bc88-15a6c7e13072"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "action",
+                        "itemId": "mybutton8",
+                        "margin": "10px 0.5em 0",
+                        "text": "忘记密码",
+                        "ui": "action"
+                    },
+                    "designerId": "75ae4ab2-e9eb-497a-addf-668512b2c337",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton8Tap",
+                                "implHandler": [
+                                    "change_page('ResetPassword',button);"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "13917d57-2bee-445e-91ed-4e5a9847c1ab"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

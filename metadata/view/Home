@@ -1,0 +1,706 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userAlias": "home",
+        "designer|userClassName": "Home",
+        "id": "Home",
+        "layout": "fit"
+    },
+    "designerId": "4b704cdb-6ca2-44c3-9aa3-56702c7b19b6",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "优渡人才",
+                "ui": "zjs"
+            },
+            "designerId": "588a528a-324a-44b6-a6aa-a21c74b1b38d",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "btn-home-nav-city",
+                        "itemId": "mybutton19",
+                        "text": "上海"
+                    },
+                    "designerId": "9a39acdd-9479-4d61-8029-a7d924baf7c7",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton19Tap1",
+                                "implHandler": [
+                                    "change_page('CityChooser_CNL',button);"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "4c51bb88-1f90-4e37-a039-07796b4bdc39"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "id": "btn-home-nav-login",
+                        "itemId": "mybutton20",
+                        "text": "登录"
+                    },
+                    "designerId": "e6871d24-14ae-4c0a-bb8d-7c561047d930",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton19Tap11",
+                                "implHandler": [
+                                    "change_page('Login',button);"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "f3e4d614-46b9-4f05-9b37-0a3cf29269ac"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "id": "btn-home-nav-usercenter",
+                        "itemId": "mybutton21",
+                        "text": "个人中心"
+                    },
+                    "designerId": "9a2d350b-d2aa-4623-a930-b6c00d7e20c0",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton19Tap111",
+                                "implHandler": [
+                                    "x$('TabFrame').setActiveItem(2);"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "c08584f1-a815-44d2-aee1-d8333df6ea71"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "scrollable": false
+            },
+            "designerId": "783a748c-e220-4c17-b530-ab2ee4396c75",
+            "cn": [
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "hp-search"
+                        ],
+                        "height": 50,
+                        "layout": "hbox",
+                        "padding": 0
+                    },
+                    "designerId": "b63b10f9-26b5-4921-923e-22e6bb4f4cd5",
+                    "cn": [
+                        {
+                            "type": "Ext.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "col-search"
+                                ],
+                                "height": 50,
+                                "layout": "fit",
+                                "layout|flex": 1,
+                                "padding": "5px 0 5px 5px"
+                            },
+                            "designerId": "361a70f0-ff79-433f-af91-3d7267fcb3ba",
+                            "cn": [
+                                {
+                                    "type": "Ext.field.Search",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "id": "home-search-keywords",
+                                        "label": null,
+                                        "labelWidth": 0,
+                                        "maxHeight": null,
+                                        "name": "",
+                                        "placeHolder": "输入职位名称/公司名称"
+                                    },
+                                    "designerId": "58497dd6-974f-40be-be51-efbe0b2b0bdc"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "col-btn"
+                                ],
+                                "height": 50,
+                                "layout": "fit",
+                                "layout|flex": null,
+                                "width": 50
+                            },
+                            "designerId": "a0f38bba-bd93-48a4-bde4-639b87dc2d0a",
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "iconCls": "zjs-icon-search",
+                                        "itemId": "mybutton117",
+                                        "text": "搜索"
+                                    },
+                                    "designerId": "3541d3b3-eeeb-4b30-ac10-78a9245aa37d",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMybutton117Tap",
+                                                "implHandler": [
+                                                    "var keywords = x$('home-search-keywords').getValue();\r",
+                                                    "\r",
+                                                    "if(keywords){\r",
+                                                    "  change_page('HomeSearchResult',button,{keywords:fix_cn(keywords)});\r",
+                                                    "}else{\r",
+                                                    "  toast(\"请输入需要搜索的关键词。\");\r",
+                                                    "}\r",
+                                                    ""
+                                                ],
+                                                "name": "tap"
+                                            },
+                                            "designerId": "5596d1d2-c648-4cb3-b5be-2162d72b0a04"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "col-btn"
+                                ],
+                                "height": 50,
+                                "layout": "fit",
+                                "layout|flex": null,
+                                "width": 50
+                            },
+                            "designerId": "d19e6a09-690f-42fe-ab0c-43083f77f520",
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "iconCls": "zjs-icon-add",
+                                        "itemId": "mybutton118",
+                                        "text": "订阅"
+                                    },
+                                    "designerId": "92a9acc7-7400-4d6c-b916-647d6a9f5230",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMybutton118Tap",
+                                                "implHandler": [
+                                                    "change_page('PositionSubscribe',button);"
+                                                ],
+                                                "name": "tap"
+                                            },
+                                            "designerId": "b27e0d14-fc56-4971-91d2-009bae7fa111"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "hp-icon-menu"
+                        ],
+                        "height": 100,
+                        "layout": "hbox"
+                    },
+                    "designerId": "444079bb-98f8-44a7-a13e-b388f07bcd8a",
+                    "cn": [
+                        {
+                            "type": "Ext.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "icon-button"
+                                ],
+                                "layout": "fit",
+                                "layout|flex": 1
+                            },
+                            "designerId": "135613d9-1eb7-47cf-a7b0-0ca208ce5608",
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": [
+                                            "btn-icon-speaker"
+                                        ],
+                                        "height": 100,
+                                        "itemId": "mybutton9",
+                                        "text": "宣讲会",
+                                        "width": ""
+                                    },
+                                    "designerId": "42579cac-6209-47c4-955d-48288e26d35d",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMybutton9Tap",
+                                                "implHandler": [
+                                                    "change_page('CampusTalk',button);"
+                                                ],
+                                                "name": "tap"
+                                            },
+                                            "designerId": "8f081e7a-2a13-4be5-9982-30670fe93979"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "icon-button"
+                                ],
+                                "layout": "fit",
+                                "layout|flex": 1
+                            },
+                            "designerId": "ad9b8614-d745-4384-8a00-550aea89c310",
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": [
+                                            "btn-icon-message"
+                                        ],
+                                        "height": 100,
+                                        "itemId": "mybutton10",
+                                        "text": "招聘会",
+                                        "width": ""
+                                    },
+                                    "designerId": "460e0724-c563-4704-9635-9a161430fedb",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMybutton10Tap",
+                                                "implHandler": [
+                                                    "change_page('Recruitment',button);"
+                                                ],
+                                                "name": "tap"
+                                            },
+                                            "designerId": "28a15911-1cd1-4f66-adb5-f9be55623921"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "icon-button"
+                                ],
+                                "layout": "fit",
+                                "layout|flex": 1
+                            },
+                            "designerId": "6a72b8c1-4b55-447c-b9a6-999c65903f36",
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": [
+                                            "btn-icon-star"
+                                        ],
+                                        "height": 100,
+                                        "itemId": "mybutton11",
+                                        "text": "热门企业",
+                                        "width": ""
+                                    },
+                                    "designerId": "9b75e559-1dd7-480b-9104-ffb0f8c023a5",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMybutton11Tap",
+                                                "implHandler": [
+                                                    "change_page('CompanyHot',button);"
+                                                ],
+                                                "name": "tap"
+                                            },
+                                            "designerId": "6b8f1135-1ff4-4738-b990-49a887e7e8e3"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "icon-button"
+                                ],
+                                "layout": "fit",
+                                "layout|flex": 1
+                            },
+                            "designerId": "d9f3e827-93ef-494c-9cf2-d158c265deb7",
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": [
+                                            "btn-icon-job"
+                                        ],
+                                        "height": 100,
+                                        "itemId": "mybutton12",
+                                        "text": "实习职位",
+                                        "width": ""
+                                    },
+                                    "designerId": "909463a1-e2cc-4c5d-8bc6-a5788b957380",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMybutton12Tap",
+                                                "implHandler": [
+                                                    "change_page('InternPosition',button);"
+                                                ],
+                                                "name": "tap"
+                                            },
+                                            "designerId": "aa32cbcc-7ce5-40e1-90d1-9ba5d8988720"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.dataview.DataView",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "zjs-listview-2line"
+                        ],
+                        "disableSelection": true,
+                        "itemId": "mydataview37",
+                        "minHeight": 180,
+                        "scrollable": false,
+                        "store": "hpNav"
+                    },
+                    "designerId": "6ae93e63-1eb3-413e-90f5-77ef28f6ce64",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=\"li\">\r",
+                                    "  <div class=\"c\">\r",
+                                    "    <h4>{title}</h4>\r",
+                                    "    <p>{desc}</p>\r",
+                                    "  </div>\r",
+                                    "  <div class=\"i\">\r",
+                                    "    <span></span>\r",
+                                    "  </div>\r",
+                                    "</div>"
+                                ]
+                            },
+                            "designerId": "8b7f309f-6147-4a00-96e1-03b336e40bca"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMydataview37ItemTap",
+                                "implHandler": [
+                                    "\r",
+                                    "var data = record.data;\r",
+                                    "\r",
+                                    "console.log(data);\r",
+                                    "\r",
+                                    "\r",
+                                    "switch( data.xindex ){\r",
+                                    "\r",
+                                    "  case 0:\r",
+                                    "    change_page('PositionSubscribe',dataview);\r",
+                                    "    break;\r",
+                                    "  case 1:\r",
+                                    "    //var page = Ext.create('ZJ02.view.CampusTalk', {fullscreen: true});\r",
+                                    "    //dataview.up('tabpanel').setActiveItem(2);\r",
+                                    "    change_page( 'ResumeCenter',dataview );\r",
+                                    "    break;\r",
+                                    "  case 2:\r",
+                                    "    //var page = Ext.create('ZJ02.view.CampusTalk', {fullscreen: true});\r",
+                                    "    dataview.up('tabpanel').setActiveItem(3);\r",
+                                    "    break;\r",
+                                    "\r",
+                                    "}"
+                                ],
+                                "name": "itemtap"
+                            },
+                            "designerId": "53faa505-c54b-4a96-99b5-6256db5e4900"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "this.update();\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "99ca5a05-21e8-45d1-b43e-5f43d7c3d642"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onHomePainted",
+                "implHandler": [
+                    "if( navigator.splashscreen ){\r",
+                    "  window.setTimeout(function(){\r",
+                    "    navigator.splashscreen.hide();\r",
+                    "  },3000);\r",
+                    "}"
+                ],
+                "name": "painted"
+            },
+            "designerId": "3530cae7-7a05-461f-9b5b-3dd49087473d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "update",
+                "implHandler": [
+                    "\r",
+                    "if( is_login() ){\r",
+                    "  x$('btn-home-nav-login').hide();\r",
+                    "  x$('btn-home-nav-usercenter').show();\r",
+                    "}else{\r",
+                    "  x$('btn-home-nav-login').show();\r",
+                    "  x$('btn-home-nav-usercenter').hide();\r",
+                    "}\r",
+                    "\r",
+                    "var city = get_city();\r",
+                    "\r",
+                    "if( city ){\r",
+                    "  x$('btn-home-nav-city').setText(city.name);\r",
+                    "}else{\r",
+                    "  x$('btn-home-nav-city').setText('选择城市');\r",
+                    "}\r",
+                    ""
+                ]
+            },
+            "designerId": "90bfe6a4-7976-47fe-a5f4-fd81263fbe7e"
+        }
+    ]
+}

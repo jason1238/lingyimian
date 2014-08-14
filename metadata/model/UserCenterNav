@@ -1,0 +1,50 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UserCenterNav"
+    },
+    "designerId": "16a5bbb5-b0c3-4c61-b6bb-9ed1dda97b54",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "title"
+            },
+            "designerId": "5041f316-376f-4e5d-9ec7-ea648716936f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "badge"
+            },
+            "designerId": "eb0260af-6bd3-43cb-a8fa-fac91dcb48e7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "action"
+            },
+            "designerId": "96488e61-eb42-49ed-8728-1ccbed9a4a2d"
+        }
+    ]
+}

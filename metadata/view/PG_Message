@@ -1,0 +1,220 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "pg_message",
+        "designer|userClassName": "PG_Message",
+        "layout": "fit"
+    },
+    "designerId": "4d903fbb-4465-4b4d-bda9-cc94c5495c42",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "hidden": false,
+                "title": "消息",
+                "ui": "zjs"
+            },
+            "designerId": "736d8cbd-1f2e-41b7-892b-b56ed0c48ec7"
+        },
+        {
+            "type": "Ext.dataview.DataView",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-listview-1line"
+                ],
+                "data": [
+                    "[{\r",
+                    "    title: \"我的提醒\",\r",
+                    "    badge: '',\r",
+                    "    action: \"my_notice\"\r",
+                    "}, {\r",
+                    "    title: \"职位订阅\",\r",
+                    "    badge: '',\r",
+                    "    action: \"job_book\"\r",
+                    "}, {\r",
+                    "    title: \"面试通知\",\r",
+                    "    badge: '',\r",
+                    "    action: \"interview\"\r",
+                    "}]"
+                ],
+                "disableSelection": true,
+                "id": "pg_message_list",
+                "itemId": "mydataview15"
+            },
+            "designerId": "0dcc71d8-6577-4de1-b574-d06229b394eb",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=\"li\">\r",
+                            "  <div class=\"c\">\r",
+                            "    <h4>{title}</h4>\r",
+                            "  </div>\r",
+                            "  <div class=\"i\">\r",
+                            "    <span></span>\r",
+                            "  </div>\r",
+                            "  <tpl if=\"badge &gt; 0\">\r",
+                            "  <div class=\"b\">\r",
+                            "    <span>{badge}</span>\r",
+                            "  </div>\r",
+                            "  </tpl>\r",
+                            "</div>"
+                        ]
+                    },
+                    "designerId": "affce76e-1357-4877-bfe5-ed78d7db35c2"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onPg_message_listItemTap",
+                        "implHandler": [
+                            "\r",
+                            "var item_data = record.data;\r",
+                            "\r",
+                            "\r",
+                            "switch( item_data.action ){\r",
+                            "  case 'my_notice':\r",
+                            "    change_page('MyNotice',dataview);\r",
+                            "    break;\r",
+                            "  case 'job_book':\r",
+                            "    change_page('JobBookList',dataview);\r",
+                            "    break;\r",
+                            "  case 'interview':\r",
+                            "    change_page('InterviewNotice',dataview);\r",
+                            "    break;\r",
+                            "  case 'reply':\r",
+                            "    change_page('TopicReply',dataview);\r",
+                            "    break;\r",
+                            "}\r",
+                            ""
+                        ],
+                        "name": "itemtap"
+                    },
+                    "designerId": "e8275538-9fac-4dc5-8bbe-74a1102ff614"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "send_request( {\r",
+                    "  api:'msg.pull',\r",
+                    "  method:'POST',\r",
+                    "  params:{\r",
+                    "    pageSize:100\r",
+                    "  },\r",
+                    "  success:function(result, request){\r",
+                    "    if( result.success ){\r",
+                    "      switch( result.code ){\r",
+                    "        case '0000':\r",
+                    "          //成功\r",
+                    "          console.log(result);\r",
+                    "\r",
+                    "          _this.build_list(result.data);\r",
+                    "          break;\r",
+                    "        case '1001':\r",
+                    "          //失败\r",
+                    "          break;\r",
+                    "        default:\r",
+                    "          toast(\"errCode:\"+result.code);\r",
+                    "          break;\r",
+                    "      }\r",
+                    "    }else{\r",
+                    "\r",
+                    "    }\r",
+                    "  },\r",
+                    "  fail:function(result){\r",
+                    "    toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "  },\r",
+                    "  text:'加载中',\r",
+                    "  silent:false,\r",
+                    "  trigger:_this,\r",
+                    "  check_login:true\r",
+                    "} );\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "906a2cf4-0ffd-45fe-b597-620be795d866"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "build_list",
+                "implHandler": [
+                    "\r",
+                    "var x$list = x$('pg_message_list');\r",
+                    "\r",
+                    "var nav_data = x$list.getData();\r",
+                    "\r",
+                    "\r",
+                    "if(data){\r",
+                    "  \r",
+                    "  nav_data[0].badge = ''+data.REMIND;\r",
+                    "  nav_data[1].badge = ''+data.POSITION;\r",
+                    "  nav_data[2].badge = ''+data.AUDITION;\r",
+                    "  \r",
+                    "}\r",
+                    "\r",
+                    "set_store_data(x$list,nav_data);\r",
+                    "x$list.refresh();\r",
+                    "refresh_scroll(x$list);"
+                ]
+            },
+            "designerId": "9a2b82af-d473-4838-957f-adfc2a5d9b28"
+        }
+    ]
+}

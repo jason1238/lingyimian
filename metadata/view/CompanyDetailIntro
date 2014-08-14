@@ -1,0 +1,35 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "companydetailintro",
+        "designer|userClassName": "CompanyDetailIntro",
+        "layout": "fit"
+    },
+    "designerId": "e147884f-f229-42b6-953c-a1c89d627e75",
+    "cn": [
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "detail_content"
+                ],
+                "designer|displayName": "Content",
+                "hidden": false,
+                "id": "content_c_detail",
+                "padding": "1em",
+                "scrollable": "vertical"
+            },
+            "designerId": "bfaacff9-6865-4d5b-ad6c-5f05531fba00"
+        }
+    ]
+}

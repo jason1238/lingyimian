@@ -1,0 +1,352 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userClassName": "JobFavourite",
+        "layout": "card"
+    },
+    "designerId": "a277a654-5b6b-4cfd-9b01-7b37eed4c2c1",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-blue"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "职位收藏",
+                "ui": "zjs"
+            },
+            "designerId": "685a03b8-0632-4d57-b59e-d9780512b422",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "9605c3a6-c591-4f63-97e3-a58fee5b1cb3",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap",
+                                "implHandler": [
+                                    "var x$last_page = button.up('navigationview').pop();\r",
+                                    "x$last_page.update();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "afda029e-6666-42d5-9cc3-fec51d962a48"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zj-list-no-data"
+                ],
+                "hidden": true,
+                "itemId": "nodata"
+            },
+            "designerId": "006aade3-d26a-4494-ab62-12ef19547648"
+        },
+        {
+            "type": "Ext.dataview.DataView",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-listview-3line-c-del"
+                ],
+                "disableSelection": true,
+                "id": "list_uc_fav_job",
+                "itemId": "mydataview4",
+                "minHeight": 180,
+                "scrollable": "vertical"
+            },
+            "designerId": "e96ffb72-43a6-4d15-b0ba-36167a537fef",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=\"li\">\r",
+                            "  <div class=\"c list_c_job_favourite\">\r",
+                            "    <div class=\"cw\">\r",
+                            "      <h4>{posName}</h4>\r",
+                            "      <div class=\"cp\">\r",
+                            "        <div class=\"cl\">\r",
+                            "          <p>{enterpriseName}</p>\r",
+                            "          <p><em>{date_fullyeardate}</em></p>\r",
+                            "        </div>\r",
+                            "        <div class=\"cr\">\r",
+                            "          <p>薪资</p>\r",
+                            "          <p>{salaryName}</p>\r",
+                            "        </div>\r",
+                            "      </div>\r",
+                            "    </div>\r",
+                            "  </div>\r",
+                            "  <div class=\"i\"> <span></span> </div>\r",
+                            "  <div class=\"del\"> <span></span> </div>\r",
+                            "</div>\r",
+                            ""
+                        ]
+                    },
+                    "designerId": "75bc1dd8-6d91-4ad4-a7ae-688025011b25"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onList_uc_fav_jobItemTap",
+                        "implHandler": [
+                            "\r",
+                            "var item_data = record.data;\r",
+                            "\r",
+                            "var _this = this;\r",
+                            "\r",
+                            "\r",
+                            "if ( jQuery(e.target).parents('.del').length || jQuery(e.target).is('.del') ){\r",
+                            "\r",
+                            "  Ext.Msg.confirm('您确认删除该收藏吗？','',function(confirmed){\r",
+                            "    if( confirmed == 'yes' ){\r",
+                            "\r",
+                            "      send_request( {\r",
+                            "        api:'fav_job_del',\r",
+                            "        method:'POST',\r",
+                            "        params:{\r",
+                            "          collectId:item_data.collectId\r",
+                            "        },\r",
+                            "        success:function(result, request){\r",
+                            "          if( result.success ){\r",
+                            "            switch( result.code ){\r",
+                            "              case 'SUCCESS':\r",
+                            "                //成功\r",
+                            "                console.log(result);\r",
+                            "                _this.update();\r",
+                            "                break;\r",
+                            "              case '1001':\r",
+                            "                //失败\r",
+                            "                break;\r",
+                            "              default:\r",
+                            "                toast(\"errCode:\"+result.code);\r",
+                            "                break;\r",
+                            "            }\r",
+                            "          }else{\r",
+                            "\r",
+                            "          }\r",
+                            "        },\r",
+                            "        fail:function(result){\r",
+                            "          toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                            "        },\r",
+                            "        text:'加载中',\r",
+                            "        silent:false,\r",
+                            "        trigger:_this,\r",
+                            "        check_login:true\r",
+                            "      } );\r",
+                            "\r",
+                            "    }\r",
+                            "  });\r",
+                            "\r",
+                            "\r",
+                            "\r",
+                            "\r",
+                            "\r",
+                            "\r",
+                            "\r",
+                            "\r",
+                            "}else{\r",
+                            "  change_page('InternPositionDetail',dataview,{positionId:item_data.posId});\r",
+                            "}\r",
+                            "\r",
+                            ""
+                        ],
+                        "name": "itemtap"
+                    },
+                    "designerId": "6e95ca83-f846-453d-b525-cf5ff7e87c1f"
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();"
+                ]
+            },
+            "designerId": "92116fcf-7b48-447b-9029-26433bebfc4d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "//if( _p && _p.keywords ){\r",
+                    "\r",
+                    "  send_request( {\r",
+                    "    api:'fav_job_list',\r",
+                    "    method:'POST',\r",
+                    "    params:{\r",
+                    "      pageSize:100\r",
+                    "    },\r",
+                    "    success:function(result, request){\r",
+                    "      if( result.success ){\r",
+                    "        switch( result.code ){\r",
+                    "          case '0000':\r",
+                    "            //成功\r",
+                    "            console.log(result);\r",
+                    "            _this.build_list(result.data);\r",
+                    "            break;\r",
+                    "          case '1001':\r",
+                    "            //失败\r",
+                    "            break;\r",
+                    "          default:\r",
+                    "            toast(\"errCode:\"+result.code);\r",
+                    "            break;\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "\r",
+                    "      }\r",
+                    "    },\r",
+                    "    fail:function(result){\r",
+                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "    },\r",
+                    "    text:'加载中',\r",
+                    "    silent:false,\r",
+                    "    trigger:_this,\r",
+                    "    check_login:true\r",
+                    "  } );\r",
+                    "\r",
+                    "//}\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "c98af9c6-ffd5-4620-97e7-e581f71e7bf8"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "build_list",
+                "implHandler": [
+                    "\r",
+                    "var _this = this;\r",
+                    "var x$nodata = i$('nodata',_this);\r",
+                    "\r",
+                    "var x$list = x$('list_uc_fav_job');\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "//x$list.removeAll();\r",
+                    "\r",
+                    "\r",
+                    "if(data && data.length){\r",
+                    "\r",
+                    "\r",
+                    "  for( var i=0;i<data.length;i++ ){\r",
+                    "    var date_ra = parse_date(data[i].collectTime,'date_');\r",
+                    "    jQuery.extend( data[i],date_ra );\r",
+                    "  }\r",
+                    "\r",
+                    "\r",
+                    "  set_store_data(x$list,data);\r",
+                    "\r",
+                    "\r",
+                    "  x$list.show();\r",
+                    "  x$nodata.hide();\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "}else{\r",
+                    "  set_store_data(x$list,[]);\r",
+                    "\r",
+                    "\r",
+                    "  x$list.hide();\r",
+                    "  x$nodata.show();\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "refresh_scroll(x$list);"
+                ]
+            },
+            "designerId": "2618c73b-dd76-4090-9716-b972a04eefaa"
+        }
+    ]
+}

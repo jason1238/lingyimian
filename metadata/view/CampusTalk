@@ -1,0 +1,1429 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CampusTalk",
+        "layout": "fit"
+    },
+    "designerId": "aa6990b1-3e99-42a2-ba34-e506b3ddda43",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "宣讲会",
+                "ui": "zjs"
+            },
+            "designerId": "149dd447-ece3-4e34-b1d8-ba61a3b5619e",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "3b2e2a4c-dfab-4641-9836-2b35557791a4",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap3",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "ff8bc283-e34c-46b3-a397-d0e384950f0d"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.SegmentedButton",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-filter-menu"
+                ],
+                "defaults": [
+                    "{\r",
+                    "  flex:1  \r",
+                    "}"
+                ],
+                "docked": "top",
+                "height": 40,
+                "itemId": "mysegmentedbutton"
+            },
+            "designerId": "b3a91132-eb55-470d-b765-7fbf8e3debfe",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "campus_btn_industry",
+                        "itemId": "mybutton1",
+                        "text": "选择行业"
+                    },
+                    "designerId": "8172b86e-7892-4b3e-bd52-e9e622a1def3",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton1Tap",
+                                "implHandler": [
+                                    "var x$flyout = x$('campus_fo_industry');\r",
+                                    "var init_fo_func = this.init_fo_industry;\r",
+                                    "\r",
+                                    "if( is_active(button) ){\r",
+                                    "  this.reset_fo();\r",
+                                    "}else{\r",
+                                    "  this.reset_fo();\r",
+                                    "  x$flyout.show();\r",
+                                    "  set_active(button);\r",
+                                    "  init_fo_func.apply(this,[]);\r",
+                                    "}"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "447edd82-5707-4701-840f-28d7a6e48bba"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "campus_btn_school",
+                        "itemId": "mybutton2",
+                        "text": "选择学校"
+                    },
+                    "designerId": "2f493be7-f53c-4472-8218-175c80e05719",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton2Tap",
+                                "implHandler": [
+                                    "var x$flyout = x$('campus_fo_school');\r",
+                                    "var init_fo_func = this.init_fo_school;\r",
+                                    "\r",
+                                    "if( is_active(button) ){\r",
+                                    "  this.reset_fo();\r",
+                                    "}else{\r",
+                                    "  this.reset_fo();\r",
+                                    "  x$flyout.show();\r",
+                                    "  set_active(button);\r",
+                                    "  init_fo_func.apply(this,[]);\r",
+                                    "}\r",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "6cb4dd53-1313-47a2-b4b5-847f5efe43d8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "campus_btn_time",
+                        "itemId": "mybutton3",
+                        "text": "开始时间"
+                    },
+                    "designerId": "241eb50f-fa92-45e8-b202-b79db7925c35",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton3Tap",
+                                "implHandler": [
+                                    "var _this = this;\r",
+                                    "\r",
+                                    "\r",
+                                    "var x$time_fe = x$('campus_dp_time');\r",
+                                    "\r",
+                                    "var x$time = i$('dp_picker',_this);\r",
+                                    "\r",
+                                    "var init_fo_func = this.init_fo_time;\r",
+                                    "\r",
+                                    "if( is_active(button) ){\r",
+                                    "  this.reset_fo();\r",
+                                    "}else{\r",
+                                    "  this.reset_fo();\r",
+                                    "  x$time.show();\r",
+                                    "  set_active(button);\r",
+                                    "  init_fo_func.apply(this,[]);\r",
+                                    "}\r",
+                                    "\r",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "8b09745f-7dc1-4261-99ae-67725ef95f93"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Content",
+                "hidden": false,
+                "layout": "fit"
+            },
+            "designerId": "19aa96a4-ade8-452e-9037-0ba1d5903b86",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "zj-list-no-data"
+                        ],
+                        "hidden": true,
+                        "itemId": "nodata"
+                    },
+                    "designerId": "7c9838a2-e7ff-49a9-b702-c1c896536f44"
+                },
+                {
+                    "type": "Ext.dataview.DataView",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "zjs-listview-calender"
+                        ],
+                        "disableSelection": true,
+                        "id": "list_campus",
+                        "itemId": "mydataview4",
+                        "minHeight": 180,
+                        "scrollable": "vertical"
+                    },
+                    "designerId": "2db18ecc-4b71-46bb-b661-a27f41621a15",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=\"li\">\r",
+                                    "\t<div class=\"calendar\">\r",
+                                    "    <div class=\"date\">{date_month}-{date_date}</div>\r",
+                                    "    <div class=\"time\">{date_am} {date_hour}:{date_minute}</div>\r",
+                                    "    <div class=\"day\">{date_localday}</div>\r",
+                                    "  </div>\r",
+                                    "  <div class=\"c\">\r",
+                                    "  \t<h4>{recruitmentTitle}</h4>\r",
+                                    "    <p>地点：{place}</p>\r",
+                                    "  </div>\r",
+                                    "  <div class=\"i\">\r",
+                                    "  \t<span></span>\r",
+                                    "  </div>\r",
+                                    "</div>"
+                                ]
+                            },
+                            "designerId": "81e82aa8-d96c-409a-a3ae-f1fb5001053f"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMydataview2ItemTap11",
+                                "implHandler": [
+                                    "var item_data = record.data;\r",
+                                    "\r",
+                                    "var id = item_data.recruitmentId;\r",
+                                    "\r",
+                                    "change_page('CampusTalkDetail',dataview,{id:id});"
+                                ],
+                                "name": "itemtap"
+                            },
+                            "designerId": "b38bf535-fc62-424a-b99c-5fdcdc5a894a"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-dd-filter-ms"
+                ],
+                "docked": null,
+                "height": 300,
+                "hidden": true,
+                "id": "campus_fo_industry",
+                "layout": "hbox"
+            },
+            "designerId": "55d0d945-5300-4dab-9c35-8920e10657f6",
+            "cn": [
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "col-1"
+                        ],
+                        "layout": "fit",
+                        "layout|flex": 4,
+                        "scrollable": "vertical"
+                    },
+                    "designerId": "f198e376-de9b-45ee-a6f6-c4bed6f78e3f",
+                    "cn": [
+                        {
+                            "type": "Ext.dataview.List",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "campustalk_filter_list_industry_lv1",
+                                "itemId": "campustalk_filter_list_industry_lv1"
+                            },
+                            "designerId": "b8fff8db-e6fb-449a-8bae-a31d43d6a504",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<div>{industryName}\r",
+                                            "  <tpl if=\"has_child &gt; 0\">\r",
+                                            "    <div class=\"more_arr\">&gt;</div>\r",
+                                            "  </tpl>\r",
+                                            "</div>"
+                                        ]
+                                    },
+                                    "designerId": "73a3cb12-d141-4fa8-9788-c98cc2418a98"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCampustalk_filter_list_industry_lv1ItemTap",
+                                        "implHandler": [
+                                            "var x$list_lv2 = x$('campustalk_filter_list_industry_lv2');\r",
+                                            "\r",
+                                            "var data = record.data;\r",
+                                            "\r",
+                                            "if(data.has_child){\r",
+                                            "  set_store_data(x$list_lv2,data.childs);\r",
+                                            "}else{\r",
+                                            "  set_store_data(x$list_lv2,[]);\r",
+                                            "  this.set_industry(data.industryId,data.industryName);\r",
+                                            "}\r",
+                                            ""
+                                        ],
+                                        "name": "itemtap"
+                                    },
+                                    "designerId": "561fc7c6-5050-4b44-bcfb-b2ef857876aa"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "col-2"
+                        ],
+                        "layout": "fit",
+                        "layout|flex": 6,
+                        "scrollable": "vertical"
+                    },
+                    "designerId": "497711cb-fc26-40ca-8068-1d64729b52d3",
+                    "cn": [
+                        {
+                            "type": "Ext.dataview.List",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "campustalk_filter_list_industry_lv2",
+                                "itemHeight": 30,
+                                "itemId": "mylist"
+                            },
+                            "designerId": "7d3e56b9-d40a-4c71-8ca7-d5cab52dad79",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<div>{industryName}</div>"
+                                        ]
+                                    },
+                                    "designerId": "d6bdd525-8bb3-42d9-a98b-55016b356aaf"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCampustalk_filter_list_industry_lv2ItemTap",
+                                        "implHandler": [
+                                            "var data = record.data;\r",
+                                            "this.set_industry(data.industryId,data.industryName);\r",
+                                            ""
+                                        ],
+                                        "name": "itemtap"
+                                    },
+                                    "designerId": "c3e0a571-7d07-4c90-a83b-1de309122fb5"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-dd-filter-ss"
+                ],
+                "docked": null,
+                "height": 300,
+                "hidden": true,
+                "id": "campus_fo_school",
+                "layout": "hbox"
+            },
+            "designerId": "ed5ab22d-ebba-4bb7-8499-b31f9a8c3596",
+            "cn": [
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "col-1"
+                        ],
+                        "layout": "fit",
+                        "layout|flex": 1,
+                        "scrollable": "vertical"
+                    },
+                    "designerId": "4d0874b0-0519-4a47-873d-1836f918acf2",
+                    "cn": [
+                        {
+                            "type": "Ext.dataview.List",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "campustalk_filter_list_school",
+                                "itemHeight": 30,
+                                "itemId": "mylist"
+                            },
+                            "designerId": "2d90daed-4f44-4216-9a38-a5481c17cff1",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<div>{schoolName}</div>"
+                                        ]
+                                    },
+                                    "designerId": "f5ac359c-32b7-4f13-8997-581d09a84845"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCampustalk_filter_list_schoolItemTap",
+                                        "implHandler": [
+                                            "var data = record.data;\r",
+                                            "this.set_school(data.schoolId,data.schoolName);"
+                                        ],
+                                        "name": "itemtap"
+                                    },
+                                    "designerId": "f0a68ee0-ab51-4397-b75f-f3e3067a1676"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": true,
+                "height": 325,
+                "hidden": true,
+                "itemId": "dp_picker",
+                "layout": "fit",
+                "modal": true,
+                "style": "background-color:#fff;",
+                "width": 299
+            },
+            "designerId": "a197be30-f852-4edf-aaf3-3950259f58f1",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onDp_pickerShow",
+                        "implHandler": [
+                            "\r",
+                            "var x$c = component;\r",
+                            "\r",
+                            "var x$t = x$c.down('#dp_title');\r",
+                            "\r",
+                            "var $t = jQuery( '#'+x$t.getId() ).find('.x-title .x-innerhtml');\r",
+                            "\r",
+                            "var id = x$c.getId();\r",
+                            "var dp_id = id+'-dp';\r",
+                            "\r",
+                            "var x$w = x$c.down('#dp_wrap');\r",
+                            "\r",
+                            "var $w = jQuery( '#'+x$w.getId() ).find('.x-inner');\r",
+                            "\r",
+                            "var $dp = jQuery('<div id=\"'+dp_id+'\" class=\"x-jq-dp\"></div>');\r",
+                            "\r",
+                            "$w.empty().append($dp);\r",
+                            "\r",
+                            "\r",
+                            "$dp.datepicker({\r",
+                            "  'dateFormat':'yy-mm-dd',\r",
+                            "  'onSelect':function(dateText,inst){\r",
+                            "    $t.text(dateText);\r",
+                            "  }\r",
+                            "});\r",
+                            "\r",
+                            "\r",
+                            "var x$field = x$('campus_dp_time');\r",
+                            "var default_time = get_data( x$field,'label' );\r",
+                            "if( default_time ){\r",
+                            "  $dp.datepicker('setDate',default_time);\r",
+                            "  $t.text(default_time);\r",
+                            "}else{\r",
+                            "  $t.text('请选择时间');\r",
+                            "}"
+                        ],
+                        "name": "show"
+                    },
+                    "designerId": "df70ed0b-b36b-4467-83e1-50329127ef1c"
+                },
+                {
+                    "type": "Ext.TitleBar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "top",
+                        "itemId": "dp_title"
+                    },
+                    "designerId": "f8d55dfc-4e5e-4e19-8acc-c358f41c35f8",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "mybutton14",
+                                "text": "重置"
+                            },
+                            "designerId": "5b45562f-9882-4500-b55e-bedaf270c2b9",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMybutton14Tap",
+                                        "implHandler": [
+                                            "var _this = this;\r",
+                                            "\r",
+                                            "\r",
+                                            "_this.reset_fo();\r",
+                                            "_this.set_time(0,0);"
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "1d563b78-f772-452a-b8ab-d8fbac21882a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "right",
+                                "itemId": "mybutton15",
+                                "text": "确定"
+                            },
+                            "designerId": "52e1b380-8943-4d6a-abbe-3834399550f9",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMybutton15Tap",
+                                        "implHandler": [
+                                            "var _this = this;\r",
+                                            "\r",
+                                            "\r",
+                                            "\r",
+                                            "var x$c = button.up('#dp_picker');\r",
+                                            "\r",
+                                            "var id = x$c.getId();\r",
+                                            "var dp_id = id+'-dp';\r",
+                                            "\r",
+                                            "var $dp = jQuery('#'+dp_id);\r",
+                                            "\r",
+                                            "var newDate = $dp.datepicker( \"getDate\" );\r",
+                                            "\r",
+                                            "var x$field = x$('campus_dp_time');\r",
+                                            "\r",
+                                            "if( has_class(x$field,'fo_inited') ){\r",
+                                            "  var date_da = parse_date(newDate);\r",
+                                            "  _this.reset_fo();\r",
+                                            "  _this.set_time(date_da.fullyeardate,date_da.fullyeardate);\r",
+                                            "}\r",
+                                            "\r",
+                                            "\r",
+                                            ""
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "6e7eaeb6-96a1-475d-b2b9-f7ba85b1875b"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "dp_wrap"
+                    },
+                    "designerId": "acaac316-dafc-449c-9512-c876c968f79c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.field.DatePicker",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "id": "campus_dp_time",
+                "itemId": "mydatepicker",
+                "label": "Field",
+                "placeHolder": "mm/dd/yyyy"
+            },
+            "designerId": "9a6609e6-9956-4bba-abdc-29f1833cb970",
+            "cn": [
+                {
+                    "type": "Ext.picker.Date",
+                    "reference": {
+                        "name": "picker",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "mydatepicker1",
+                        "yearFrom": 2010,
+                        "yearTo": 2020
+                    },
+                    "designerId": "3e90ac4b-ed94-460d-a4e8-d2f280bbb8c0",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "doneButton",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bubbleEvents": [
+                                    "tap"
+                                ],
+                                "text": "确定"
+                            },
+                            "designerId": "dea61bc3-0137-4f70-a5bf-7851d67965ef"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "cancelButton",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "mybutton7",
+                                "text": "重置"
+                            },
+                            "designerId": "b23360d7-8bd1-4561-bd6d-17ea4e49fbfe"
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onCampus_dp_timeChange",
+                        "implHandler": [
+                            "var x$field = x$('campus_dp_time');\r",
+                            "var _this = this;\r",
+                            "\r",
+                            "if( has_class(x$field,'fo_inited') ){\r",
+                            "  var date_da = parse_date(newDate);\r",
+                            "  _this.reset_fo();\r",
+                            "  _this.set_time(date_da.fullyeardate,date_da.fullyeardate);\r",
+                            "}\r",
+                            "\r",
+                            "\r",
+                            ""
+                        ],
+                        "name": "change"
+                    },
+                    "designerId": "a5079c69-6b68-43cb-a482-8121fc05bb37"
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "\r",
+                    "/*\r",
+                    "var list_industry_lv1 = Ext.getCmp('campustalk-filter-list-industry-lv1');\r",
+                    "var list_industry_lv2 = Ext.getCmp('campustalk-filter-list-industry-lv2');\r",
+                    "\r",
+                    "var opt_store = Ext.getStore('optIndustry');\r",
+                    "\r",
+                    "var oa = get_array_from_store(opt_store);\r",
+                    "\r",
+                    "var lv1_item = [];\r",
+                    "\r",
+                    "for( var i=0;i<oa.length;i++ ){\r",
+                    "  var ci = oa[i];\r",
+                    "  if(ci.parentId == 0){\r",
+                    "    lv1_item.push(ci);\r",
+                    "  }\r",
+                    "}\r",
+                    "\r",
+                    "list_industry_lv1.setData(lv1_item);\r",
+                    "list_industry_lv1.setItemTpl('{industryName}');\r",
+                    "list_industry_lv2.setItemTpl('{industryName}');\r",
+                    "\r",
+                    "list_industry_lv1.on('itemtap',function( dataview, index, target, record, e, eOpts){\r",
+                    "  var data = record.data;\r",
+                    "  var id = data.industryId;\r",
+                    "  var lv2_item = [];\r",
+                    "\r",
+                    "  for( var i=0;i<oa.length;i++ ){\r",
+                    "    var ci = oa[i];\r",
+                    "    if(ci.parentId == id){\r",
+                    "      lv2_item.push(ci);\r",
+                    "    }\r",
+                    "  }\r",
+                    "\r",
+                    "  list_industry_lv2.removeAll(false);\r",
+                    "  list_industry_lv2.setData(lv2_item);\r",
+                    "  list_industry_lv2.refresh();\r",
+                    "\r",
+                    "});\r",
+                    "*/"
+                ]
+            },
+            "designerId": "b30ac9c0-dd5a-4cd9-809a-d6a1e1ec47e9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "var x$industry = x$('campus_fo_industry');\r",
+                    "var x$school = x$('campus_fo_school');\r",
+                    "var x$time = x$('campus_dp_time');\r",
+                    "\r",
+                    "\r",
+                    "var params = {\r",
+                    "  pageSize:100,\r",
+                    "  recruitmentType:0\r",
+                    "};\r",
+                    "\r",
+                    "var cur_industry_val = get_data( 'campus_fo_industry','value' );\r",
+                    "if(cur_industry_val){\r",
+                    "  params.industryId = cur_industry_val;\r",
+                    "}\r",
+                    "\r",
+                    "var cur_school_val = get_data( 'campus_fo_school','value' );\r",
+                    "if(cur_school_val){\r",
+                    "  params.schoolId = cur_school_val;\r",
+                    "}\r",
+                    "\r",
+                    "var cur_time_val = get_data( 'campus_dp_time','value' );\r",
+                    "if(cur_time_val){\r",
+                    "  params.beginTime = cur_time_val;\r",
+                    "}\r",
+                    "\r",
+                    "console.log(params);\r",
+                    "\r",
+                    "send_request( {\r",
+                    "  api:'recruit_list',\r",
+                    "  method:'POST',\r",
+                    "  params:params,\r",
+                    "  success:function(result, request){\r",
+                    "    if( result.success ){\r",
+                    "      switch( result.code ){\r",
+                    "        case '0000':\r",
+                    "          //成功\r",
+                    "          console.log(result);\r",
+                    "          _this.build_list(result.data);\r",
+                    "          break;\r",
+                    "        case '1001':\r",
+                    "          //失败\r",
+                    "          break;\r",
+                    "        default:\r",
+                    "          toast(\"errCode:\"+result.code);\r",
+                    "          break;\r",
+                    "      }\r",
+                    "    }else{\r",
+                    "\r",
+                    "    }\r",
+                    "  },\r",
+                    "  fail:function(result){\r",
+                    "    toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "  },\r",
+                    "  text:'加载中',\r",
+                    "  silent:false,\r",
+                    "  trigger:_this,\r",
+                    "  check_login:true\r",
+                    "} );\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "120b14fd-7a2c-472f-814a-2f097636da44"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "build_list",
+                "implHandler": [
+                    "\r",
+                    "var _this = this;\r",
+                    "var x$nodata = i$('nodata',_this);\r",
+                    "\r",
+                    "\r",
+                    "var x$list = x$('list_campus');\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "for( var i=0;i<data.length;i++ ){\r",
+                    "  var date_ra = parse_date(data[i].beginTime,'date_');\r",
+                    "  jQuery.extend( data[i],date_ra );\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "if(data.length){\r",
+                    "\r",
+                    "  set_store_data( x$list,data );\r",
+                    "\r",
+                    "\r",
+                    "  x$list.show();\r",
+                    "  x$nodata.hide();\r",
+                    "\r",
+                    "\r",
+                    "}else{\r",
+                    "  set_store_data( x$list,[] );\r",
+                    "\r",
+                    "\r",
+                    "  x$list.hide();\r",
+                    "  x$nodata.show();\r",
+                    "\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "refresh_scroll(x$list);"
+                ]
+            },
+            "designerId": "46e4cbd8-79fd-4d3d-9a47-5d6b4d13d201"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init_fo_industry",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "var x$flyout = x$('campus_fo_industry');\r",
+                    "\r",
+                    "var x$list_lv1 = x$('campustalk_filter_list_industry_lv1');\r",
+                    "var x$list_lv2 = x$('campustalk_filter_list_industry_lv2');\r",
+                    "\r",
+                    "\r",
+                    "var key_id = 'industryId';\r",
+                    "var key_parent = 'parentId';\r",
+                    "\r",
+                    "\r",
+                    "var init_fo = function(data){\r",
+                    "  console.log(data);\r",
+                    "\r",
+                    "  var da_lv1 = [\r",
+                    "    {\r",
+                    "      has_child:0,\r",
+                    "      industryId:0,\r",
+                    "      industryName:'重置',\r",
+                    "      is_reset:true\r",
+                    "    }\r",
+                    "  ];\r",
+                    "  var da_lv2 = {};\r",
+                    "\r",
+                    "  for( var i=0;i<data.length;i++){\r",
+                    "    var cur_o = data[i];\r",
+                    "\r",
+                    "    if( cur_o[key_parent] === 0 ){\r",
+                    "      da_lv1.push(cur_o);\r",
+                    "    }else{\r",
+                    "      if( typeof da_lv2[cur_o[key_parent]] == 'undefined' ){\r",
+                    "        da_lv2[cur_o[key_parent]]=[];\r",
+                    "      }\r",
+                    "      da_lv2[cur_o[key_parent]].push(cur_o);\r",
+                    "    }\r",
+                    "  }\r",
+                    "\r",
+                    "  for( var j=0;j<da_lv1.length;j++){\r",
+                    "    if( da_lv2[da_lv1[j][key_id]] instanceof Array ){\r",
+                    "      da_lv1[j].has_child = 1;\r",
+                    "      da_lv1[j].childs = da_lv2[da_lv1[j][key_id]];\r",
+                    "    }else{\r",
+                    "      da_lv1[j].has_child = 0;\r",
+                    "      da_lv1[j].childs = [];\r",
+                    "    }\r",
+                    "  }\r",
+                    "\r",
+                    "  x$list_lv1.setData(da_lv1);\r",
+                    "\r",
+                    "  console.log(da_lv1);\r",
+                    "\r",
+                    "  x$flyout.addCls('fo_inited');\r",
+                    "};\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "if( !has_class(x$flyout,'fo_inited') ){\r",
+                    "\r",
+                    "  send_request( {\r",
+                    "    api:'opt_industry',\r",
+                    "    method:'POST',\r",
+                    "    params:{\r",
+                    "      pageSize:1000,\r",
+                    "      recruitmentType:0\r",
+                    "    },\r",
+                    "    success:function(result, request){\r",
+                    "      if( result.success ){\r",
+                    "        switch( result.code ){\r",
+                    "          case '0000':\r",
+                    "            //成功\r",
+                    "            init_fo(result.data);\r",
+                    "            break;\r",
+                    "          case '1001':\r",
+                    "            //失败\r",
+                    "            break;\r",
+                    "          default:\r",
+                    "            toast(\"errCode:\"+result.code);\r",
+                    "            break;\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "\r",
+                    "      }\r",
+                    "    },\r",
+                    "    fail:function(result){\r",
+                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "    },\r",
+                    "    text:'加载中',\r",
+                    "    silent:false,\r",
+                    "    trigger:_this,\r",
+                    "    check_login:false\r",
+                    "  } );\r",
+                    "\r",
+                    "\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "68f95b5f-d5c7-476b-b5b4-5254bd9e4c2b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init_fo_school",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "var x$flyout = x$('campus_fo_school');\r",
+                    "var x$list = x$('campustalk_filter_list_school');\r",
+                    "\r",
+                    "var init_fo = function(data){\r",
+                    "\r",
+                    "  data.unshift({\r",
+                    "    has_child:0,\r",
+                    "    schoolId:0,\r",
+                    "    schoolName:'重置',\r",
+                    "    is_reset:true\r",
+                    "  });\r",
+                    "\r",
+                    "\r",
+                    "  set_store_data( x$list,data );\r",
+                    "  x$flyout.addCls('fo_inited');\r",
+                    "};\r",
+                    "\r",
+                    "if( !has_class(x$flyout,'fo_inited') ){\r",
+                    "\r",
+                    "  send_request( {\r",
+                    "    api:'opt_school',\r",
+                    "    method:'POST',\r",
+                    "    params:{\r",
+                    "      pageSize:1000,\r",
+                    "      recruitmentType:0\r",
+                    "    },\r",
+                    "    success:function(result, request){\r",
+                    "      if( result.success ){\r",
+                    "        switch( result.code ){\r",
+                    "          case '0000':\r",
+                    "            //成功\r",
+                    "            init_fo(result.data);\r",
+                    "            break;\r",
+                    "          case '1001':\r",
+                    "            //失败\r",
+                    "            break;\r",
+                    "          default:\r",
+                    "            toast(\"errCode:\"+result.code);\r",
+                    "            break;\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "\r",
+                    "      }\r",
+                    "    },\r",
+                    "    fail:function(result){\r",
+                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "    },\r",
+                    "    text:'加载中',\r",
+                    "    silent:false,\r",
+                    "    trigger:_this,\r",
+                    "    check_login:false\r",
+                    "  } );\r",
+                    "\r",
+                    "\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "8fbec824-0ff0-42a8-b16b-6d967d54900f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init_fo_time",
+                "implHandler": [
+                    "var x$field = x$('campus_dp_time');\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "var init_fo = function(data){\r",
+                    "  x$field.setValue((new Date()));\r",
+                    "  x$field.addCls('fo_inited');\r",
+                    "};\r",
+                    "\r",
+                    "if( !has_class(x$field,'fo_inited') ){\r",
+                    "  init_fo();\r",
+                    "}"
+                ]
+            },
+            "designerId": "b6b2997a-21f4-4db9-a9ba-574582584659"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "value",
+                    "text"
+                ],
+                "fn": "set_industry",
+                "implHandler": [
+                    "var fo_id = 'campus_fo_industry';\r",
+                    "var btn_id = 'campus_btn_industry';\r",
+                    "\r",
+                    "var x$fo = x$(fo_id);\r",
+                    "var x$btn = x$(btn_id);\r",
+                    "\r",
+                    "\r",
+                    "if( value === 0 ){\r",
+                    "  set_data( x$fo,'value',null );\r",
+                    "  set_data( x$fo,'label',null );\r",
+                    "  x$btn.setText('选择行业');\r",
+                    "}else{\r",
+                    "  set_data( x$fo,'value',value );\r",
+                    "  set_data( x$fo,'label',text );\r",
+                    "  x$btn.setText(text);\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "this.reset_fo();\r",
+                    "this.update();"
+                ]
+            },
+            "designerId": "410b66a3-dd1d-4fac-9eb5-dc8fede84081"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "value",
+                    "text"
+                ],
+                "fn": "set_school",
+                "implHandler": [
+                    "var fo_id = 'campus_fo_school';\r",
+                    "var btn_id = 'campus_btn_school';\r",
+                    "\r",
+                    "var x$fo = x$(fo_id);\r",
+                    "var x$btn = x$(btn_id);\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "if( value === 0 ){\r",
+                    "  set_data( x$fo,'value',null );\r",
+                    "  set_data( x$fo,'label',null );\r",
+                    "  x$btn.setText('选择学校');  \r",
+                    "}else{\r",
+                    "  set_data( x$fo,'value',value );\r",
+                    "  set_data( x$fo,'label',text );\r",
+                    "  x$btn.setText(text);\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "this.reset_fo();\r",
+                    "this.update();"
+                ]
+            },
+            "designerId": "c3f0cb97-d165-4758-bdea-84da6d215178"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "value",
+                    "text"
+                ],
+                "fn": "set_time",
+                "implHandler": [
+                    "var fo_id = 'campus_dp_time';\r",
+                    "var btn_id = 'campus_btn_time';\r",
+                    "\r",
+                    "var x$fo = x$(fo_id);\r",
+                    "var x$btn = x$(btn_id);\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "if( value === 0 ){\r",
+                    "  set_data( x$fo,'value',null );\r",
+                    "  set_data( x$fo,'label',null );\r",
+                    "  x$btn.setText('开始时间');\r",
+                    "}else{\r",
+                    "  set_data( x$fo,'value',value );\r",
+                    "  set_data( x$fo,'label',text );\r",
+                    "  x$btn.setText(text);\r",
+                    "}\r",
+                    "\r",
+                    "this.reset_fo();\r",
+                    "this.update();"
+                ]
+            },
+            "designerId": "47fac3aa-5172-49a7-823b-ff7d7f40ae06"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "reset_fo",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "var x$industry = x$('campus_fo_industry');\r",
+                    "var x$school = x$('campus_fo_school');\r",
+                    "var x$time_fe = x$('campus_dp_time');\r",
+                    "var x$time = i$('dp_picker',_this);\r",
+                    "\r",
+                    "\r",
+                    "var x$btn_industry = x$('campus_btn_industry');\r",
+                    "var x$btn_school = x$('campus_btn_school');\r",
+                    "var x$btn_time = x$('campus_btn_time');\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "x$industry.hide();\r",
+                    "x$school.hide();\r",
+                    "x$time.hide();\r",
+                    "\r",
+                    "clr_active(x$btn_industry);\r",
+                    "clr_active(x$btn_school);\r",
+                    "clr_active(x$btn_time);\r",
+                    "\r",
+                    "\r",
+                    "console.log('reset fo');"
+                ]
+            },
+            "designerId": "c77ae172-fb03-4dc1-9fab-a24f84bde74b"
+        }
+    ]
+}

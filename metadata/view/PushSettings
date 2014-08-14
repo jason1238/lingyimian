@@ -1,0 +1,372 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userClassName": "PushSettings",
+        "layout": "card"
+    },
+    "designerId": "d783b116-ed65-49d4-9c92-67f63adb9790",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "scrollable": "vertical"
+            },
+            "designerId": "e5034fb2-14fb-4db4-ac24-2ef66b6f5569",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "7828ea2f-459b-4917-bcde-3dd4060a36b9",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Toggle",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "pushsettings_toggle",
+                                "label": "推送设置"
+                            },
+                            "designerId": "615b9515-f1e3-482b-b0d8-01e773509bff"
+                        },
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "pushsettings_time",
+                                "label": "推送时间",
+                                "placeHolder": "请选择",
+                                "readOnly": true
+                            },
+                            "designerId": "5c482aa7-219c-4fad-8d98-9151bfd9380f"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "推送设置",
+                "ui": "zjs"
+            },
+            "designerId": "bdc26434-2dc6-44fb-86b2-9bad407a7c75",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "4707d8c3-2c3c-4e95-9ff5-1543335783d7",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "ce8faedd-771e-43a3-9975-6e03b6eff57a"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "var toggle = _this.down('#pushsettings_toggle');\r",
+                    "var time = _this.down('#pushsettings_time');\r",
+                    "\r",
+                    "\r",
+                    "var check_toggle = function(){\r",
+                    "  var val = toggle.getValue();\r",
+                    "\r",
+                    "  if( val ){\r",
+                    "    time.show();\r",
+                    "    //set_s('_PUSH_TIME',nselect_get_val(time));\r",
+                    "  }else{\r",
+                    "    time.hide();\r",
+                    "    time.setValue('');\r",
+                    "    time.field_val = '';\r",
+                    "    set_s('_PUSH_TIME','');\r",
+                    "  }\r",
+                    "\r",
+                    "\r",
+                    "};\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "toggle.on( 'change',function(field, newValue, oldValue) {\r",
+                    "  check_toggle();\r",
+                    "});\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "var time_options = [\r",
+                    "  {text: '8:00 - 14:00',  value: '8-14'},\r",
+                    "  {text: '14:00 - 22:00',  value: '14-22'},\r",
+                    "  {text: '8:00 - 22:00',  value: '8-22'}\r",
+                    "];\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "var x$input = _this.down('#pushsettings_time');\r",
+                    "var x$pop =  _this.down('#cnl_pop_pushtime');\r",
+                    "var x$list = _this.down('#cnl_pushtime');\r",
+                    "\r",
+                    "\r",
+                    "x$input.addListener('focus',function(){\r",
+                    "  x$pop.show();\r",
+                    "});\r",
+                    "\r",
+                    "\r",
+                    "_this.CNL_pushtime = new LD_Nested_List( x$list,time_options,'items',function(data){\r",
+                    "  x$input.setValue(data.text);\r",
+                    "  x$input.field_val = data.value;\r",
+                    "  set_s('_PUSH_TIME',data.value);\r",
+                    "  window.setTimeout(function(){\r",
+                    "    x$pop.hide();\r",
+                    "  },320);\r",
+                    "} );\r",
+                    "\r",
+                    "\r",
+                    "//init\r",
+                    "var push_time = get_s('_PUSH_TIME');\r",
+                    "\r",
+                    "//var time_options = time.getOptions();\r",
+                    "//console.log(push_time);\r",
+                    "\r",
+                    "if( push_time ){\r",
+                    "  toggle.setValue(1);\r",
+                    "  for( var i=0;i<time_options.length;i++ ){\r",
+                    "    if( time_options[i].value == push_time ){\r",
+                    "      x$input.setValue(time_options[i].text);\r",
+                    "      x$input.field_val = time_options[i].value;\r",
+                    "    }\r",
+                    "  }\r",
+                    "\r",
+                    "}else{\r",
+                    "  toggle.setValue(0);\r",
+                    "  time.hide();\r",
+                    "}"
+                ]
+            },
+            "designerId": "f79fe009-d292-4b43-89c4-41c5fe6c38f1"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": true,
+                "height": 200,
+                "hidden": true,
+                "itemId": "cnl_pop_pushtime",
+                "layout": "fit",
+                "modal": true,
+                "width": 280
+            },
+            "designerId": "ee4a0690-d8a8-4dc5-816f-b57bbb60bcfa",
+            "cn": [
+                {
+                    "type": "Ext.TitleBar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "top",
+                        "title": "推送时间"
+                    },
+                    "designerId": "72b439c1-cf0b-404e-a64c-c31ff0fe9553",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "cnl_pop_back_pushsettings_time",
+                                "text": "返回"
+                            },
+                            "designerId": "14f0df6b-a5d7-4710-9e46-8542b0d60dcd",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMybutton23Tap31111111",
+                                        "implHandler": [
+                                            "var _this = this;\r",
+                                            "\r",
+                                            "if( !_this.CNL_pushtime.pop() ){\r",
+                                            "  window.setTimeout(function(){\r",
+                                            "    _this.down('#cnl_pop_pushtime').hide();\r",
+                                            "  },320);\r",
+                                            "}\r",
+                                            ""
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "4bd8c518-f138-4a7a-aa01-7cf5dbab0f8a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "right",
+                                "itemId": "cnl_pop_reset_pushsettings_time",
+                                "text": "重置"
+                            },
+                            "designerId": "61dde00c-c9b6-4222-a559-14e2fd6827d4",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMybutton23Tap311111111",
+                                        "implHandler": [
+                                            "var _this = this;\r",
+                                            "\r",
+                                            "\r",
+                                            "var x$input = _this.down('#pushsettings_time');\r",
+                                            "x$input.setValue('');\r",
+                                            "x$input.field_val = '';\r",
+                                            "set_s('_PUSH_TIME','');\r",
+                                            "\r",
+                                            "\r",
+                                            "window.setTimeout(function(){\r",
+                                            "  _this.down('#cnl_pop_pushtime').hide();\r",
+                                            "},320);\r",
+                                            ""
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "5af778a2-e0ff-407e-9711-87d52fe7c969"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disableSelection": true,
+                        "itemCls": "leaf_list",
+                        "itemId": "cnl_pushtime"
+                    },
+                    "designerId": "d9409d07-b91e-44ed-9735-376f7dafcb10",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=\"{__leaf_cls}\">{text}</div>"
+                                ]
+                            },
+                            "designerId": "cab0bbf7-da01-4bff-9a17-a22b0f457108"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

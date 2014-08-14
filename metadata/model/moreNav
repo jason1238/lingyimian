@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "moreNav",
+        "identifier": [
+            "{\"type\":\"simple\"}"
+        ]
+    },
+    "designerId": "2ea2e25f-179f-4f8f-a7f3-ac67dd23a41f",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "title"
+            },
+            "designerId": "6ed290d4-5acd-49ce-a2a7-11145aa743ce"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "action"
+            },
+            "designerId": "8e3a2b93-40b5-4d5f-9d15-8ea778aa00b3"
+        }
+    ]
+}

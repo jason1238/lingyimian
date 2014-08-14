@@ -1,0 +1,201 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "PositionSubscribeByPositionSelectIndustry",
+        "designer|userClassName": "PositionSubscribeByPositionSelectIndustry",
+        "layout": "fit"
+    },
+    "designerId": "bd2c1230-34f6-4b8c-a09e-1ee0d750d6a5",
+    "cn": [
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": false,
+                "id": "pos_sub_by_pos_pop_nlist_industry",
+                "layout": "fit",
+                "modal": true
+            },
+            "designerId": "ef0357b8-e4a7-41ab-a5f6-157b1cd57446",
+            "cn": [
+                {
+                    "type": "Ext.dataview.NestedList",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "pos_sub_by_pos_nlist_industry",
+                        "itemId": "mynestedlist",
+                        "store": "NestedDataIndustry_sub3",
+                        "title": "行业"
+                    },
+                    "designerId": "8ce52077-2d1a-4b51-83cc-959541615710",
+                    "cn": [
+                        {
+                            "type": "Ext.TitleBar",
+                            "reference": {
+                                "name": "toolbar",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "f13f62a4-ee96-4b0c-9195-ce211b7f6363",
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "align": "right",
+                                        "docked": null,
+                                        "itemId": "mybutton75",
+                                        "text": "取消"
+                                    },
+                                    "designerId": "289726be-44dd-48bc-800e-052d6399d783",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMybutton75Tap",
+                                                "implHandler": [
+                                                    "var x$text = x$('pos_sub_by_pos_fe_industry');\r",
+                                                    "var x$pop = x$('pos_sub_by_pos_pop_nlist_industry');\r",
+                                                    "\r",
+                                                    "x$text.setValue('');\r",
+                                                    "set_data(x$text,'id',null);\r",
+                                                    "\r",
+                                                    "this.up('navigationview').pop();"
+                                                ],
+                                                "name": "tap"
+                                            },
+                                            "designerId": "874b8ec4-b57d-484f-bb27-0c67553f143a"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPos_sub_by_pos_nlist_industryLeafItemTap",
+                                "implHandler": [
+                                    "var x$text = x$('pos_sub_by_pos_fe_industry');\r",
+                                    "var x$pop = x$('pos_sub_by_pos_pop_nlist_industry');\r",
+                                    "\r",
+                                    "\r",
+                                    "var data = record.data;\r",
+                                    "\r",
+                                    "\r",
+                                    "x$text.setValue(data.record.industryName);\r",
+                                    "set_data(x$text,'id',data.record.industryId);\r",
+                                    "this.up('navigationview').pop();"
+                                ],
+                                "name": "leafitemtap"
+                            },
+                            "designerId": "6325bcc6-0e33-4061-a19c-47133bc1b906"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "init_industry",
+                "implHandler": [
+                    "var x$nlist = x$('pos_sub_by_pos_nlist_industry');\r",
+                    "\r",
+                    "var n_data = make_nested_data(data,0,'industryId','industryName');\r",
+                    "set_store_data( x$nlist,n_data );\r",
+                    ""
+                ]
+            },
+            "designerId": "9932137e-6149-44ca-96b2-052a5d0179a7"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "send_request( {\r",
+                    "  api:'opt_industry',\r",
+                    "  method:'POST',\r",
+                    "  params:{\r",
+                    "    pageSize:100,\r",
+                    "    parentId:_G._cityId\r",
+                    "  },\r",
+                    "  success:function(result, request){\r",
+                    "    if( result.success ){\r",
+                    "      switch( result.code ){\r",
+                    "        case '0000':\r",
+                    "          //成功\r",
+                    "          _this.init_industry(result.data);\r",
+                    "          break;\r",
+                    "        case '1001':\r",
+                    "          //失败\r",
+                    "          break;\r",
+                    "        default:\r",
+                    "          toast(\"errCode:\"+result.code);\r",
+                    "          break;\r",
+                    "      }\r",
+                    "    }else{\r",
+                    "\r",
+                    "    }\r",
+                    "  },\r",
+                    "  fail:function(result){\r",
+                    "    toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "  },\r",
+                    "  text:'加载中',\r",
+                    "  silent:false,\r",
+                    "  trigger:_this,\r",
+                    "  check_login:false,\r",
+                    "  group:'p_s_b_p'\r",
+                    "} );\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "97b37978-9f9d-45d2-8fa5-b71227e08f24"
+        }
+    ]
+}

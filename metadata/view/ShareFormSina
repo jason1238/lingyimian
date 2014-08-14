@@ -1,0 +1,190 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userClassName": "ShareFormSina",
+        "layout": "card"
+    },
+    "designerId": "a27160f1-c38a-4779-b385-a38e188a7b42",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "分享至新浪微博",
+                "ui": "zjs"
+            },
+            "designerId": "4e4c7df2-46cd-4b5c-9d94-f8074b683168",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "d9e16717-f5d5-4a19-bf02-d431fc8f8902",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "60011775-b88b-415d-bd9c-433760c3d935"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "itemId": "mybutton44",
+                        "text": "发布"
+                    },
+                    "designerId": "fc479219-4ad3-4f36-8cc1-9652d8564a87",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton44Tap",
+                                "implHandler": [
+                                    "var _this = this;\r",
+                                    "\r",
+                                    "var x$ta = x$('ta_share_sina');\r",
+                                    "\r",
+                                    "var text = x$ta.getValue();\r",
+                                    "\r",
+                                    "\r",
+                                    "console.log(_this.sns_data);\r",
+                                    "console.log(_this.share_data);\r",
+                                    "\r",
+                                    "\r",
+                                    "if(text){\r",
+                                    "  share_to_sina(_this.sns_data.access_token,text,function(){\r",
+                                    "    toast('您的分享已发送。');\r",
+                                    "    button.up('navigationview').pop();\r",
+                                    "  });\r",
+                                    "}else{\r",
+                                    "  toast('请输入您想分享的内容。');\r",
+                                    "}\r",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "56a89584-6cd6-48db-a689-56417da7b4ba"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "scrollable": "vertical"
+            },
+            "designerId": "cf028d6c-9c79-4ab5-a422-cbaefc7180dd",
+            "cn": [
+                {
+                    "type": "Ext.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 150,
+                        "id": "ta_share_sina",
+                        "placeHolder": ""
+                    },
+                    "designerId": "c8a6436b-9c90-411c-a191-f12758afa200"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "console.log(_p);\r",
+                    "\r",
+                    "\r",
+                    "_this.sns_data = _p.sns;\r",
+                    "_this.share_data = _p.data;\r",
+                    "\r",
+                    "\r",
+                    "var $ta = x$('ta_share_sina');\r",
+                    "\r",
+                    "\r",
+                    "if(_this.share_data.recruitmentTitle){\r",
+                    "  $ta.setValue(_this.share_data.recruitmentTitle + '\\nhttp://www.eyoudu.com');\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "a923d548-dcad-4331-844f-1127593b9eb5"
+        }
+    ]
+}

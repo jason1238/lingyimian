@@ -1,0 +1,263 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userClassName": "MyNotice",
+        "layout": "fit"
+    },
+    "designerId": "9dcb1935-86bc-408c-8984-ab9c75ecd100",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "我的提醒",
+                "ui": "zjs"
+            },
+            "designerId": "29b7abe1-0821-46de-89f3-cd2628f3ee9d",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "7a575c00-36d6-4c00-86b8-1b50895f864c",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "8720f5d7-8308-48b1-af51-f13f7fc99918"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.dataview.DataView",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-listview-calender"
+                ],
+                "disableSelection": true,
+                "id": "list-msg-remider",
+                "itemId": "mydataview3",
+                "minHeight": 180,
+                "scrollable": "vertical"
+            },
+            "designerId": "5a42a965-c7e0-43a4-bb58-dbf095564c63",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=\"li\">\r",
+                            "\t<div class=\"calendar\">\r",
+                            "    <div class=\"date\">{date_month}-{date_date}</div>\r",
+                            "    <div class=\"time\">{date_am} {date_hour}:{date_minute}</div>\r",
+                            "    <div class=\"day\">{date_localday}</div>\r",
+                            "  </div>\r",
+                            "  <div class=\"c\">\r",
+                            "  \t<h4>{remindTitle}</h4>\r",
+                            "    <p>地点：{remindAddress}</p>\r",
+                            "  </div>\r",
+                            "  <div class=\"i\">\r",
+                            "  \t<span></span>\r",
+                            "  </div>\r",
+                            "</div>"
+                        ]
+                    },
+                    "designerId": "45ee103d-1249-4275-a05f-005e8bbcaaab"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMydataview2ItemTap1",
+                        "implHandler": [
+                            "var item_data = record.data;\r",
+                            "\r",
+                            "var id = item_data.bizId;\r",
+                            "\r",
+                            "switch(item_data.bizType){\r",
+                            "  case 0:\r",
+                            "    change_page('CampusTalkDetail',dataview,{id:id});\r",
+                            "    break;\r",
+                            "  case 1:\r",
+                            "    change_page('RecruitmentDetail',dataview,{id:id});\r",
+                            "    break;\r",
+                            "}\r",
+                            "\r",
+                            "\r",
+                            ""
+                        ],
+                        "name": "itemtap"
+                    },
+                    "designerId": "5440b148-425a-4b96-8bf2-16ef9773f5ea"
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();"
+                ]
+            },
+            "designerId": "a2ae9163-0654-43a5-b4e6-3a689762db0e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "send_request( {\r",
+                    "  api:'msg.remider.list',\r",
+                    "  method:'POST',\r",
+                    "  params:{\r",
+                    "    pageSize:100\r",
+                    "  },\r",
+                    "  success:function(result, request){\r",
+                    "    if( result.success ){\r",
+                    "      switch( result.code ){\r",
+                    "        case '0000':\r",
+                    "          //成功\r",
+                    "          console.log(result);\r",
+                    "          _this.build_list(result.data);\r",
+                    "          break;\r",
+                    "        case '1001':\r",
+                    "          //失败\r",
+                    "          break;\r",
+                    "        default:\r",
+                    "          toast(\"errCode:\"+result.code);\r",
+                    "          break;\r",
+                    "      }\r",
+                    "    }else{\r",
+                    "\r",
+                    "    }\r",
+                    "  },\r",
+                    "  fail:function(result){\r",
+                    "    toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "  },\r",
+                    "  text:'加载中',\r",
+                    "  silent:false,\r",
+                    "  trigger:_this,\r",
+                    "  check_login:true\r",
+                    "} );\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "60414895-7465-480a-9e10-33995a0089bf"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "build_list",
+                "implHandler": [
+                    "var x$list = x$('list-msg-remider');\r",
+                    "\r",
+                    "\r",
+                    "console.log(data);\r",
+                    "\r",
+                    "if(data && data.length){\r",
+                    "\r",
+                    "  for( var i=0;i<data.length;i++ ){\r",
+                    "    var date_ra = parse_date(data[i].remindTime,'date_');\r",
+                    "    jQuery.extend( data[i],date_ra );\r",
+                    "  }\r",
+                    "\r",
+                    "\r",
+                    "  x$list.removeCls('zj-list-no-data');\r",
+                    "  x$list.setData(data);\r",
+                    "}else{\r",
+                    "  x$list.addCls('zj-list-no-data');\r",
+                    "  x$list.removeAll();\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "refresh_scroll(x$list);"
+                ]
+            },
+            "designerId": "3aacd95d-001a-4f13-b412-66897e530842"
+        }
+    ]
+}

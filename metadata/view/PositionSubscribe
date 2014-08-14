@@ -1,0 +1,232 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userClassName": "PositionSubscribe",
+        "layout": "fit"
+    },
+    "designerId": "9a1b87dd-acff-48cf-b227-283ebbced11f",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "职位订阅",
+                "ui": "zjs"
+            },
+            "designerId": "b38bf3f9-e400-4666-b6c5-cd6cbb1e1cc6",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton24",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "692e36f7-b037-4219-a237-563277e5d3b4",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap3111",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "4256e2ab-a13f-444f-9c87-e5ae6325f112"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-tab-top"
+                ],
+                "id": "pos_sub_tab",
+                "itemId": "mytabpanel"
+            },
+            "designerId": "f8f197a9-ab0c-4ae3-9426-5a38676a02a0",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "fit",
+                        "title": "按职位"
+                    },
+                    "designerId": "95facac9-cca4-44b5-ad70-c8adcb563504",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "designerId": "7a06cf0b-5cb3-4ced-af01-8f0028812734",
+                            "masterInstanceId": "8e79db8c-482d-436b-9c32-f237a3c79d3b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "fit",
+                        "title": "按企业"
+                    },
+                    "designerId": "82e20e7a-7966-4f65-818b-6203031de77f",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "designerId": "1eb382f4-4939-46be-9933-f3517db7bc56",
+                            "masterInstanceId": "3386e129-1219-4259-8fcf-6a3273cc7988"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "fit",
+                        "title": "按行业"
+                    },
+                    "designerId": "2d0fb084-79eb-4239-afd4-4f2cdacb4e82",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "designerId": "7a682a9c-9ac8-4eca-9a1d-cda131e1544e",
+                            "masterInstanceId": "0d37377d-f137-4080-94e0-9abcc3e5704f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Bar",
+                    "reference": {
+                        "name": "tabBar",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "zjs-bg-green"
+                        ],
+                        "defaults": [
+                            "{\r",
+                            "  flex:1\r",
+                            "}"
+                        ],
+                        "designer|uiInterfaceName": "zjs",
+                        "docked": "top",
+                        "ui": "zjs"
+                    },
+                    "designerId": "17459072-8cbf-4d32-84de-8fe1e1d02380"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onPos_sub_tabActiveItemChange",
+                        "implHandler": [
+                            "\r",
+                            "\r",
+                            "console.log('ACTIVE ITEM CHANGE');"
+                        ],
+                        "name": "activeitemchange"
+                    },
+                    "designerId": "4ed90a58-e6c9-4e07-b486-176d65435fed"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "\r",
+                    "\r",
+                    "var x$tab = x$('pos_sub_tab');\r",
+                    "x$tab.setActiveItem(0);\r",
+                    "\r",
+                    "\r",
+                    "this.down('positionsubscribebyposition').update();"
+                ]
+            },
+            "designerId": "93e409a0-aa01-40e3-84e7-8ffb7f59be15"
+        }
+    ]
+}

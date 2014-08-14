@@ -1,0 +1,62 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "recruitment"
+    },
+    "designerId": "4d7c6e4b-8730-459d-b844-8322d99bf24f",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "recruitmentId"
+            },
+            "designerId": "bd962ef7-f21d-4c5b-a1c0-1309b2e0e393"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "recruitmentTitle"
+            },
+            "designerId": "50c980fb-97d0-4c03-81d5-b9d786b0b83c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "place"
+            },
+            "designerId": "d1028e59-699c-4dd7-920c-18423958fbd6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "beginTime"
+            },
+            "designerId": "5245e370-49e4-4fd4-b9c4-17328e087266"
+        }
+    ]
+}

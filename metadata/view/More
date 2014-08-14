@@ -1,0 +1,264 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userAlias": "more",
+        "designer|userClassName": "More",
+        "layout": "fit"
+    },
+    "designerId": "9bfc4983-7f14-4c04-9de3-649b698ee77e",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "更多",
+                "ui": "zjs"
+            },
+            "designerId": "a28aa1da-8a64-41a5-9597-84a42683cf34"
+        },
+        {
+            "type": "Ext.dataview.DataView",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-listview-1line"
+                ],
+                "disableSelection": true,
+                "itemId": "menu_list",
+                "minHeight": 180,
+                "scrollable": "vertical"
+            },
+            "designerId": "c3150eed-2810-47bc-8376-c90f2db0b77d",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=\"li\">\r",
+                            "  <div class=\"c\">\r",
+                            "    <h4>{title}</h4>\r",
+                            "  </div>\r",
+                            "  <div class=\"i\">\r",
+                            "    <span></span>\r",
+                            "  </div>\r",
+                            "</div>"
+                        ]
+                    },
+                    "designerId": "c2e999cd-000e-4720-9192-a2705a478f36"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMydataview2ItemTap",
+                        "implHandler": [
+                            "\r",
+                            "var item_data = record.data;\r",
+                            "\r",
+                            "\r",
+                            "switch( item_data.action ){\r",
+                            "\r",
+                            "  case 'push_setting':\r",
+                            "    change_page('PushSettings',dataview);\r",
+                            "    break;\r",
+                            "  case 'account_bind':\r",
+                            "    if( is_login() ){\r",
+                            "      change_page('AccountBind',dataview);\r",
+                            "    }else{\r",
+                            "      show_login(dataview);\r",
+                            "      toast('您需要先登录才能绑定账号。');\r",
+                            "    }\r",
+                            "    break;\r",
+                            "  case 'feedback':\r",
+                            "    if( is_login() ){\r",
+                            "      change_page('Feedback',dataview);\r",
+                            "    }else{\r",
+                            "      show_login(dataview);\r",
+                            "      toast('您需要先登录才能留言。');\r",
+                            "    }\r",
+                            "    break;\r",
+                            "  case 'clear_cache':\r",
+                            "\r",
+                            "    Ext.Msg.confirm('确认清除缓存','您确定要清除缓存吗？',function(result){\r",
+                            "      if( result == 'yes' ){\r",
+                            "        clear_data();\r",
+                            "        go_home();\r",
+                            "        Ext.Msg.alert('缓存清除成功！您将返回首页。');\r",
+                            "      }\r",
+                            "    });\r",
+                            "\r",
+                            "\r",
+                            "    break;\r",
+                            "  case 'check_update':\r",
+                            "\r",
+                            "    check_new_version(function(result,success){\r",
+                            "      if(success){\r",
+                            "        if(result){\r",
+                            "          Ext.Msg.confirm('版本更新','发现新的版本，您需要更新吗？',function(confirmed){\r",
+                            "            if( confirmed == 'yes' ){\r",
+                            "              window.open(result, '_system');\r",
+                            "            }\r",
+                            "          });\r",
+                            "        }else{\r",
+                            "          toast('您已经是最新的版本。');\r",
+                            "        }\r",
+                            "\r",
+                            "      }else{\r",
+                            "        toast('获取版本信息失败，请稍候再试。');\r",
+                            "      }\r",
+                            "\r",
+                            "    },false);\r",
+                            "\r",
+                            "    break;\r",
+                            "  case 'app_introduction':\r",
+                            "    change_page('AppIntroduction',dataview);\r",
+                            "    break;\r",
+                            "  case 'account_quit':\r",
+                            "\r",
+                            "    if( is_login()){\r",
+                            "      Ext.Msg.confirm('确认退出','您确定要退出当前账号吗？',function(result){\r",
+                            "        if( result == 'yes' ){\r",
+                            "          logout(function(){\r",
+                            "            toast('您已成功退出！');\r",
+                            "            go_home();\r",
+                            "          },function(){\r",
+                            "            toast('退出登录失败，请稍候再试。');\r",
+                            "          });\r",
+                            "        }\r",
+                            "      });\r",
+                            "    }else{\r",
+                            "      toast('您尚未登录。');\r",
+                            "    }\r",
+                            "    break;\r",
+                            "  case 'app_config':\r",
+                            "    change_page('AppConfig',dataview);\r",
+                            "    break;\r",
+                            "}\r",
+                            "\r",
+                            "\r",
+                            "/*\r",
+                            "\r",
+                            "\r",
+                            "[{\r",
+                            "    title: \"推送设置\",\r",
+                            "    action: \"push_setting\"\r",
+                            "}, {\r",
+                            "    title: \"账号绑定\",\r",
+                            "    action: \"account_bind\"\r",
+                            "}, {\r",
+                            "    title: \"意见反馈\",\r",
+                            "    action: \"feedback\"\r",
+                            "}, {\r",
+                            "    title: \"清除缓存\",\r",
+                            "    action: \"clear_cache\"\r",
+                            "}, {\r",
+                            "    title: \"检查更新\",\r",
+                            "    action: \"check_update\"\r",
+                            "}, {\r",
+                            "    title: \"APP介绍\",\r",
+                            "    action: \"app_introduction\"\r",
+                            "}, {\r",
+                            "    title: \"退出当前账号\",\r",
+                            "    action: \"account_quit\"\r",
+                            "}]\r",
+                            "\r",
+                            "\r",
+                            "*/"
+                        ],
+                        "name": "itemtap"
+                    },
+                    "designerId": "23194a7c-bd96-4998-a421-a09bc3e97132"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this\r",
+                    "\r",
+                    "var menu_data = [{\r",
+                    "    title: \"推送设置\",\r",
+                    "    action: \"push_setting\"\r",
+                    "}, {\r",
+                    "    title: \"账号绑定\",\r",
+                    "    action: \"account_bind\"\r",
+                    "}, {\r",
+                    "    title: \"意见反馈\",\r",
+                    "    action: \"feedback\"\r",
+                    "}, {\r",
+                    "    title: \"清除缓存\",\r",
+                    "    action: \"clear_cache\"\r",
+                    "}, {\r",
+                    "    title: \"检查更新\",\r",
+                    "    action: \"check_update\"\r",
+                    "}, {\r",
+                    "    title: \"APP介绍\",\r",
+                    "    action: \"app_introduction\"\r",
+                    "}/*, {\r",
+                    "    title: \"App Config\",\r",
+                    "    action: \"app_config\"\r",
+                    "}*/\r",
+                    "\r",
+                    "];\r",
+                    "\r",
+                    "\r",
+                    "if( is_login() ){\r",
+                    "  menu_data.push({\r",
+                    "    title: \"退出当前账号\",\r",
+                    "    action: \"account_quit\"\r",
+                    "  });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "var x$nav_list = _this.down('#menu_list');\r",
+                    "\r",
+                    "set_store_data(x$nav_list,menu_data);"
+                ]
+            },
+            "designerId": "b0365ec1-b369-4d7a-9c43-acf827145d6f"
+        }
+    ]
+}

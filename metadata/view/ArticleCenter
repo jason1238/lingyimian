@@ -1,0 +1,214 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userAlias": "articlecenter",
+        "designer|userClassName": "ArticleCenter",
+        "layout": "fit"
+    },
+    "designerId": "cf577d70-68d5-4004-a954-e5fb16469f2b",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "求职锦囊",
+                "ui": "zjs"
+            },
+            "designerId": "644f0547-991d-4ab8-9b4f-1b0712ca0ead",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "itemId": "mybutton114",
+                        "text": "发布"
+                    },
+                    "designerId": "8ecb261a-4458-4dc3-998b-48250c20cdb5",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton114Tap",
+                                "implHandler": [
+                                    "\r",
+                                    "var page = Ext.create('ZJ02.view.AcSubmit', {fullscreen: true});\r",
+                                    "button.up('navigationview').push(page);\r",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "5a6b2f84-e135-4626-9f92-5aebfb90cf1f"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-tab-top"
+                ]
+            },
+            "designerId": "0ef17301-44e9-4a3c-a59d-4b2d6672a9b7",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "fit",
+                        "scrollable": "vertical",
+                        "title": "感悟"
+                    },
+                    "designerId": "54004adf-a6d0-41d1-a091-326e75cc79fa",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "designerId": "dff82760-7f26-44f2-bcf3-abffd96b6313",
+                            "masterInstanceId": "10520133-9a6f-4d2a-a52f-288d3c93adb5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "fit",
+                        "scrollable": "vertical",
+                        "title": "简历"
+                    },
+                    "designerId": "99800638-2216-44be-ab94-adf8a9e5361a",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "designerId": "32ca7f3f-4799-409b-a45c-c1f6161121d9",
+                            "masterInstanceId": "8fd31366-b503-4479-accb-89a1cd7214a3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "fit",
+                        "scrollable": "vertical",
+                        "title": "面经"
+                    },
+                    "designerId": "03c3b81c-d364-4120-964d-4936a36aef4a",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "designerId": "c75de29b-7bf3-4b2f-bcb0-2f2849d392c5",
+                            "masterInstanceId": "146ef773-f50e-46d7-9580-48af51c9a27a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "fit",
+                        "scrollable": "vertical",
+                        "title": "职场"
+                    },
+                    "designerId": "3ad31306-b9dd-4d1b-a2b8-f2388325ce18",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "designerId": "3623a52f-1bef-4280-b0fd-a931bbefd96a",
+                            "masterInstanceId": "bb38af95-ad66-4d99-8681-a7c6716edb57"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Bar",
+                    "reference": {
+                        "name": "tabBar",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "zjs-bg-green"
+                        ],
+                        "defaults": [
+                            "{flex:1}"
+                        ],
+                        "designer|uiInterfaceName": "zjs",
+                        "docked": "top",
+                        "ui": "zjs"
+                    },
+                    "designerId": "46cc7dee-52d7-4cbb-85f0-c88e1996ffa0"
+                }
+            ]
+        }
+    ]
+}

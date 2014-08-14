@@ -1,0 +1,499 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "usercenter",
+        "designer|userClassName": "UserCenter",
+        "layout": "fit"
+    },
+    "designerId": "f6e72658-aacb-431e-b76a-2cee9ae62ae6",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-blue"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "用户中心",
+                "ui": "zjs"
+            },
+            "designerId": "8503e2bc-2deb-4e56-a2a8-51f9b205bdbe"
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-blue user-center-head"
+                ],
+                "docked": "top",
+                "height": 110
+            },
+            "designerId": "788da93d-7258-41ec-9204-2dc261f8e2f2",
+            "cn": [
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "centered": false,
+                        "cls": [
+                            "uch-info"
+                        ],
+                        "designer|uiInterfaceName": "zjs",
+                        "docked": null,
+                        "height": 55,
+                        "layout": "hbox",
+                        "margin": "",
+                        "style": "background-color:#fff",
+                        "ui": "zjs",
+                        "width": ""
+                    },
+                    "designerId": "bd634ace-6929-400e-81bb-44b86fd64f1d",
+                    "cn": [
+                        {
+                            "type": "Ext.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "uch-left"
+                                ],
+                                "height": 55,
+                                "id": "user_center_name",
+                                "layout|flex": 1
+                            },
+                            "designerId": "4e9c6ccb-a425-4061-b995-2eb3db5abbcf"
+                        },
+                        {
+                            "type": "Ext.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "uch-right"
+                                ],
+                                "height": 55,
+                                "html": "",
+                                "layout": "fit",
+                                "layout|flex": 1
+                            },
+                            "designerId": "eefbee7d-e593-49f4-be4c-bdbacb00d1a2",
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": [
+                                            "btn"
+                                        ],
+                                        "docked": "right",
+                                        "iconAlign": "right",
+                                        "iconCls": "zjs-icon-qrcode-g",
+                                        "itemId": "mybutton79",
+                                        "text": "简历中心",
+                                        "width": 120
+                                    },
+                                    "designerId": "fd9b1c50-5777-4dd3-8229-147d56e08bd1",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMybutton79Tap",
+                                                "implHandler": [
+                                                    "\r",
+                                                    "if( !is_login() ){\r",
+                                                    "  change_page('Login',button);\r",
+                                                    "  return;\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "\r",
+                                                    "change_page('ResumeCenter',button);"
+                                                ],
+                                                "name": "tap"
+                                            },
+                                            "designerId": "2fa4ddf3-9ccc-47c3-87cc-038b561e16f1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "uch-avatar"
+                        ],
+                        "docked": null,
+                        "height": 100,
+                        "html": "<div class=\"bg\"></div> <div class=\"avatar\"></div> <div class=\"avatar_mask\"></div> <div class=\"level\"></div> <div class=\"level_mask\"></div>",
+                        "id": "user_center_avatar",
+                        "margin": "0 auto",
+                        "width": 100
+                    },
+                    "designerId": "2fa0d368-982f-4c2e-b096-53a70944ffa9"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout": "fit",
+                "scrollable": "vertical"
+            },
+            "designerId": "8b871f5a-8204-4e93-a090-7c93e24d6b1a",
+            "cn": [
+                {
+                    "type": "Ext.dataview.DataView",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "zjs-listview-1line"
+                        ],
+                        "data": [
+                            "[{\r",
+                            "    title: \"申请记录\",\r",
+                            "    badge: '',\r",
+                            "    action: \"apply_log\"\r",
+                            "}, {\r",
+                            "    title: \"职位收藏\",\r",
+                            "    badge: '',\r",
+                            "    action: \"job_favourite\"\r",
+                            "}, {\r",
+                            "    title: \"谁看过我\",\r",
+                            "    badge: '',\r",
+                            "    action: \"who_see_me\"\r",
+                            "}/*, {\r",
+                            "    title: \"我的发布\",\r",
+                            "    badge: '20',\r",
+                            "    action: \"my_publish\"\r",
+                            "}, {\r",
+                            "    title: \"文章收藏\",\r",
+                            "    badge: '20',\r",
+                            "    action: \"article_favourite\"\r",
+                            "}*/]"
+                        ],
+                        "disableSelection": true,
+                        "id": "nav_user_center",
+                        "itemId": "mydataview3",
+                        "minHeight": 180,
+                        "scrollable": "vertical"
+                    },
+                    "designerId": "d5e50e0a-a239-489e-b831-ba4737448ac7",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=\"li\">\r",
+                                    "  <div class=\"c\">\r",
+                                    "    <h4>{title}</h4>\r",
+                                    "  </div>\r",
+                                    "  <div class=\"i\">\r",
+                                    "    <span></span>\r",
+                                    "  </div>\r",
+                                    "  <tpl if=\"badge &gt; 0\">\r",
+                                    "  <div class=\"b\">\r",
+                                    "    <span>{badge}</span>\r",
+                                    "  </div>\r",
+                                    "  </tpl>\r",
+                                    "</div>"
+                                ]
+                            },
+                            "designerId": "e8d51e5b-6454-45d2-a737-666477b318a8"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMydataview3ItemTap1",
+                                "implHandler": [
+                                    "\r",
+                                    "var item_data = record.data;\r",
+                                    "\r",
+                                    "\r",
+                                    "if( !is_login() ){\r",
+                                    "  change_page('Login',dataview);\r",
+                                    "  return;\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "switch( item_data.action ){\r",
+                                    "\r",
+                                    "  case 'apply_log':\r",
+                                    "\r",
+                                    "    change_page('ApplyLog',dataview,{resumeId:get_s('resumeId')});\r",
+                                    "\r",
+                                    "    break;\r",
+                                    "  case 'job_favourite':\r",
+                                    "\r",
+                                    "    change_page('JobFavourite',dataview);\r",
+                                    "\r",
+                                    "    break;\r",
+                                    "  case 'who_see_me':\r",
+                                    "\r",
+                                    "    change_page('WhoSeeMe',dataview,{resumeId:get_s('resumeId')});\r",
+                                    "\r",
+                                    "    break;\r",
+                                    "  case 'my_publish':\r",
+                                    "\r",
+                                    "    change_page('PublishedArticle',dataview);\r",
+                                    "\r",
+                                    "    break;\r",
+                                    "  case 'article_favourite':\r",
+                                    "\r",
+                                    "    change_page('ArticleFavourite',dataview);\r",
+                                    "\r",
+                                    "    break;\r",
+                                    "\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "/*\r",
+                                    "\r",
+                                    "\r",
+                                    "[\r",
+                                    "      {\r",
+                                    "        title: '申请记录',\r",
+                                    "        badge: '',\r",
+                                    "        action: 'apply_log'\r",
+                                    "      },\r",
+                                    "      {\r",
+                                    "        title: '职位收藏',\r",
+                                    "        badge: '5',\r",
+                                    "        action: 'job_favourite'\r",
+                                    "      },\r",
+                                    "      {\r",
+                                    "        title: '谁看过我',\r",
+                                    "        badge: '1',\r",
+                                    "        action: 'who_see_me'\r",
+                                    "      },\r",
+                                    "      {\r",
+                                    "        title: '我的发布',\r",
+                                    "        badge: '20',\r",
+                                    "        action: 'my_publish'\r",
+                                    "      },\r",
+                                    "      {\r",
+                                    "        title: '文章收藏',\r",
+                                    "        badge: '20',\r",
+                                    "        action: 'article_favourite'\r",
+                                    "      }\r",
+                                    "    ],\r",
+                                    "\r",
+                                    "*/"
+                                ],
+                                "name": "itemtap"
+                            },
+                            "designerId": "3471c108-81db-4b26-9a24-81f2515ee07d"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    ""
+                ]
+            },
+            "designerId": "d2a57751-9f05-474a-8147-b7c50126b9fa"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "//if( _p && _p.keywords ){\r",
+                    "\r",
+                    "  send_request( {\r",
+                    "    api:'user_center',\r",
+                    "    method:'POST',\r",
+                    "    params:{\r",
+                    "      //pageSize:100,\r",
+                    "    },\r",
+                    "    success:function(result, request){\r",
+                    "      if( result.success ){\r",
+                    "        switch( result.code ){\r",
+                    "          case '0000':\r",
+                    "            //成功\r",
+                    "            //console.log(result);\r",
+                    "            _this.build_page(result.data);\r",
+                    "            break;\r",
+                    "          case '1001':\r",
+                    "            //失败\r",
+                    "            break;\r",
+                    "          default:\r",
+                    "            toast(\"errCode:\"+result.code);\r",
+                    "            break;\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "\r",
+                    "      }\r",
+                    "    },\r",
+                    "    fail:function(result){\r",
+                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "    },\r",
+                    "    text:'加载中',\r",
+                    "    silent:false,\r",
+                    "    trigger:this,\r",
+                    "    check_login:true\r",
+                    "  } );\r",
+                    "\r",
+                    "//}\r",
+                    ""
+                ]
+            },
+            "designerId": "7512760e-2eb4-4a03-92de-cb7f329f7611"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "build_page",
+                "implHandler": [
+                    "var user = data.userSimpleResumePo;\r",
+                    "\r",
+                    "var x$avatar = x$('user_center_avatar');\r",
+                    "var x$name = x$('user_center_name');\r",
+                    "var x$nav_user_center = x$('nav_user_center');\r",
+                    "\r",
+                    "\r",
+                    "if( user ){\r",
+                    "  var name_html = '<div class=\"name\">'+user.realname+'</div><div class=\"nickname\">'+user.nickName+'</div>';\r",
+                    "  var avatar_html = '<div class=\"bg\"></div>'+\r",
+                    "      '<div class=\"avatar\"><img src=\"'+user.icon+'\" alt=\"\" /></div>'+\r",
+                    "  '<div class=\"avatar_mask\"></div>'+\r",
+                    "  '<div class=\"level\"></div>'+\r",
+                    "  '<div class=\"level_mask\"></div>';\r",
+                    "\r",
+                    "  x$name.setHtml(name_html);\r",
+                    "  x$avatar.setHtml(avatar_html);\r",
+                    "\r",
+                    "  set_s('resumeId',user.resumeId);\r",
+                    "\r",
+                    "}else{\r",
+                    "  logout();\r",
+                    "}\r",
+                    "\r",
+                    "var nav_data = x$nav_user_center.getData();\r",
+                    "\r",
+                    "if(data){\r",
+                    "  nav_data[0].badge = ''+data.jobApplyCount;\r",
+                    "  nav_data[1].badge = ''+data.jobCollectCount;\r",
+                    "  nav_data[2].badge = ''+data.jobviewCount;\r",
+                    "}\r",
+                    "//console.log(nav_data);\r",
+                    "\r",
+                    "x$nav_user_center.getStore().setData(nav_data);\r",
+                    "x$nav_user_center.refresh();\r",
+                    "\r",
+                    "refresh_scroll(x$nav_user_center);"
+                ]
+            },
+            "designerId": "db9e327a-9d7e-4481-afb3-71039f6d8fb4"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "show",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "\r",
+                    "console.log('show data');"
+                ]
+            },
+            "designerId": "271c666e-dd25-4506-8541-65dca8b669b4"
+        }
+    ]
+}

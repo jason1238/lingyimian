@@ -1,0 +1,714 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userClassName": "HomeSearchResult",
+        "layout": "card"
+    },
+    "designerId": "133ee696-ae7e-4054-ba02-823a354ae5be",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "搜索结果",
+                "ui": "zjs"
+            },
+            "designerId": "499db2f0-1093-4698-996c-933da57a0fd5",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "264a26bf-8779-4242-a2c6-71066328b174",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "e8d74033-c722-4a18-b01e-6add5ed3fa07"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.dataview.DataView",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "allowDeselect": true,
+                "cls": [
+                    "zjs-listview-jobapplylist"
+                ],
+                "disableSelection": false,
+                "id": "list-home-search-result",
+                "itemId": "mydataview3",
+                "minHeight": 180,
+                "mode": "MULTI",
+                "scrollable": "vertical"
+            },
+            "designerId": "53c50e90-2820-4ada-98c7-171f6e4a1f7a",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=\"li\">\r",
+                            "  <div class=\"d\">\r",
+                            "  \t<span></span>\r",
+                            "  </div>\r",
+                            "  <div class=\"c\">\r",
+                            "  \t<h4>{positionName}</h4>\r",
+                            "    <p>{companyName}</p>\r",
+                            "  </div>\r",
+                            "  <div class=\"i js_arrow_btn\">\r",
+                            "  \t<span></span>\r",
+                            "  </div>\r",
+                            "  <div class=\"b\">\r",
+                            "    <div class=\"count\"><span>发布时间</span></div>\r",
+                            "    <div class=\"count\"><span>{date_localfulldate}</span></div>\r",
+                            "  </div>\r",
+                            "</div>"
+                        ]
+                    },
+                    "designerId": "40a880aa-7546-48af-92e2-263365336369"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMydataview2ItemTap1",
+                        "implHandler": [
+                            "\r",
+                            "var item_data = record.data;\r",
+                            "\r",
+                            "\r",
+                            "if(event_on(e,'.js_arrow_btn')){\r",
+                            "  console.log('detail');\r",
+                            "\r",
+                            "  change_page('InternPositionDetail',dataview,item_data);\r",
+                            "\r",
+                            "  return false;\r",
+                            "}else{\r",
+                            "  console.log('select');\r",
+                            "}\r",
+                            "\r",
+                            "\r",
+                            "console.log(e.target);\r",
+                            "\r",
+                            "\r",
+                            "//var page = Ext.create('ZJ02.view.RecruitmentDetail', {fullscreen: true});\r",
+                            "//dataview.up('navigationview').push(page);\r",
+                            ""
+                        ],
+                        "name": "itemtap"
+                    },
+                    "designerId": "b11644a8-de01-44af-98aa-f82c6323a20b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.SegmentedButton",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-segment-btn-bottom"
+                ],
+                "defaults": [
+                    "{\r",
+                    "  flex:1\r",
+                    "  \r",
+                    "}"
+                ],
+                "docked": "bottom",
+                "height": 50
+            },
+            "designerId": "590b3834-8ae2-44ee-8098-fcb091a28397",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "btn-green"
+                        ],
+                        "iconCls": "zjs-icon-copy",
+                        "itemId": "mybutton72",
+                        "text": "全部申请"
+                    },
+                    "designerId": "a31daefc-3d91-4811-8e9a-5137f3adb6b4",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton72Tap",
+                                "implHandler": [
+                                    "var _this = this;\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "var x$list = x$('list-home-search-result');\r",
+                                    "\r",
+                                    "var x$items = x$list.getSelection();\r",
+                                    "\r",
+                                    "var _this = this;\r",
+                                    "\r",
+                                    "var selected_ids = [];\r",
+                                    "for(var i=0; i<x$items.length; i++){\r",
+                                    "  selected_ids.push(x$items[i].data.positionId);\r",
+                                    "\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "if(selected_ids.length){\r",
+                                    "\r",
+                                    "  if( _this.resume_data && _this.resume_data.length>0 ){\r",
+                                    "\r",
+                                    "    var x$pop_resume = _this.down('#pop_resume');\r",
+                                    "    x$pop_resume.show();\r",
+                                    "    \r",
+                                    "  }else{\r",
+                                    "    toast('您尚未创建简历。请先去优渡网创建简历。');\r",
+                                    "  }\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "}else{\r",
+                                    "  toast('请选择您要申请的职位。');\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "bea36b8a-a36a-4f8b-b59d-bf6b4efa0c32"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "btn-blue"
+                        ],
+                        "iconAlign": null,
+                        "iconCls": "zjs-icon-star",
+                        "itemId": "mybutton73",
+                        "text": "全部收藏"
+                    },
+                    "designerId": "1720a124-f81c-4354-a187-1a424ad81d4b",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton73Tap",
+                                "implHandler": [
+                                    "\r",
+                                    "var x$list = x$('list-home-search-result');\r",
+                                    "\r",
+                                    "var x$items = x$list.getSelection();\r",
+                                    "\r",
+                                    "var _this = this;\r",
+                                    "\r",
+                                    "var selected_ids = [];\r",
+                                    "for(var i=0; i<x$items.length; i++){\r",
+                                    "  selected_ids.push(x$items[i].data.positionId);\r",
+                                    "\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "if(selected_ids.length){\r",
+                                    "  send_request( {\r",
+                                    "    api:'p_fav',\r",
+                                    "    method:'POST',\r",
+                                    "    params:{\r",
+                                    "      positionId:selected_ids.join(',')\r",
+                                    "    },\r",
+                                    "    success:function(result, request){\r",
+                                    "\r",
+                                    "\r",
+                                    "      //if( result.success ){\r",
+                                    "        switch( result.code ){\r",
+                                    "          case '0000':\r",
+                                    "            //成功\r",
+                                    "            if( result.alreadyCollect ){\r",
+                                    "              toast('您已收藏过该职位。');\r",
+                                    "            }else{\r",
+                                    "              toast('您已收藏成功。');\r",
+                                    "            }\r",
+                                    "            break;\r",
+                                    "          case '1001':\r",
+                                    "            //失败\r",
+                                    "            break;\r",
+                                    "          default:\r",
+                                    "            toast(\"errCode:\"+result.code);\r",
+                                    "            break;\r",
+                                    "        }\r",
+                                    "      //}else{\r",
+                                    "\r",
+                                    "      //}\r",
+                                    "\r",
+                                    "\r",
+                                    "    },\r",
+                                    "    fail:function(result){\r",
+                                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                                    "    },\r",
+                                    "    text:'加载中',\r",
+                                    "    silent:false,\r",
+                                    "    trigger:_this,\r",
+                                    "    check_login:false\r",
+                                    "  } );\r",
+                                    "}else{\r",
+                                    "  toast('请选择您要收藏的职位。');\r",
+                                    "}\r",
+                                    "\r",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "0f84c90d-7dea-4980-bdba-c0976b03f26b"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "if( _p && _p.keywords ){\r",
+                    "\r",
+                    "  send_request( {\r",
+                    "    api:'home_search',\r",
+                    "    method:'POST',\r",
+                    "    params:{\r",
+                    "      pageSize:100,\r",
+                    "      positionKey:_p.keywords\r",
+                    "    },\r",
+                    "    success:function(result, request){\r",
+                    "      if( result.success ){\r",
+                    "        switch( result.code ){\r",
+                    "          case '0000':\r",
+                    "            //成功\r",
+                    "            console.log(result);\r",
+                    "            _this.build_list(result.data);\r",
+                    "            break;\r",
+                    "          case '1001':\r",
+                    "            //失败\r",
+                    "            break;\r",
+                    "          default:\r",
+                    "            toast(\"errCode:\"+result.code);\r",
+                    "            break;\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "\r",
+                    "      }\r",
+                    "    },\r",
+                    "    fail:function(result){\r",
+                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "    },\r",
+                    "    text:'加载中',\r",
+                    "    silent:false,\r",
+                    "    trigger:_this,\r",
+                    "    check_login:true\r",
+                    "  } );\r",
+                    "\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "659ec880-dc33-40f3-86e6-f262a197da01"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "build_list",
+                "implHandler": [
+                    "var x$list = x$('list-home-search-result');\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "for( var i=0;i<data.length;i++ ){\r",
+                    "  var date_ra = parse_date(data[i].refreshiTime,'date_');\r",
+                    "  jQuery.extend( data[i],date_ra );\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "if(data.length){\r",
+                    "  x$list.removeCls('zj-list-no-data');\r",
+                    "  set_store_data( x$list,data );\r",
+                    "}else{\r",
+                    "  x$list.addCls('zj-list-no-data');\r",
+                    "  set_store_data( x$list,[] );\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "console.log(data);\r",
+                    "\r",
+                    "\r",
+                    "refresh_scroll(x$list);\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "var x$pop_resume_list = _this.down('#pop_resume_list');\r",
+                    "\r",
+                    "send_request( {\r",
+                    "  api:'resume_list',\r",
+                    "  method:'POST',\r",
+                    "  params:{\r",
+                    "    pageSize:100\r",
+                    "  },\r",
+                    "  success:function(result, request){\r",
+                    "    if( result.success ){\r",
+                    "      switch( result.code ){\r",
+                    "        case '0000':\r",
+                    "          //成功\r",
+                    "          console.log(result);\r",
+                    "          _this.resume_data = result.data;\r",
+                    "          if( result.data && result.data.length>0 ){\r",
+                    "            var fe_da = [];\r",
+                    "            for( var i=0;i<result.data.length;i++ ){\r",
+                    "              fe_da.push({\r",
+                    "                text:result.data[i].resumeTitle,\r",
+                    "                value:result.data[i].resumeId\r",
+                    "              });\r",
+                    "            }\r",
+                    "\r",
+                    "\r",
+                    "            set_store_data(x$pop_resume_list,fe_da);\r",
+                    "\r",
+                    "          }\r",
+                    "          break;\r",
+                    "        case '1001':\r",
+                    "          //失败\r",
+                    "          break;\r",
+                    "        default:\r",
+                    "          toast(\"errCode:\"+result.code);\r",
+                    "          break;\r",
+                    "      }\r",
+                    "    }else{\r",
+                    "\r",
+                    "    }\r",
+                    "  },\r",
+                    "  fail:function(result){\r",
+                    "    toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "  },\r",
+                    "  text:'加载中',\r",
+                    "  silent:false,\r",
+                    "  trigger:_this,\r",
+                    "  check_login:true\r",
+                    "} );\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "c1faf28b-6b12-434e-9a5f-ccbe9a816cd8"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": true,
+                "height": 250,
+                "hidden": true,
+                "itemId": "pop_resume",
+                "modal": true,
+                "width": 300
+            },
+            "designerId": "7de456cb-af12-45d4-a335-60fb5ca8e1ff",
+            "cn": [
+                {
+                    "type": "Ext.TitleBar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "top",
+                        "title": "选择简历"
+                    },
+                    "designerId": "c9006950-7c15-4714-b3bd-6f8d2f056bea",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "right",
+                                "itemId": "mybutton42",
+                                "text": "取消"
+                            },
+                            "designerId": "4ac03ac5-edf0-46b6-b3e3-5f2b6f2da9cc",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMybutton42Tap1",
+                                        "implHandler": [
+                                            "button.up('#pop_resume').hide();"
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "d2412e93-024f-45c6-97ce-749103d4d16b"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disableSelection": true,
+                        "height": 200,
+                        "itemId": "pop_resume_list",
+                        "width": 300
+                    },
+                    "designerId": "88362600-7448-42a6-a144-0f3f784f8b65",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div>{text}</div>"
+                                ]
+                            },
+                            "designerId": "4b0f8b0d-a24f-42a0-80b6-a94b85c3915f"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPop_resume_listItemTap1",
+                                "implHandler": [
+                                    "var _this = this;\r",
+                                    "\r",
+                                    "\r",
+                                    "var x$list = x$('list-home-search-result');\r",
+                                    "\r",
+                                    "var x$items = x$list.getSelection();\r",
+                                    "\r",
+                                    "var _this = this;\r",
+                                    "\r",
+                                    "var selected_ids = [];\r",
+                                    "for(var i=0; i<x$items.length; i++){\r",
+                                    "  selected_ids.push(x$items[i].data.positionId);\r",
+                                    "}\r",
+                                    "\r",
+                                    "var newValue = record.data.value;\r",
+                                    "\r",
+                                    "\r",
+                                    "if( newValue === 0 ){\r",
+                                    "  toast('请选择需要申请的简历。');\r",
+                                    "}else{\r",
+                                    "\r",
+                                    "  if( selected_ids.length ){\r",
+                                    "\r",
+                                    "    send_request( {\r",
+                                    "      api:'p_apply',\r",
+                                    "      method:'POST',\r",
+                                    "      params:{\r",
+                                    "        positionId:selected_ids.join(','),\r",
+                                    "        resumeId:newValue\r",
+                                    "      },\r",
+                                    "      success:function(result, request){\r",
+                                    "        //if( result.success ){\r",
+                                    "          switch( result.code ){\r",
+                                    "            case '0000':\r",
+                                    "              //成功\r",
+                                    "              if( result.alreadyApply ){\r",
+                                    "                toast('您一周之内已经申请过该职位。');\r",
+                                    "              }else{\r",
+                                    "                toast('您的职位申请已提交。');\r",
+                                    "              }\r",
+                                    "              break;\r",
+                                    "            case '1001':\r",
+                                    "              //失败\r",
+                                    "              break;\r",
+                                    "            default:\r",
+                                    "              toast(\"errCode:\"+result.code);\r",
+                                    "              break;\r",
+                                    "          }\r",
+                                    "        //}else{\r",
+                                    "\r",
+                                    "        //}\r",
+                                    "      },\r",
+                                    "      fail:function(result){\r",
+                                    "        toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                                    "      },\r",
+                                    "      text:'加载中',\r",
+                                    "      silent:false,\r",
+                                    "      trigger:_this,\r",
+                                    "      check_login:false\r",
+                                    "    } );\r",
+                                    "\r",
+                                    "  }else{\r",
+                                    "    toast('暂无可申请的职位。');\r",
+                                    "  }\r",
+                                    "\r",
+                                    "\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "var x$pop_resume = _this.down('#pop_resume');\r",
+                                    "x$pop_resume.hide();\r",
+                                    ""
+                                ],
+                                "name": "itemtap"
+                            },
+                            "designerId": "5b544187-7ca3-4d7e-a7ee-3ab601ab99a3"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defaultRootProperty": "items",
+        "designer|userClassName": "NestedDataIndustry",
+        "model": "NestedData",
+        "storeId": "NestedDataIndustry"
+    },
+    "designerId": "b2bb9750-7629-4020-88f3-492a7c2b0b53"
+}

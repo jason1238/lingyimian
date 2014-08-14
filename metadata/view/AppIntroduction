@@ -1,0 +1,108 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userClassName": "AppIntroduction",
+        "layout": "card"
+    },
+    "designerId": "34bc4b88-89d2-4604-b5bc-5ac0b946396b",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "APP介绍",
+                "ui": "zjs"
+            },
+            "designerId": "17c2b5b5-fb89-4e00-b663-d4986e358065",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "49c2903a-6875-435d-95e9-bf0985b685b7",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "ad18275a-0337-48c6-8f8e-aff77a73c116"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<h2>App 介绍</h2><p>BlahBlahBlah</p>",
+                "id": "app_intro_con",
+                "padding": "0.5em"
+            },
+            "designerId": "3e21ec17-9c07-4219-a3db-f711b594c867"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "\r",
+                    "var x$con = x$('app_intro_con');\r",
+                    "\r",
+                    "x$con.setHtml('<h3>职点App客户端('+Ext.os.name+'版)<h3><p>版本号：'+_G.VER_STR+'</p><p>Version Code：'+_G.VER+'</p>');"
+                ]
+            },
+            "designerId": "cdd6a8dc-63c7-4cf4-a746-c565c3dd3faf"
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[{\r",
+            "    title: \"推送设置\",\r",
+            "    action: \"push_setting\"\r",
+            "}, {\r",
+            "    title: \"账号绑定\",\r",
+            "    action: \"account_bind\"\r",
+            "}, {\r",
+            "    title: \"意见反馈\",\r",
+            "    action: \"feedback\"\r",
+            "}, {\r",
+            "    title: \"清除缓存\",\r",
+            "    action: \"clear_cache\"\r",
+            "}, {\r",
+            "    title: \"检查更新\",\r",
+            "    action: \"check_update\"\r",
+            "}, {\r",
+            "    title: \"APP介绍\",\r",
+            "    action: \"app_introduction\"\r",
+            "}, {\r",
+            "    title: \"退出当前账号\",\r",
+            "    action: \"account_quit\"\r",
+            "}/*, {\r",
+            "    title: \"App Config\",\r",
+            "    action: \"app_config\"\r",
+            "}*/\r",
+            "\r",
+            "]"
+        ],
+        "designer|userClassName": "moreNav",
+        "model": "moreNav",
+        "storeId": "moreNav"
+    },
+    "designerId": "6d132a78-bf0a-4e49-b426-4e5663726f01"
+}

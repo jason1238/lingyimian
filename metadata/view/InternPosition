@@ -1,0 +1,254 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "InternPosition",
+        "layout": "fit"
+    },
+    "designerId": "8b9ea159-8ea0-429f-8635-71781d590812",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "实习职位",
+                "ui": "zjs"
+            },
+            "designerId": "46938ee4-69e0-4529-afb5-0cc8f1160cf3",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton24",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "4d089709-111d-4455-82c7-ae8d4c66dcf1",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap31111",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "4e49efb0-0e2d-45fb-9eaa-f0f0f24b8ea2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.dataview.DataView",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-listview-3line-c"
+                ],
+                "disableSelection": true,
+                "id": "list_intern_pos",
+                "itemId": "mydataview5",
+                "minHeight": 180,
+                "scrollable": "vertical"
+            },
+            "designerId": "8880608f-b9cf-496a-b2cb-21ec2cf2827f",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=\"li\">\r",
+                            "  <div class=\"c list_c_job_favourite\">\r",
+                            "    <div class=\"cw\">\r",
+                            "      <h4>{positionName}</h4>\r",
+                            "      <div class=\"cp\">\r",
+                            "        <div class=\"cl\">\r",
+                            "          <p>{companyName}</p>\r",
+                            "          <p><em>{date_fullyeardate}</em></p>\r",
+                            "        </div>\r",
+                            "        <div class=\"cr\">\r",
+                            "          <p>薪资</p>\r",
+                            "          <p>{salaryName}</p>\r",
+                            "        </div>\r",
+                            "      </div>\r",
+                            "    </div>\r",
+                            "  </div>\r",
+                            "  <div class=\"i\"> <span></span> </div>\r",
+                            "</div>\r",
+                            "\r",
+                            ""
+                        ]
+                    },
+                    "designerId": "3756d61d-49b9-4578-8803-12102260a6cd"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMydataview5ItemTap",
+                        "implHandler": [
+                            "var data = record.data;\r",
+                            "\r",
+                            "change_page('InternPositionDetail',dataview,data);"
+                        ],
+                        "name": "itemtap"
+                    },
+                    "designerId": "2bfd62d7-16f0-464c-af0d-8de1b57f81d8"
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();"
+                ]
+            },
+            "designerId": "ba445618-d29c-498d-806e-732d25d212ce"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "send_request( {\r",
+                    "  api:'p_intern',\r",
+                    "  method:'POST',\r",
+                    "  params:{\r",
+                    "    pageSize:100\r",
+                    "  },\r",
+                    "  success:function(result, request){\r",
+                    "    if( result.success ){\r",
+                    "      switch( result.code ){\r",
+                    "        case '0000':\r",
+                    "          //成功\r",
+                    "          console.log(result);\r",
+                    "          _this.build_list(result.data);\r",
+                    "          break;\r",
+                    "        case '1001':\r",
+                    "          //失败\r",
+                    "          break;\r",
+                    "        default:\r",
+                    "          toast(\"errCode:\"+result.code);\r",
+                    "          break;\r",
+                    "      }\r",
+                    "    }else{\r",
+                    "\r",
+                    "    }\r",
+                    "  },\r",
+                    "  fail:function(result){\r",
+                    "    toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "  },\r",
+                    "  text:'加载中',\r",
+                    "  silent:false,\r",
+                    "  trigger:_this,\r",
+                    "  check_login:true\r",
+                    "} );\r",
+                    ""
+                ]
+            },
+            "designerId": "c0ec93cc-d07e-4bfd-b6ba-6f4d30b8e6e9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "build_list",
+                "implHandler": [
+                    "var x$list = x$('list_intern_pos');\r",
+                    "\r",
+                    "\r",
+                    "for( var i=0;i<data.length;i++ ){\r",
+                    "  var date_ra = parse_date(data[i].refreshiTime,'date_');\r",
+                    "  jQuery.extend( data[i],date_ra );\r",
+                    "  \r",
+                    "  data[i].salaryName = data[i].salary || '面议';\r",
+                    "  \r",
+                    "  \r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "if(data.length){\r",
+                    "  x$list.removeCls('zj-list-no-data');\r",
+                    "  set_store_data( x$list,data );\r",
+                    "}else{\r",
+                    "  x$list.addCls('zj-list-no-data');\r",
+                    "  set_store_data( x$list,[] );\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "refresh_scroll(x$list);"
+                ]
+            },
+            "designerId": "8705cd98-1447-4122-b424-f3d4732220f3"
+        }
+    ]
+}

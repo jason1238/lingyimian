@@ -1,0 +1,138 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CityChooser_CNL",
+        "layout": "fit"
+    },
+    "designerId": "7737bb4c-05c9-4cea-a6cd-06088013b1f3",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "选择城市",
+                "ui": "zjs"
+            },
+            "designerId": "cca7252e-cdfb-44f0-bf02-f049d783f6fc",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "17dac4c0-f33f-4fa1-b917-700f2219ade3",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap31",
+                                "implHandler": [
+                                    "var _this = this;\r",
+                                    "\r",
+                                    "if( !_this.CityNestedList.pop() ){\r",
+                                    "  _this.up('navigationview').pop();\r",
+                                    "}\r",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "cc6a1766-bac1-40f6-827f-42369064ae69"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disableSelection": true,
+                "itemCls": "leaf_list",
+                "itemId": "city_list"
+            },
+            "designerId": "f14b4d28-1e04-4d48-85b6-95d5ba11ed75",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=\"{__leaf_cls}\">{text}</div>"
+                        ]
+                    },
+                    "designerId": "a5f4dc51-9290-46ea-8cf0-93da6aa056bd"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "var x$list = _this.down('#city_list');\r",
+                    "\r",
+                    "_this.CityNestedList = new LD_Nested_List( x$list,_DATA_CITYS.items,'items',function(data){\r",
+                    "\r",
+                    "  change_city(data.record.areaId,data.record.areaName);\r",
+                    "  _this.up('navigationview').pop();\r",
+                    "\r",
+                    "} );\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "27c51e68-85c7-4c9e-8ac8-6ab7bf3530b2"
+        }
+    ]
+}

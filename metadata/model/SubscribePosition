@@ -1,0 +1,74 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SubscribePosition"
+    },
+    "designerId": "5cccbc81-71d9-46f9-8291-9f7a8d901a25",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "positionId"
+            },
+            "designerId": "79cef799-f7cf-47ac-adbf-ad9350448101"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "positionName"
+            },
+            "designerId": "6a88717f-be6c-4666-954a-7d91c8a9b013"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "companyName"
+            },
+            "designerId": "4b2b2a92-17c9-468f-8099-05daaeb2306a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "salary"
+            },
+            "designerId": "82585ad8-9a7a-4b07-8cea-d1beb29ea43d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "refreshiTime"
+            },
+            "designerId": "dce36257-8929-424c-8843-e2dde0d9afff"
+        }
+    ]
+}

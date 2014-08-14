@@ -1,0 +1,32 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "        {\r",
+            "            \"applyId\": 1,\r",
+            "            \"applyTime\": \"2014/1/23 16:49:12\",\r",
+            "            \"posName\": \"java软件工程师\",\r",
+            "            \"enterpriseName\": \"上海创驰网络有限公司\",\r",
+            "            \"applyCount\": 1\r",
+            "        },\r",
+            "        {\r",
+            "            \"applyId\": 2,\r",
+            "            \"applyTime\": \"2014/1/23 16:49:12\",\r",
+            "            \"posName\": \"java软件工程师\",\r",
+            "            \"enterpriseName\": \"上海创驰网络有限公司\",\r",
+            "            \"applyCount\": 1\r",
+            "        }\r",
+            "    ]"
+        ],
+        "designer|userClassName": "ApplyLog",
+        "model": "ApplyLog",
+        "storeId": "ApplyLog"
+    },
+    "designerId": "f588b605-f104-428f-b6b9-f76a777b1605"
+}

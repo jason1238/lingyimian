@@ -1,0 +1,1481 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CompanyHot",
+        "layout": "fit"
+    },
+    "designerId": "166a8b4e-412f-4943-a852-f755fc4682c8",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "热门企业",
+                "ui": "zjs"
+            },
+            "designerId": "db1e9e03-11e1-4c6c-aa08-5b02aea46cb7",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "627a5857-9fb2-443c-b6f7-d8b8223ee7b9",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap3",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "0365224d-03c6-48b2-a452-53e242c7c6ee"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "itemId": "mybutton72",
+                        "text": "附近企业"
+                    },
+                    "designerId": "ab0b88a1-a6a4-476d-b212-06d47658a056",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton72Tap",
+                                "implHandler": [
+                                    "change_page('CompanyNear',button);"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "a36b9640-384f-4533-adbd-cd15c4d7564e"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.SegmentedButton",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-filter-menu"
+                ],
+                "defaults": [
+                    "{\r",
+                    "  flex:1  \r",
+                    "}"
+                ],
+                "docked": "top",
+                "height": 40,
+                "itemId": "mysegmentedbutton"
+            },
+            "designerId": "247118f3-3bb8-4769-a65a-1f31ce41baa6",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "chot_btn_industry",
+                        "itemId": "mybutton1",
+                        "text": "选择行业"
+                    },
+                    "designerId": "99f35d04-ba60-4d52-a458-c3e3aa6997ff",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton1Tap",
+                                "implHandler": [
+                                    "var x$flyout = x$('chot_fo_industry');\r",
+                                    "var init_fo_func = this.init_fo_industry;\r",
+                                    "\r",
+                                    "if( is_active(button) ){\r",
+                                    "  this.reset_fo();\r",
+                                    "}else{\r",
+                                    "  this.reset_fo();\r",
+                                    "  x$flyout.show();\r",
+                                    "  set_active(button);\r",
+                                    "  init_fo_func.apply(this,[]);\r",
+                                    "}"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "c78c1ebc-b0ed-4bb3-8ca3-ed9eb9adc0c8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "chot_btn_type",
+                        "itemId": "mybutton2",
+                        "text": "企业性质"
+                    },
+                    "designerId": "151d0371-a54f-4cd7-9157-c0f70877ffc0",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton2Tap",
+                                "implHandler": [
+                                    "var x$flyout = x$('chot_fo_type');\r",
+                                    "var init_fo_func = this.init_fo_type;\r",
+                                    "\r",
+                                    "if( is_active(button) ){\r",
+                                    "  this.reset_fo();\r",
+                                    "}else{\r",
+                                    "  this.reset_fo();\r",
+                                    "  x$flyout.show();\r",
+                                    "  set_active(button);\r",
+                                    "  init_fo_func.apply(this,[]);\r",
+                                    "}\r",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "2751fadc-17bc-4eae-a1a0-55c37020f967"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "id": "chot_btn_area",
+                        "itemId": "mybutton3",
+                        "text": "选择地区"
+                    },
+                    "designerId": "615247ec-3914-4b9e-b720-b4a275282007",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton2Tap1",
+                                "implHandler": [
+                                    "var x$flyout = x$('chot_fo_area');\r",
+                                    "var init_fo_func = this.init_fo_area;\r",
+                                    "\r",
+                                    "if( is_active(button) ){\r",
+                                    "  this.reset_fo();\r",
+                                    "}else{\r",
+                                    "  this.reset_fo();\r",
+                                    "  x$flyout.show();\r",
+                                    "  set_active(button);\r",
+                                    "  init_fo_func.apply(this,[]);\r",
+                                    "}\r",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "d4c83f10-89d1-4e6f-a9e6-749b73f35262"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "id": "chot_btn_school",
+                        "itemId": "mybutton4",
+                        "text": "选择学校"
+                    },
+                    "designerId": "6a3a6462-121e-4a47-8071-832a104dedd1",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton2Tap11",
+                                "implHandler": [
+                                    "var x$flyout = x$('chot_fo_school');\r",
+                                    "var init_fo_func = this.init_fo_school;\r",
+                                    "\r",
+                                    "if( is_active(button) ){\r",
+                                    "  this.reset_fo();\r",
+                                    "}else{\r",
+                                    "  this.reset_fo();\r",
+                                    "  x$flyout.show();\r",
+                                    "  set_active(button);\r",
+                                    "  init_fo_func.apply(this,[]);\r",
+                                    "}\r",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "c6739253-d2a4-42fb-89d8-fdabde200385"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Content",
+                "hidden": false,
+                "layout": "fit"
+            },
+            "designerId": "cfff2733-f4ee-475e-934d-7288cbf517ae",
+            "cn": [
+                {
+                    "type": "Ext.dataview.DataView",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "zjs-listview-icon"
+                        ],
+                        "disableSelection": true,
+                        "id": "list_chot",
+                        "itemId": "mydataview4",
+                        "minHeight": 180,
+                        "scrollable": "vertical"
+                    },
+                    "designerId": "7fb6cffc-0f4b-411d-9113-3e3c0791606b",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=\"li\">\r",
+                                    "\t<div class=\"icon\">\r",
+                                    "    <span><img src=\"{companyLogo}\"/></span>\r",
+                                    "  </div>\r",
+                                    "  <div class=\"c\">\r",
+                                    "  \t<h4>{companyName}</h4>\r",
+                                    "    <p>企业简介：{profile}</p>\r",
+                                    "  </div>\r",
+                                    "  <div class=\"i\">\r",
+                                    "  \t<span></span>\r",
+                                    "  </div>\r",
+                                    "</div>"
+                                ]
+                            },
+                            "designerId": "c5b425bf-7124-473f-b13a-4b51a4dd2d4d"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMydataview2ItemTap11",
+                                "implHandler": [
+                                    "var item_data = record.data;\r",
+                                    "change_page('CompanyDetail',dataview,item_data);"
+                                ],
+                                "name": "itemtap"
+                            },
+                            "designerId": "f55d73ba-5457-4f13-9050-4be4dfb6c18d"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-dd-filter-ms"
+                ],
+                "docked": null,
+                "height": 300,
+                "hidden": true,
+                "id": "chot_fo_industry",
+                "layout": "hbox"
+            },
+            "designerId": "eb01d614-0643-4da0-86e3-bbc7d13f9988",
+            "cn": [
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "col-1"
+                        ],
+                        "layout": "fit",
+                        "layout|flex": 4,
+                        "scrollable": "vertical"
+                    },
+                    "designerId": "b8010095-a496-4549-be7d-29243ebfd66d",
+                    "cn": [
+                        {
+                            "type": "Ext.dataview.List",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "chot_filter_list_industry_lv1",
+                                "itemId": "chot_filter_list_industry_lv1"
+                            },
+                            "designerId": "0c9aee63-0e59-4a10-80ef-5fb96a117bf2",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<div>{industryName}\r",
+                                            "  <tpl if=\"has_child &gt; 0\">\r",
+                                            "    <div class=\"more_arr\">&gt;</div>\r",
+                                            "  </tpl>\r",
+                                            "</div>"
+                                        ]
+                                    },
+                                    "designerId": "29e1fb18-f80f-4d32-9339-d49fac780209"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCampustalk_filter_list_industry_lv1ItemTap",
+                                        "implHandler": [
+                                            "var x$list_lv2 = x$('chot_filter_list_industry_lv2');\r",
+                                            "\r",
+                                            "var data = record.data;\r",
+                                            "\r",
+                                            "if(data.has_child){\r",
+                                            "  set_store_data(x$list_lv2,data.childs);\r",
+                                            "}else{\r",
+                                            "  set_store_data(x$list_lv2,[]);\r",
+                                            "  this.set_industry(data.industryId,data.industryName);\r",
+                                            "}\r",
+                                            ""
+                                        ],
+                                        "name": "itemtap"
+                                    },
+                                    "designerId": "e65d3887-cd84-4af8-816f-743d87d97ba9"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "col-2"
+                        ],
+                        "layout": "fit",
+                        "layout|flex": 6,
+                        "scrollable": "vertical"
+                    },
+                    "designerId": "9a0df90f-dcb0-49e0-b664-c7704838a368",
+                    "cn": [
+                        {
+                            "type": "Ext.dataview.List",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "chot_filter_list_industry_lv2",
+                                "itemHeight": 30,
+                                "itemId": "chot_filter_list_industry_lv2"
+                            },
+                            "designerId": "9a05d501-81b0-4e30-9300-8f612c9ae4e0",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<div>{industryName}</div>"
+                                        ]
+                                    },
+                                    "designerId": "1fd9b35e-6441-4f3b-b03d-e827425d02ee"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCampustalk_filter_list_industry_lv2ItemTap",
+                                        "implHandler": [
+                                            "var data = record.data;\r",
+                                            "this.set_industry(data.industryId,data.industryName);\r",
+                                            ""
+                                        ],
+                                        "name": "itemtap"
+                                    },
+                                    "designerId": "7b395e27-7d31-41bb-8518-60ab6cc5edb8"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-dd-filter-ss"
+                ],
+                "docked": null,
+                "height": 300,
+                "hidden": true,
+                "id": "chot_fo_type",
+                "layout": "hbox"
+            },
+            "designerId": "93b5531c-fabb-470f-b43a-40ecf7829cac",
+            "cn": [
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "col-1"
+                        ],
+                        "layout": "fit",
+                        "layout|flex": 1,
+                        "scrollable": "vertical"
+                    },
+                    "designerId": "e59532fa-8a6e-4a1f-8431-df6b890a778f",
+                    "cn": [
+                        {
+                            "type": "Ext.dataview.List",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "chot_filter_list_type",
+                                "itemHeight": 30,
+                                "itemId": "mylist"
+                            },
+                            "designerId": "a7c77b33-aef9-47f3-87c9-4d4f468f2fd3",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<div>{name}</div>"
+                                        ]
+                                    },
+                                    "designerId": "d254e6a0-79f4-4e80-ab53-0a09ac32d4d2"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCampustalk_filter_list_schoolItemTap1",
+                                        "implHandler": [
+                                            "var data = record.data;\r",
+                                            "this.set_type(data.value,data.name);"
+                                        ],
+                                        "name": "itemtap"
+                                    },
+                                    "designerId": "a182f827-cac0-49a2-b02a-71fbdfb02cf3"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-dd-filter-ss"
+                ],
+                "docked": null,
+                "height": 300,
+                "hidden": true,
+                "id": "chot_fo_area",
+                "layout": "hbox"
+            },
+            "designerId": "de707b00-b731-4d73-990f-2a0595e49664",
+            "cn": [
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "col-1"
+                        ],
+                        "layout": "fit",
+                        "layout|flex": 1,
+                        "scrollable": "vertical"
+                    },
+                    "designerId": "db0b85ce-4762-4f62-bfae-8e79a185c099",
+                    "cn": [
+                        {
+                            "type": "Ext.dataview.List",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "chot_filter_list_area",
+                                "itemHeight": 30,
+                                "itemId": "mylist"
+                            },
+                            "designerId": "c54a1593-8e27-4cb5-bf4f-beade9379478",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<div>{areaName}</div>"
+                                        ]
+                                    },
+                                    "designerId": "4b2d1c2d-f2ac-4cc2-ab1a-5432129b4787"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCampustalk_filter_list_schoolItemTap11",
+                                        "implHandler": [
+                                            "var data = record.data;\r",
+                                            "this.set_area(data.areaId,data.areaName);"
+                                        ],
+                                        "name": "itemtap"
+                                    },
+                                    "designerId": "84dc3bca-f9a5-4ebe-8773-84d3db917a27"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-dd-filter-ss"
+                ],
+                "docked": null,
+                "height": 300,
+                "hidden": true,
+                "id": "chot_fo_school",
+                "layout": "hbox"
+            },
+            "designerId": "79fb86f9-391e-4108-a3d7-65b0dee7430f",
+            "cn": [
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "col-1"
+                        ],
+                        "layout": "fit",
+                        "layout|flex": 1,
+                        "scrollable": "vertical"
+                    },
+                    "designerId": "b79f0587-78e6-4b7d-a99e-e8bb2f7d81df",
+                    "cn": [
+                        {
+                            "type": "Ext.dataview.List",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "chot_filter_list_school",
+                                "itemHeight": 30,
+                                "itemId": "mylist"
+                            },
+                            "designerId": "80eb1e0d-0d4b-422d-a633-e2c3ba5c577f",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<div>{realname}</div>"
+                                        ]
+                                    },
+                                    "designerId": "5d5380f5-0243-44dc-b5d8-df6584dac220"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCampustalk_filter_list_schoolItemTap",
+                                        "implHandler": [
+                                            "var data = record.data;\r",
+                                            "this.set_school(data.schoolId,data.realname);"
+                                        ],
+                                        "name": "itemtap"
+                                    },
+                                    "designerId": "3280114e-5d70-45ce-8d81-c4568c77b416"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    ""
+                ]
+            },
+            "designerId": "3d226694-8994-46a7-908a-6a4cdb033074"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "var x$industry = x$('chot_fo_industry');\r",
+                    "var x$type = x$('chot_fo_type');\r",
+                    "var x$area = x$('chot_fo_area');\r",
+                    "var x$school = x$('chot_fo_school');\r",
+                    "\r",
+                    "\r",
+                    "var params = {\r",
+                    "  pageSize:100\r",
+                    "};\r",
+                    "\r",
+                    "var cur_industry_val = get_data( 'chot_fo_industry','value' );\r",
+                    "if(cur_industry_val){\r",
+                    "  params.industryId = cur_industry_val;\r",
+                    "}\r",
+                    "\r",
+                    "var cur_type_val = get_data( 'chot_fo_type','value' );\r",
+                    "if(cur_type_val){\r",
+                    "  params.companyType = cur_type_val;\r",
+                    "}\r",
+                    "\r",
+                    "var cur_area_val = get_data( 'chot_fo_area','value' );\r",
+                    "if(cur_area_val){\r",
+                    "  params.areaId = cur_area_val;\r",
+                    "}\r",
+                    "\r",
+                    "var cur_school_val = get_data( 'chot_fo_school','value' );\r",
+                    "if(cur_school_val){\r",
+                    "  params.schoolId = cur_school_val;\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "console.log(params);\r",
+                    "\r",
+                    "send_request( {\r",
+                    "  api:'c_hot',\r",
+                    "  method:'POST',\r",
+                    "  params:params,\r",
+                    "  success:function(result, request){\r",
+                    "    if( result.success ){\r",
+                    "      switch( result.code ){\r",
+                    "        case '0000':\r",
+                    "          //成功\r",
+                    "          console.log(result);\r",
+                    "          _this.build_list(result.data);\r",
+                    "          break;\r",
+                    "        case '1001':\r",
+                    "          //失败\r",
+                    "          break;\r",
+                    "        default:\r",
+                    "          toast(\"errCode:\"+result.code);\r",
+                    "          break;\r",
+                    "      }\r",
+                    "    }else{\r",
+                    "\r",
+                    "    }\r",
+                    "  },\r",
+                    "  fail:function(result){\r",
+                    "    toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "  },\r",
+                    "  text:'加载中',\r",
+                    "  silent:false,\r",
+                    "  trigger:_this,\r",
+                    "  check_login:true\r",
+                    "} );\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "e69e3db1-d1cf-4be0-ae5d-7a0f7612a84a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "build_list",
+                "implHandler": [
+                    "var x$list = x$('list_chot');\r",
+                    "\r",
+                    "/*\r",
+                    "for( var i=0;i<data.length;i++ ){\r",
+                    "  var date_ra = parse_date(data[i].refreshiTime,'date_');\r",
+                    "  jQuery.extend( data[i],date_ra );\r",
+                    "}\r",
+                    "*/\r",
+                    "\r",
+                    "if(data.length){\r",
+                    "  x$list.removeCls('zj-list-no-data');\r",
+                    "  set_store_data( x$list,data );\r",
+                    "}else{\r",
+                    "  x$list.addCls('zj-list-no-data');\r",
+                    "  set_store_data( x$list,[] );\r",
+                    "}\r",
+                    "\r",
+                    "refresh_scroll(x$list);"
+                ]
+            },
+            "designerId": "82eca587-0000-4a2b-a3d9-bf77bca20649"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init_fo_industry",
+                "implHandler": [
+                    "var x$flyout = x$('chot_fo_industry');\r",
+                    "\r",
+                    "var x$list_lv1 = x$('chot_filter_list_industry_lv1');\r",
+                    "var x$list_lv2 = x$('chot_filter_list_industry_lv2');\r",
+                    "\r",
+                    "\r",
+                    "var key_id = 'industryId';\r",
+                    "var key_parent = 'parentId';\r",
+                    "\r",
+                    "\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "var init_fo = function(data){\r",
+                    "  console.log(data);\r",
+                    "\r",
+                    "  var da_lv1 = [\r",
+                    "    {\r",
+                    "      has_child:0,\r",
+                    "      industryId:0,\r",
+                    "      industryName:'重置',\r",
+                    "      is_reset:true\r",
+                    "    }\r",
+                    "  ];\r",
+                    "  var da_lv2 = {};\r",
+                    "\r",
+                    "  for( var i=0;i<data.length;i++){\r",
+                    "    var cur_o = data[i];\r",
+                    "\r",
+                    "    if( cur_o[key_parent] === 0 ){\r",
+                    "      da_lv1.push(cur_o);\r",
+                    "    }else{\r",
+                    "      if( typeof da_lv2[cur_o[key_parent]] == 'undefined' ){\r",
+                    "        da_lv2[cur_o[key_parent]]=[];\r",
+                    "      }\r",
+                    "      da_lv2[cur_o[key_parent]].push(cur_o);\r",
+                    "    }\r",
+                    "  }\r",
+                    "\r",
+                    "  for( var j=0;j<da_lv1.length;j++){\r",
+                    "    if( da_lv2[da_lv1[j][key_id]] instanceof Array ){\r",
+                    "      da_lv1[j].has_child = 1;\r",
+                    "      da_lv1[j].childs = da_lv2[da_lv1[j][key_id]];\r",
+                    "    }else{\r",
+                    "      da_lv1[j].has_child = 0;\r",
+                    "      da_lv1[j].childs = [];\r",
+                    "    }\r",
+                    "  }\r",
+                    "\r",
+                    "  x$list_lv1.setData(da_lv1);\r",
+                    "\r",
+                    "  console.log(da_lv1);\r",
+                    "\r",
+                    "  x$flyout.addCls('fo_inited');\r",
+                    "};\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "if( !has_class(x$flyout,'fo_inited') ){\r",
+                    "\r",
+                    "  send_request( {\r",
+                    "    api:'opt_industry',\r",
+                    "    method:'POST',\r",
+                    "    params:{\r",
+                    "      pageSize:1000\r",
+                    "    },\r",
+                    "    success:function(result, request){\r",
+                    "      if( result.success ){\r",
+                    "        switch( result.code ){\r",
+                    "          case '0000':\r",
+                    "            //成功\r",
+                    "            init_fo(result.data);\r",
+                    "            break;\r",
+                    "          case '1001':\r",
+                    "            //失败\r",
+                    "            break;\r",
+                    "          default:\r",
+                    "            toast(\"errCode:\"+result.code);\r",
+                    "            break;\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "\r",
+                    "      }\r",
+                    "    },\r",
+                    "    fail:function(result){\r",
+                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "    },\r",
+                    "    text:'加载中',\r",
+                    "    silent:false,\r",
+                    "    trigger:_this,\r",
+                    "    check_login:false\r",
+                    "  } );\r",
+                    "\r",
+                    "\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "cd9863eb-15e9-4dff-b697-f71bc4fbd7a5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init_fo_type",
+                "implHandler": [
+                    "var x$flyout = x$('chot_fo_type');\r",
+                    "var x$list = x$('chot_filter_list_type');\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "var init_fo = function(data){\r",
+                    "\r",
+                    "  data.enterpriseType.unshift({\r",
+                    "    has_child:0,\r",
+                    "    value:0,\r",
+                    "    name:'重置',\r",
+                    "    is_reset:true\r",
+                    "  });\r",
+                    "\r",
+                    "\r",
+                    "  set_store_data( x$list,data.enterpriseType );\r",
+                    "  x$flyout.addCls('fo_inited');\r",
+                    "};\r",
+                    "\r",
+                    "if( !has_class(x$flyout,'fo_inited') ){\r",
+                    "\r",
+                    "  send_request( {\r",
+                    "    api:'enum',\r",
+                    "    method:'POST',\r",
+                    "    params:{\r",
+                    "      pageSize:1000\r",
+                    "    },\r",
+                    "    success:function(result, request){\r",
+                    "      if( result.success ){\r",
+                    "        switch( result.code ){\r",
+                    "          case '0000':\r",
+                    "            //成功\r",
+                    "            init_fo(result.data);\r",
+                    "            break;\r",
+                    "          case '1001':\r",
+                    "            //失败\r",
+                    "            break;\r",
+                    "          default:\r",
+                    "            toast(\"errCode:\"+result.code);\r",
+                    "            break;\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "\r",
+                    "      }\r",
+                    "    },\r",
+                    "    fail:function(result){\r",
+                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "    },\r",
+                    "    text:'加载中',\r",
+                    "    silent:false,\r",
+                    "    trigger:_this,\r",
+                    "    check_login:false\r",
+                    "  } );\r",
+                    "\r",
+                    "\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "90381f7e-570e-4284-b347-8ab170e6e226"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init_fo_area",
+                "implHandler": [
+                    "var x$flyout = x$('chot_fo_area');\r",
+                    "var x$list = x$('chot_filter_list_area');\r",
+                    "\r",
+                    "\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "var init_fo = function(data){\r",
+                    "\r",
+                    "  data.unshift({\r",
+                    "    has_child:0,\r",
+                    "    areaId:0,\r",
+                    "    areaName:'重置',\r",
+                    "    is_reset:true\r",
+                    "  });\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "  set_store_data( x$list,data );\r",
+                    "  x$flyout.addCls('fo_inited');\r",
+                    "};\r",
+                    "\r",
+                    "if( !has_class(x$flyout,'fo_inited') ){\r",
+                    "\r",
+                    "  send_request( {\r",
+                    "    api:'area_list',\r",
+                    "    method:'POST',\r",
+                    "    params:{\r",
+                    "      pageSize:1000,\r",
+                    "      parentId:_G._cityId\r",
+                    "    },\r",
+                    "    success:function(result, request){\r",
+                    "      if( result.success ){\r",
+                    "        switch( result.code ){\r",
+                    "          case '0000':\r",
+                    "            //成功\r",
+                    "            init_fo(result.data);\r",
+                    "            break;\r",
+                    "          case '1001':\r",
+                    "            //失败\r",
+                    "            break;\r",
+                    "          default:\r",
+                    "            toast(\"errCode:\"+result.code);\r",
+                    "            break;\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "\r",
+                    "      }\r",
+                    "    },\r",
+                    "    fail:function(result){\r",
+                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "    },\r",
+                    "    text:'加载中',\r",
+                    "    silent:false,\r",
+                    "    trigger:_this,\r",
+                    "    check_login:false\r",
+                    "  } );\r",
+                    "\r",
+                    "\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "2d79989c-d02d-405d-b76e-903366934da0"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init_fo_school",
+                "implHandler": [
+                    "var x$flyout = x$('chot_fo_school');\r",
+                    "var x$list = x$('chot_filter_list_school');\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "var init_fo = function(data){\r",
+                    "  set_store_data( x$list,data );\r",
+                    "  x$flyout.addCls('fo_inited');\r",
+                    "};\r",
+                    "\r",
+                    "if( !has_class(x$flyout,'fo_inited') ){\r",
+                    "\r",
+                    "  send_request( {\r",
+                    "    api:'opt_school',\r",
+                    "    method:'POST',\r",
+                    "    params:{\r",
+                    "      pageSize:1000\r",
+                    "    },\r",
+                    "    success:function(result, request){\r",
+                    "      if( result.success ){\r",
+                    "        switch( result.code ){\r",
+                    "          case '0000':\r",
+                    "            //成功\r",
+                    "            init_fo(result.data);\r",
+                    "            break;\r",
+                    "          case '1001':\r",
+                    "            //失败\r",
+                    "            break;\r",
+                    "          default:\r",
+                    "            toast(\"errCode:\"+result.code);\r",
+                    "            break;\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "\r",
+                    "      }\r",
+                    "    },\r",
+                    "    fail:function(result){\r",
+                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "    },\r",
+                    "    text:'加载中',\r",
+                    "    silent:false,\r",
+                    "    trigger:_this,\r",
+                    "    check_login:false\r",
+                    "  } );\r",
+                    "\r",
+                    "\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "977476ca-6094-4125-8466-165df83dd9ca"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "value",
+                    "text"
+                ],
+                "fn": "set_industry",
+                "implHandler": [
+                    "var fo_id = 'chot_fo_industry';\r",
+                    "var btn_id = 'chot_btn_industry';\r",
+                    "\r",
+                    "var x$fo = x$(fo_id);\r",
+                    "var x$btn = x$(btn_id);\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "if( value === 0 ){\r",
+                    "  set_data( x$fo,'value',null );\r",
+                    "  set_data( x$fo,'label',null );\r",
+                    "  x$btn.setText('选择行业');  \r",
+                    "}else{\r",
+                    "  set_data( x$fo,'value',value );\r",
+                    "  set_data( x$fo,'label',text );\r",
+                    "  x$btn.setText(text);\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "this.reset_fo();\r",
+                    "this.update();"
+                ]
+            },
+            "designerId": "24efe260-774a-4e58-8388-36bb4b275556"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "value",
+                    "text"
+                ],
+                "fn": "set_type",
+                "implHandler": [
+                    "var fo_id = 'chot_fo_type';\r",
+                    "var btn_id = 'chot_btn_type';\r",
+                    "\r",
+                    "var x$fo = x$(fo_id);\r",
+                    "var x$btn = x$(btn_id);\r",
+                    "\r",
+                    "\r",
+                    "if( value === 0 ){\r",
+                    "  set_data( x$fo,'value',null );\r",
+                    "  set_data( x$fo,'label',null );\r",
+                    "  x$btn.setText('企业性质');  \r",
+                    "}else{\r",
+                    "  set_data( x$fo,'value',value );\r",
+                    "  set_data( x$fo,'label',text );\r",
+                    "  x$btn.setText(text);\r",
+                    "}\r",
+                    "\r",
+                    "this.reset_fo();\r",
+                    "this.update();"
+                ]
+            },
+            "designerId": "63d891e4-d679-450d-a0e2-b9d7543f2cd5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "value",
+                    "text"
+                ],
+                "fn": "set_area",
+                "implHandler": [
+                    "var fo_id = 'chot_fo_area';\r",
+                    "var btn_id = 'chot_btn_area';\r",
+                    "\r",
+                    "var x$fo = x$(fo_id);\r",
+                    "var x$btn = x$(btn_id);\r",
+                    "\r",
+                    "\r",
+                    "if( value === 0 ){\r",
+                    "  set_data( x$fo,'value',null );\r",
+                    "  set_data( x$fo,'label',null );\r",
+                    "  x$btn.setText('选择地区');  \r",
+                    "}else{\r",
+                    "  set_data( x$fo,'value',value );\r",
+                    "  set_data( x$fo,'label',text );\r",
+                    "  x$btn.setText(text);\r",
+                    "}\r",
+                    "\r",
+                    "this.reset_fo();\r",
+                    "this.update();"
+                ]
+            },
+            "designerId": "b5290859-0801-4d3d-b701-86138c885b0c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "value",
+                    "text"
+                ],
+                "fn": "set_school",
+                "implHandler": [
+                    "var fo_id = 'chot_fo_school';\r",
+                    "var btn_id = 'chot_btn_school';\r",
+                    "\r",
+                    "var x$fo = x$(fo_id);\r",
+                    "var x$btn = x$(btn_id);\r",
+                    "\r",
+                    "\r",
+                    "set_data( 'chot_fo_school','value',value );\r",
+                    "set_data( 'chot_fo_school','label',text );\r",
+                    "\r",
+                    "x$btn.setText(text);\r",
+                    "\r",
+                    "this.reset_fo();\r",
+                    "this.update();"
+                ]
+            },
+            "designerId": "78c518d7-8faa-4e1f-8bfe-e7667f4bb3b3"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "reset_fo",
+                "implHandler": [
+                    "var x$industry = x$('chot_fo_industry');\r",
+                    "var x$type = x$('chot_fo_type');\r",
+                    "var x$area = x$('chot_fo_area');\r",
+                    "var x$school = x$('chot_fo_school');\r",
+                    "\r",
+                    "\r",
+                    "var x$btn_industry = x$('chot_btn_industry');\r",
+                    "var x$btn_type = x$('chot_btn_type');\r",
+                    "var x$btn_area = x$('chot_btn_area');\r",
+                    "var x$btn_school = x$('chot_btn_school');\r",
+                    "\r",
+                    "\r",
+                    "x$industry.hide();\r",
+                    "x$type.hide();\r",
+                    "x$area.hide();\r",
+                    "x$school.hide();\r",
+                    "\r",
+                    "\r",
+                    "clr_active(x$btn_industry);\r",
+                    "clr_active(x$btn_type);\r",
+                    "clr_active(x$btn_area);\r",
+                    "clr_active(x$btn_school);"
+                ]
+            },
+            "designerId": "d07063f3-d088-48e1-a564-9351b12c7755"
+        }
+    ]
+}

@@ -1,0 +1,213 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userClassName": "AcDetail",
+        "layout": "card"
+    },
+    "designerId": "219c3351-f95d-476a-89fe-3e0af7dfbcab",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "文章详情",
+                "ui": "zjs"
+            },
+            "designerId": "ca5ae3d4-9cc5-4b33-9739-efae7c383085",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "72ee53fc-4516-4caa-8412-adbbb9513323",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap1",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "bc5a6e77-e0b8-45ab-a8c8-7568fd42209a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-share",
+                        "itemId": "mybutton24",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "1475bfd7-e1cd-4118-8cdc-d60bb4721619",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap21",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "b53d14d6-34d1-4420-9863-773d46f40308"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "",
+                "scrollable": "vertical"
+            },
+            "designerId": "2c8bf35c-eb72-4fa0-91fe-ff7d9f8108aa",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "article-headline"
+                        ],
+                        "html": "资深HR给应届毕业生求职者的忠告",
+                        "padding": "0.5em",
+                        "style": "text-align:center;font-size:20px;"
+                    },
+                    "designerId": "2989a3a0-3ba9-45cb-be24-8d43121589d1"
+                },
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "detail_panel"
+                        ],
+                        "layout": "hbox",
+                        "padding": "0.2em 0.7em"
+                    },
+                    "designerId": "95f1d6e3-c40d-4168-bb93-7faf7d56c5a4",
+                    "cn": [
+                        {
+                            "type": "Ext.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "col-content"
+                                ],
+                                "html": "2014-01-08 09:00",
+                                "layout|flex": 1,
+                                "padding": "0 1em 0 0"
+                            },
+                            "designerId": "63c6cfa7-062d-422e-b09f-11a33dee4691"
+                        },
+                        {
+                            "type": "Ext.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "col-content-r"
+                                ],
+                                "html": "来源：武林盟主",
+                                "layout|flex": 1,
+                                "width": 40
+                            },
+                            "designerId": "fdfcd9f2-768b-4c08-b11e-3cb492fb9781"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "detail_content"
+                        ],
+                        "html": "<p>招聘会详情内容招聘会详情内容招聘会详情内容招聘会详情内容招聘会详情内容招聘会详情内容招聘会详情内容</p><p>招聘会详情内容招聘会详情内容招聘会详情内容招聘会详情内容招聘会详情内容招聘会详情内容招聘会详情内容</p><p>招聘会详情内容招聘会详情内容招聘会详情内容招聘会详情内容招聘会详情内容招聘会详情内容招聘会详情内容</p><p>招聘会详情内容招聘会详情内容招聘会详情内容招聘会详情内容招聘会详情内容招聘会详情内容招聘会详情内容</p>",
+                        "padding": "1em"
+                    },
+                    "designerId": "616e37f0-6993-4fd4-a079-254a76ed6675"
+                }
+            ]
+        }
+    ]
+}

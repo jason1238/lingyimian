@@ -1,0 +1,74 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ApplyLog"
+    },
+    "designerId": "82ac3ce7-69c5-453c-bffd-7248c570775e",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "applyId"
+            },
+            "designerId": "bf58eb06-cf1e-475f-83fa-f28efe2298be"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "applyTime"
+            },
+            "designerId": "8e8e4e99-6268-4ebd-89b3-72fd399a572b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "posName"
+            },
+            "designerId": "93d36b43-b0bc-4bdf-a743-2bf485bd64ec"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "enterpriseName"
+            },
+            "designerId": "e1f0b458-49af-4838-8df4-0babd98e2d26"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "applyCount"
+            },
+            "designerId": "cf495691-7fde-435a-bfb1-b393a14aa7c9"
+        }
+    ]
+}

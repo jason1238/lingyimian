@@ -1,0 +1,33 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[   \r",
+            "    {\r",
+            "        title:\"职位订阅\",\r",
+            "        desc:\"轻松订阅，好职位来找你\",\r",
+            "        target:\"ZJ01.view.PositionBook\"\r",
+            "    },\r",
+            "    {\r",
+            "        title:\"二维码简历\",\r",
+            "        desc:\"打造属于自己的二维码简历\",\r",
+            "        target:\"ZJ01.view.Resume\"\r",
+            "    },\r",
+            "    {\r",
+            "        title:\"日程提醒\",\r",
+            "        desc:\"参加招聘会、宣讲会，日程提醒，轻松面对\",\r",
+            "        target:\"ZJ01.view.Notice\"\r",
+            "    }    \r",
+            "]"
+        ],
+        "designer|userClassName": "hpNav",
+        "model": "hpNav",
+        "storeId": "hpNav"
+    },
+    "designerId": "41b772c9-5840-410a-9887-ab39e048a227"
+}

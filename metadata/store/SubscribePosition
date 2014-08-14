@@ -1,0 +1,49 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "        {\r",
+            "            \"positionId\": 1,\r",
+            "            \"positionName\": \"产品经理\",\r",
+            "            \"companyName\": \"上海创驰网络科技有限公司\",\r",
+            "            \"salary\": \"面议\",\r",
+            "            \"refreshiTime\": \"2014-02-17 16:17:00\"\r",
+            "        },{\r",
+            "            \"positionId\": 1,\r",
+            "            \"positionName\": \"产品经理\",\r",
+            "            \"companyName\": \"上海创驰网络科技有限公司\",\r",
+            "            \"salary\": \"面议\",\r",
+            "            \"refreshiTime\": \"2014-02-17 16:17:00\"\r",
+            "        },{\r",
+            "            \"positionId\": 1,\r",
+            "            \"positionName\": \"产品经理\",\r",
+            "            \"companyName\": \"上海创驰网络科技有限公司\",\r",
+            "            \"salary\": \"面议\",\r",
+            "            \"refreshiTime\": \"2014-02-17 16:17:00\"\r",
+            "        },{\r",
+            "            \"positionId\": 1,\r",
+            "            \"positionName\": \"产品经理\",\r",
+            "            \"companyName\": \"上海创驰网络科技有限公司\",\r",
+            "            \"salary\": \"面议\",\r",
+            "            \"refreshiTime\": \"2014-02-17 16:17:00\"\r",
+            "        },{\r",
+            "            \"positionId\": 1,\r",
+            "            \"positionName\": \"产品经理\",\r",
+            "            \"companyName\": \"上海创驰网络科技有限公司\",\r",
+            "            \"salary\": \"面议\",\r",
+            "            \"refreshiTime\": \"2014-02-17 16:17:00\"\r",
+            "        }\r",
+            "    ]"
+        ],
+        "designer|userClassName": "SubscribePosition",
+        "model": "SubscribePosition",
+        "storeId": "SubscribePosition"
+    },
+    "designerId": "2d753c63-a5b3-4fb0-a145-e9e411f228cc"
+}

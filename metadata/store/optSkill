@@ -1,0 +1,30 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "        {\r",
+            "            \"functionId\": 66,\r",
+            "            \"functionName\": \"计算机/互联网/通信/电子\",\r",
+            "            \"functionType\": 1,\r",
+            "            \"parentId\": 0\r",
+            "        },\r",
+            "        {\r",
+            "            \"functionId\": 66,\r",
+            "            \"functionName\": \"计算机/互联网/通信/电子\",\r",
+            "            \"functionType\": 1,\r",
+            "            \"parentId\": 0\r",
+            "        }\r",
+            "    ]"
+        ],
+        "designer|userClassName": "optSkill",
+        "model": "optSkill",
+        "storeId": "optSkill"
+    },
+    "designerId": "d308019b-25e5-4c7d-a540-890ac3158bbb"
+}

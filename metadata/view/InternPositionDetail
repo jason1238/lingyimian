@@ -1,0 +1,641 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userClassName": "InternPositionDetail",
+        "layout": "card"
+    },
+    "designerId": "6bf17e86-1f23-4add-a3ba-bb12f2105e0d",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "职位详情",
+                "ui": "zjs"
+            },
+            "designerId": "294ab380-a1c2-4afc-a0a5-20a9d09a39c4",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton24",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "35348a70-c0b2-4c91-955f-6d07e49f54c3",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap311111",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "0cb2adb1-65db-4333-b62e-1e2303066f62"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "",
+                "id": "i_p_d_scp",
+                "scrollable": "vertical"
+            },
+            "designerId": "766b1a9f-31b3-44be-b0f1-0cd86b4e5850",
+            "cn": [
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "detail_panel content_con"
+                        ],
+                        "id": "intern_pos_detail_line_1",
+                        "layout": "hbox",
+                        "padding": "0.2em 0.7em"
+                    },
+                    "designerId": "e4b1df84-d1a3-4683-b4ff-f19e8cffa8cb"
+                },
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "detail_content  content_con"
+                        ],
+                        "id": "intern_pos_detail_line_2",
+                        "padding": "1em"
+                    },
+                    "designerId": "33fa09b5-0519-429c-86f8-a73f942ee5a5"
+                }
+            ]
+        },
+        {
+            "type": "Ext.SegmentedButton",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-segment-btn-bottom"
+                ],
+                "defaults": [
+                    "{\r",
+                    "  flex:1\r",
+                    "  \r",
+                    "}"
+                ],
+                "docked": "bottom",
+                "height": 50
+            },
+            "designerId": "5e74aef5-b0f3-4ff8-9407-449daa6efc9b",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "btn-green"
+                        ],
+                        "iconCls": "zjs-icon-copy",
+                        "itemId": "btn_i_p_d_apply_job",
+                        "text": "申请"
+                    },
+                    "designerId": "94531520-b402-4b8a-9ce1-faf9a99b8829",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtn_i_p_d_apply_jobTap",
+                                "implHandler": [
+                                    "var _this = this;\r",
+                                    "\r",
+                                    "if( _this.resume_data && _this.resume_data.length>0 ){\r",
+                                    "  var x$pop_resume = _this.down('#pop_resume');\r",
+                                    "  x$pop_resume.show();\r",
+                                    "}else{\r",
+                                    "  toast('您尚未创建简历。请先去优渡网创建简历。');\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "2fdf6081-b6cb-47aa-95b5-a8f9d6163b43"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "btn-blue"
+                        ],
+                        "iconAlign": null,
+                        "iconCls": "zjs-icon-star",
+                        "itemId": "btn_i_p_d_add_fav",
+                        "text": "收藏"
+                    },
+                    "designerId": "3a96d7af-bf43-4f6a-a6bb-8235bbd02a5a",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtn_i_p_d_add_favTap",
+                                "implHandler": [
+                                    "var _this = this;\r",
+                                    "\r",
+                                    "\r",
+                                    "if( _this.page_data && _this.page_data.positionId ){\r",
+                                    "\r",
+                                    "  send_request( {\r",
+                                    "    api:'p_fav',\r",
+                                    "    method:'POST',\r",
+                                    "    params:{\r",
+                                    "      positionId:_this.page_data.positionId\r",
+                                    "    },\r",
+                                    "    success:function(result, request){\r",
+                                    "      //if( result.success ){\r",
+                                    "        switch( result.code ){\r",
+                                    "          case '0000':\r",
+                                    "            //成功\r",
+                                    "            if( result.alreadyCollect ){\r",
+                                    "              toast('您已收藏过该职位。');\r",
+                                    "            }else{\r",
+                                    "              toast('您已收藏成功。');\r",
+                                    "            }\r",
+                                    "            break;\r",
+                                    "          case '1001':\r",
+                                    "            //失败\r",
+                                    "            break;\r",
+                                    "          default:\r",
+                                    "            toast(\"errCode:\"+result.code);\r",
+                                    "            break;\r",
+                                    "        }\r",
+                                    "      //}else{\r",
+                                    "\r",
+                                    "      //}\r",
+                                    "    },\r",
+                                    "    fail:function(result){\r",
+                                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                                    "    },\r",
+                                    "    text:'加载中',\r",
+                                    "    silent:false,\r",
+                                    "    trigger:button,\r",
+                                    "    check_login:false\r",
+                                    "  } );\r",
+                                    "\r",
+                                    "}else{\r",
+                                    "  toast('暂无可收藏的职位。');\r",
+                                    "}\r",
+                                    "\r",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "2f6ed405-ae07-4ca6-8eed-98b77dca23e3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();"
+                ]
+            },
+            "designerId": "f06907d5-794f-426b-8b51-981a91988dcc"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "console.log(_p);\r",
+                    "\r",
+                    "if( _p && _p.positionId ){\r",
+                    "\r",
+                    "  send_request( {\r",
+                    "    api:'p_detail',\r",
+                    "    method:'POST',\r",
+                    "    params:{\r",
+                    "      pageSize:100,\r",
+                    "      positionId:_p.positionId\r",
+                    "    },\r",
+                    "    success:function(result, request){\r",
+                    "      if( result.success ){\r",
+                    "        switch( result.code ){\r",
+                    "          case '0000':\r",
+                    "            //成功\r",
+                    "            console.log(result);\r",
+                    "            _this.page_data = result.data;\r",
+                    "            _this.build_page(result.data);\r",
+                    "            break;\r",
+                    "          case '1001':\r",
+                    "            //失败\r",
+                    "            break;\r",
+                    "          default:\r",
+                    "            toast(\"errCode:\"+result.code);\r",
+                    "            break;\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "\r",
+                    "      }\r",
+                    "    },\r",
+                    "    fail:function(result){\r",
+                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "    },\r",
+                    "    text:'加载中',\r",
+                    "    silent:false,\r",
+                    "    trigger:_this,\r",
+                    "    check_login:true\r",
+                    "  } );\r",
+                    "\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "cd7221a8-9969-4222-abac-1ff5353ef1a4"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "build_page",
+                "implHandler": [
+                    "var x$line1 = x$('intern_pos_detail_line_1');\r",
+                    "var x$line2 = x$('intern_pos_detail_line_2');\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "var date_ra = parse_date(data.refreshTime,'date_');\r",
+                    "jQuery.extend( data,date_ra );\r",
+                    "\r",
+                    "get_enum(function(enum_da){\r",
+                    "  var educationType = enum_da.educationType;\r",
+                    "\r",
+                    "  var edu_code2name = {};\r",
+                    "\r",
+                    "  for( var i=0;i<educationType.length;i++ ){\r",
+                    "    edu_code2name[educationType[i].code] = educationType[i].name;\r",
+                    "  }\r",
+                    "\r",
+                    "  var line1_html = ' <h4>职位名称：'+(data.positionName||'暂无')+'</h4> <ul class=\"c2x c2x_fit\">   <li>招聘人数：'+(data.hirNumber||'暂无')+'</li>   <li>薪资待遇：'+(data.salary||'暂无')+'</li>   <li>发布时间：'+(data.date_fullyeardate||'暂无')+'</li>   <li>学历要求：'+(data.education?edu_code2name[data.education]:'暂无')+'</li>   <li>工作经验：'+(data.workExp?data.workExp+'年':'暂无')+'</li>   <li>工作地点：'+(data.areaName||'暂无')+'</li> </ul>';\r",
+                    "  var line2_html = ' <h4>职位要求</h4> <p>'+(data.description||'暂无')+'</p>';\r",
+                    "\r",
+                    "  x$line1.setHtml(line1_html);\r",
+                    "  x$line2.setHtml(line2_html);\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "  refresh_scroll(x$('i_p_d_scp'));\r",
+                    "\r",
+                    "\r",
+                    "});\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "var x$pop_resume_list = _this.down('#pop_resume_list');\r",
+                    "\r",
+                    "\r",
+                    "send_request( {\r",
+                    "  api:'resume_list',\r",
+                    "  method:'POST',\r",
+                    "  params:{\r",
+                    "    pageSize:100\r",
+                    "  },\r",
+                    "  success:function(result, request){\r",
+                    "    if( result.success ){\r",
+                    "      switch( result.code ){\r",
+                    "        case '0000':\r",
+                    "          //成功\r",
+                    "          console.log(result);\r",
+                    "          _this.resume_data = result.data;\r",
+                    "          if( result.data && result.data.length>0 ){\r",
+                    "            var fe_da = [];\r",
+                    "            for( var i=0;i<result.data.length;i++ ){\r",
+                    "              fe_da.push({\r",
+                    "                text:result.data[i].resumeTitle,\r",
+                    "                value:result.data[i].resumeId\r",
+                    "              });\r",
+                    "            }\r",
+                    "\r",
+                    "\r",
+                    "            set_store_data(x$pop_resume_list,fe_da);\r",
+                    "\r",
+                    "          }\r",
+                    "          break;\r",
+                    "        case '1001':\r",
+                    "          //失败\r",
+                    "          break;\r",
+                    "        default:\r",
+                    "          toast(\"errCode:\"+result.code);\r",
+                    "          break;\r",
+                    "      }\r",
+                    "    }else{\r",
+                    "\r",
+                    "    }\r",
+                    "  },\r",
+                    "  fail:function(result){\r",
+                    "    toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "  },\r",
+                    "  text:'加载中',\r",
+                    "  silent:false,\r",
+                    "  trigger:_this,\r",
+                    "  check_login:true\r",
+                    "} );\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "7372eea2-c423-491a-9b73-8cbc16eb6c9f"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": true,
+                "height": 250,
+                "hidden": true,
+                "itemId": "pop_resume",
+                "modal": true,
+                "width": 300
+            },
+            "designerId": "144f283d-69c8-4fda-9750-3955da296150",
+            "cn": [
+                {
+                    "type": "Ext.TitleBar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "top",
+                        "title": "选择简历"
+                    },
+                    "designerId": "927cc31c-d82e-4a6a-9b29-01bc176e202a",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "right",
+                                "itemId": "mybutton42",
+                                "text": "取消"
+                            },
+                            "designerId": "c106651a-7440-43dd-9efd-05e53706eca6",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMybutton42Tap1",
+                                        "implHandler": [
+                                            "button.up('#pop_resume').hide();"
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "805e5c37-4913-415a-9bdd-71fce7fe2466"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disableSelection": true,
+                        "height": 200,
+                        "itemId": "pop_resume_list",
+                        "width": 300
+                    },
+                    "designerId": "8522b29b-bdd8-4646-b4de-695f348ee932",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div>{text}</div>"
+                                ]
+                            },
+                            "designerId": "17e99517-b590-4609-8181-bf1b7f9e280e"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPop_resume_listItemTap1",
+                                "implHandler": [
+                                    "var _this = this;\r",
+                                    "\r",
+                                    "var resume_id = window.resume_private_id;\r",
+                                    "\r",
+                                    "var newValue = record.data.value;\r",
+                                    "\r",
+                                    "if( newValue == 0 ){\r",
+                                    "  toast('请选择需要申请的简历。');\r",
+                                    "}else{\r",
+                                    "\r",
+                                    "  if( _this.page_data && _this.page_data.positionId ){\r",
+                                    "\r",
+                                    "    send_request( {\r",
+                                    "      api:'p_apply',\r",
+                                    "      method:'POST',\r",
+                                    "      params:{\r",
+                                    "        positionId:_this.page_data.positionId,\r",
+                                    "        resumeId:newValue\r",
+                                    "      },\r",
+                                    "      success:function(result, request){\r",
+                                    "        //if( result.success ){\r",
+                                    "          switch( result.code ){\r",
+                                    "            case '0000':\r",
+                                    "              //成功\r",
+                                    "              if( result.alreadyApply ){\r",
+                                    "                toast('您一周之内已经申请过该职位。');\r",
+                                    "              }else{\r",
+                                    "                toast('您的职位申请已提交。');\r",
+                                    "              }\r",
+                                    "              break;\r",
+                                    "            case '1001':\r",
+                                    "              //失败\r",
+                                    "              break;\r",
+                                    "            default:\r",
+                                    "              toast(\"errCode:\"+result.code);\r",
+                                    "              break;\r",
+                                    "          }\r",
+                                    "        //}else{\r",
+                                    "\r",
+                                    "        //}\r",
+                                    "      },\r",
+                                    "      fail:function(result){\r",
+                                    "        toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                                    "      },\r",
+                                    "      text:'加载中',\r",
+                                    "      silent:false,\r",
+                                    "      trigger:_this,\r",
+                                    "      check_login:false\r",
+                                    "    } );\r",
+                                    "\r",
+                                    "  }else{\r",
+                                    "    toast('暂无可申请的职位。');\r",
+                                    "  }\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "var x$pop_resume = _this.down('#pop_resume');\r",
+                                    "x$pop_resume.hide();\r",
+                                    "\r",
+                                    ""
+                                ],
+                                "name": "itemtap"
+                            },
+                            "designerId": "faf37ea0-5dbd-4148-87fa-84a27936242d"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

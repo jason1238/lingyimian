@@ -1,0 +1,387 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ResumeCenter",
+        "layout": "fit"
+    },
+    "designerId": "946ddaac-83d2-4d73-b609-2aa614f5cb9a",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-blue"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "简历中心",
+                "ui": "zjs"
+            },
+            "designerId": "4d9a5c87-66ee-4bd2-aae8-2a538fe00b78",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton24",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "05776581-f909-48a3-86f9-f9b23ad99b9e",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap1",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "65a8ef82-2337-42c8-b856-a7a854e45806"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": false,
+                "itemId": "has_data",
+                "layout": "fit"
+            },
+            "designerId": "54c4258f-b967-452c-996d-0996ff6e8919",
+            "cn": [
+                {
+                    "type": "Ext.dataview.DataView",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "zjs-listview-interview-notice"
+                        ],
+                        "disableSelection": true,
+                        "itemId": "list",
+                        "minHeight": 180,
+                        "scrollable": "vertical"
+                    },
+                    "designerId": "07145741-0fcd-4990-a6fc-93cece83911d",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=\"li\">\r",
+                                    "  <div class=\"c\">\r",
+                                    "    <h4>{resumeTitle}</h4>\r",
+                                    "    <p>  <span class=\"fl\"><em>完成度：{resumeComplete}%</em></span> <span class=\"fr\"><em></em></span> </p>\r",
+                                    "  </div>\r",
+                                    "  <div class=\"i\"> <span></span> </div>\r",
+                                    "</div>\r",
+                                    ""
+                                ]
+                            },
+                            "designerId": "01e8c59d-6c6e-46c6-924e-f091a7b8cea3"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMydataview2ItemTap11",
+                                "implHandler": [
+                                    "var item_data = record.data;\r",
+                                    "change_page('ResumeCenterDetail',dataview,item_data);"
+                                ],
+                                "name": "itemtap"
+                            },
+                            "designerId": "36a8b1fd-caf3-4f63-b621-3230f61b3dda"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "itemId": "no_data",
+                "scrollable": "vertical"
+            },
+            "designerId": "a121a6a3-3d0f-4594-93b9-6c1670cc7790",
+            "cn": [
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "result_title"
+                        ],
+                        "html": "  您还未创建简历，请去优渡网站创建您的简历。网址：www.eyoudu.com",
+                        "padding": 10
+                    },
+                    "designerId": "e3b06b37-2316-4fc9-a7f8-32c358d428bd"
+                },
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "rc_nodata_qrcode_resume"
+                        ],
+                        "html": "  在参加招聘会时，您还带纸张打印的简历吗？OUT了！您只需让招聘官扫一扫您的二维码简历，对方就看到您的简历了（前提是你先要创建简历哦！）"
+                    },
+                    "designerId": "79b81523-e664-409c-8426-cadfe32cc9f6"
+                },
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 180,
+                        "layout": "hbox",
+                        "margin": "20px auto",
+                        "width": 213
+                    },
+                    "designerId": "74bf2a6f-4b1b-4a75-9ef2-439773b1c2ce",
+                    "cn": [
+                        {
+                            "type": "Ext.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 180,
+                                "width": 33
+                            },
+                            "designerId": "e86a6645-27c3-4d8b-ac7c-014ab48b5422",
+                            "cn": [
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": 180,
+                                        "src": "images/qr_code_title.png",
+                                        "width": 33
+                                    },
+                                    "designerId": "f902b3b9-5d4f-4ddf-9cfe-781e3c3f50fe"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 180,
+                                "width": 180
+                            },
+                            "designerId": "a0fa2889-7174-4ac2-a0ce-fea72553923d",
+                            "cn": [
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": 180,
+                                        "id": "resume_center_qr_code2",
+                                        "src": "images/qr_code.jpg",
+                                        "width": 180
+                                    },
+                                    "designerId": "991b4152-dde8-4d66-8ea5-03941d53ac17"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();"
+                ]
+            },
+            "designerId": "5efbdaef-1b88-463d-8c82-6620ffc892ec"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "//if( _p && _p.keywords ){\r",
+                    "\r",
+                    "  send_request( {\r",
+                    "    api:'resume_list',\r",
+                    "    method:'POST',\r",
+                    "    params:{\r",
+                    "      //pageSize:100,\r",
+                    "    },\r",
+                    "    success:function(result, request){\r",
+                    "      if( result.success ){\r",
+                    "        switch( result.code ){\r",
+                    "          case '0000':\r",
+                    "            //成功\r",
+                    "            //console.log(result);\r",
+                    "            _this.build_page(result.data);\r",
+                    "            break;\r",
+                    "          case '1001':\r",
+                    "            //失败\r",
+                    "            break;\r",
+                    "          default:\r",
+                    "            toast(\"errCode:\"+result.code);\r",
+                    "            break;\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "\r",
+                    "      }\r",
+                    "    },\r",
+                    "    fail:function(result){\r",
+                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "    },\r",
+                    "    text:'加载中',\r",
+                    "    silent:false,\r",
+                    "    trigger:_this,\r",
+                    "    check_login:true\r",
+                    "  } );\r",
+                    "\r",
+                    "//}\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "f72661d4-a6da-4c94-89a3-b99b05f0a925"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "build_page",
+                "implHandler": [
+                    "\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "var x$has_data = i$('has_data',_this);\r",
+                    "var x$no_data = i$('no_data',_this);\r",
+                    "\r",
+                    "var x$slider = i$('slider',_this);\r",
+                    "\r",
+                    "\r",
+                    "var x$list = i$('list',_this);\r",
+                    "\r",
+                    "console.log(x$list);\r",
+                    "\r",
+                    "var $page = j$(_this);\r",
+                    "\r",
+                    "if( data && data.length ){\r",
+                    "\r",
+                    "  set_store_data( x$list,data );\r",
+                    "\r",
+                    "  x$has_data.show();\r",
+                    "  x$no_data.hide();\r",
+                    "}else{\r",
+                    "  x$has_data.hide();\r",
+                    "  x$no_data.show();\r",
+                    "}"
+                ]
+            },
+            "designerId": "5a163066-eaec-42a2-b4a9-22300d340c28"
+        }
+    ]
+}

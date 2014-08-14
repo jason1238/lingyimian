@@ -1,0 +1,44 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "        {\r",
+            "            \"subscriptionId\": 1,\r",
+            "            \"searchName\": \"上海+产品经理\",\r",
+            "            \"todayPositionCount\": 2,\r",
+            "            \"positionCount\": 99\r",
+            "        },{\r",
+            "            \"subscriptionId\": 1,\r",
+            "            \"searchName\": \"上海+产品经理\",\r",
+            "            \"todayPositionCount\": 2,\r",
+            "            \"positionCount\": 99\r",
+            "        },{\r",
+            "            \"subscriptionId\": 1,\r",
+            "            \"searchName\": \"上海+产品经理\",\r",
+            "            \"todayPositionCount\": 2,\r",
+            "            \"positionCount\": 99\r",
+            "        },{\r",
+            "            \"subscriptionId\": 1,\r",
+            "            \"searchName\": \"上海+产品经理\",\r",
+            "            \"todayPositionCount\": 2,\r",
+            "            \"positionCount\": 99\r",
+            "        },{\r",
+            "            \"subscriptionId\": 1,\r",
+            "            \"searchName\": \"上海+产品经理\",\r",
+            "            \"todayPositionCount\": 2,\r",
+            "            \"positionCount\": 99\r",
+            "        }\r",
+            "    ]"
+        ],
+        "designer|userClassName": "Subscription",
+        "model": "Subscription",
+        "storeId": "Subscription"
+    },
+    "designerId": "34987d88-85dc-4589-ad5d-727efb7f3e76"
+}

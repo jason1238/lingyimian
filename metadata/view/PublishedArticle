@@ -1,0 +1,163 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userClassName": "PublishedArticle",
+        "layout": "fit"
+    },
+    "designerId": "c455461d-7432-4933-a2c7-416f54cfd40c",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-blue"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "我的发布",
+                "ui": "zjs"
+            },
+            "designerId": "0a050549-4964-4f41-b398-223c4e046988",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "476e719d-2788-460f-a9f8-ae0ffe6c5ca0",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "67824f14-ab9c-4468-92c9-b54bed79029d"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-tab-top"
+                ]
+            },
+            "designerId": "1b07a8d2-c8f7-4560-b9a5-c77207c35e7b",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "fit",
+                        "scrollable": "vertical",
+                        "title": "我发布的文章"
+                    },
+                    "designerId": "aec3b477-56ed-41d8-ad9c-194483ffc40b",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "designerId": "8deff3c4-2aa7-4a3d-b5b4-0b3dc37e265f",
+                            "masterInstanceId": "fc4977d3-8a78-495b-84c8-6246c7a5daf7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "fit",
+                        "scrollable": "vertical",
+                        "title": "我参与的评论"
+                    },
+                    "designerId": "d64c052a-ab48-4291-830e-31473b8d363d",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "designerId": "41af27cc-0f0c-4346-8385-a2a88ac53d6c",
+                            "masterInstanceId": "a7c87b6d-448e-4709-b596-ab0f01cc2ae8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Bar",
+                    "reference": {
+                        "name": "tabBar",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "zjs-bg-blue"
+                        ],
+                        "defaults": [
+                            "{flex:1}"
+                        ],
+                        "designer|uiInterfaceName": "zjs",
+                        "docked": "top",
+                        "ui": "zjs"
+                    },
+                    "designerId": "e6369b56-d74b-4406-8c9a-78da4d91d323"
+                }
+            ]
+        }
+    ]
+}

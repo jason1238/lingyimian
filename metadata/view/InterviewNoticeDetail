@@ -1,0 +1,259 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userClassName": "InterviewNoticeDetail",
+        "layout": "card"
+    },
+    "designerId": "10d24d2e-f971-42a0-ae93-6292f2eec06e",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "面试通知",
+                "ui": "zjs"
+            },
+            "designerId": "914c5798-dfbc-4114-a55b-c949b2bf5ee3",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "933104eb-5c01-43dc-9e5b-276efb5b2ec5",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "8d57c312-9ec9-4b64-80f1-c4d695d3ad51"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "c_t_d_scp1",
+                "scrollable": "vertical"
+            },
+            "designerId": "89b9ce99-b73e-4450-b1fa-50a3d4589e3f",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "article-headline"
+                        ],
+                        "html": "载入中，请稍候...",
+                        "id": "interview-notice-detail-title",
+                        "padding": "0.5em",
+                        "style": "text-align:center;font-size:20px;"
+                    },
+                    "designerId": "88dcd23b-3c9e-4cf2-80db-315b67e91245"
+                },
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "detail_panel"
+                        ],
+                        "layout": "hbox",
+                        "padding": "0.2em 0.5em 0.2em 0.8em"
+                    },
+                    "designerId": "bb3a77c8-d15c-4278-b81c-b73502229bc0",
+                    "cn": [
+                        {
+                            "type": "Ext.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "col-content"
+                                ],
+                                "id": "interview-notice-detail-info",
+                                "layout|flex": 1,
+                                "padding": "0 1em 0 0"
+                            },
+                            "designerId": "97dd9f52-58f9-4c66-b6a7-349b1b9bf821"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "detail_content"
+                        ],
+                        "id": "interview-notice-detail-desc",
+                        "padding": "1em"
+                    },
+                    "designerId": "ce1537c7-b001-4b18-b903-d8368eaac60c"
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();"
+                ]
+            },
+            "designerId": "6b011523-909a-400e-abd3-fd266c6adfee"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "var x$content = x$('interview_detail_content');\r",
+                    "\r",
+                    "\r",
+                    "x$title = x$('interview-notice-detail-title');\r",
+                    "x$info = x$('interview-notice-detail-info');\r",
+                    "x$desc = x$('interview-notice-detail-desc');\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "if( _p && _p.auditionId )\r",
+                    "\r",
+                    "\r",
+                    "send_request( {\r",
+                    "  api:'msg.interview.detail',\r",
+                    "  method:'POST',\r",
+                    "  params:{\r",
+                    "    auditionId:_p.auditionId,\r",
+                    "    pageSize:100\r",
+                    "  },\r",
+                    "  success:function(result, request){\r",
+                    "    \r",
+                    "    \r",
+                    "    console.log( result );\r",
+                    "    \r",
+                    "    \r",
+                    "    if( result.success ){\r",
+                    "      switch( result.code ){\r",
+                    "        case '0000':\r",
+                    "          \r",
+                    "          \r",
+                    "          console.log(x$desc);\r",
+                    "          \r",
+                    "          \r",
+                    "          console.log( result.data.auditionContent );\r",
+                    "          \r",
+                    "          \r",
+                    "          //成功\r",
+                    "          x$title.setHtml(result.data.companyName);\r",
+                    "          x$info.setHtml('<p>面试职位：'+result.data.positionName+'</p>'+'<p>面试时间：'+result.data.auditionTime+'</p>');\r",
+                    "          x$desc.setHtml(result.data.auditionContent);\r",
+                    "\r",
+                    "          refresh_scroll(x$desc);\r",
+                    "\r",
+                    "          break;\r",
+                    "        case '1001':\r",
+                    "          //失败\r",
+                    "          break;\r",
+                    "        default:\r",
+                    "          toast(\"errCode:\"+result.code);\r",
+                    "          break;\r",
+                    "      }\r",
+                    "    }else{\r",
+                    "\r",
+                    "    }\r",
+                    "  },\r",
+                    "  fail:function(result){\r",
+                    "    toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "  },\r",
+                    "  text:'加载中',\r",
+                    "  silent:false,\r",
+                    "  trigger:_this,\r",
+                    "  check_login:true\r",
+                    "} );\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "066fab33-2e16-4c2a-a56f-c35dd49172ec"
+        }
+    ]
+}

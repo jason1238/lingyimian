@@ -1,0 +1,89 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userAlias": "acstaff",
+        "designer|userClassName": "AcStaff",
+        "layout": "card"
+    },
+    "designerId": "bb38af95-ad66-4d99-8681-a7c6716edb57",
+    "cn": [
+        {
+            "type": "Ext.dataview.DataView",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-listview-topic-reply zjs-listview-topic-reply-no-badge"
+                ],
+                "disableSelection": true,
+                "itemId": "mydataview3",
+                "minHeight": 180,
+                "scrollable": "vertical",
+                "store": "TopicReply"
+            },
+            "designerId": "8c383004-a57d-4aa1-91aa-e1e0c3566175",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=\"li\">\r",
+                            "  <div class=\"c\">\r",
+                            "    <h4>{title}</h4>\r",
+                            "    <p> <span class=\"fl\">评论：<em>20</em></span> <span class=\"fr\"><em>2014-01-14</em></span> </p>\r",
+                            "  </div>\r",
+                            "  <div class=\"i\"> <span></span> </div>\r",
+                            "  <tpl if=\"false\">\r",
+                            "  <div class=\"b\">\r",
+                            "    <span>{badge}</span>\r",
+                            "  </div>\r",
+                            "  </tpl>\r",
+                            "</div>\r",
+                            ""
+                        ]
+                    },
+                    "designerId": "1b2991b7-9aa1-4760-ae7e-28fa04227921"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMydataview2ItemTap1",
+                        "implHandler": [
+                            "\r",
+                            "var item_data = record.data;\r",
+                            "\r",
+                            "\r",
+                            "//var page = Ext.create('ZJ02.view.InterviewNoticeDetail', {fullscreen: true});\r",
+                            "//dataview.up('navigationview').push(page);\r",
+                            ""
+                        ],
+                        "name": "itemtap"
+                    },
+                    "designerId": "5d187065-b257-4554-b71d-0448310cf9bd"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "App"
+    },
+    "designerId": "27a00507-b7cb-4715-bb53-26053166da76",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "btnBootEnter",
+                "designer|targetType": "Ext.Button",
+                "fn": "onBtnBootEnterTap",
+                "implHandler": [
+                    "\r",
+                    "//Ext.get('view_boot_slider').hide();\r",
+                    "var page_home = Ext.create('ZJ02.view.TabFrame', {fullscreen: true});\r",
+                    "Ext.Viewport.animateActiveItem(page_home,{ type: 'fade', direction: 'down' });"
+                ],
+                "name": "tap"
+            },
+            "designerId": "e2ae1aee-b4f4-4bf8-890e-25ea9a87753e"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "btnBootEnter",
+                "selector": "#btn_boot_slider_enter"
+            },
+            "designerId": "4989b0a8-8115-4f24-8a98-2ca258290a9b"
+        }
+    ]
+}

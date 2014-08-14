@@ -1,0 +1,13 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js5",
+        "url": "js/jquery-ui.min.js"
+    },
+    "designerId": "431eb238-2e9a-407e-ae70-604455c5678f"
+}

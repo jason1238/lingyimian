@@ -1,0 +1,30 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ResumeItem",
+        "groupField": "group",
+        "model": "ResumeItem",
+        "storeId": "ResumeItem"
+    },
+    "designerId": "e181b38a-32c0-45c4-b426-e24ab8b10de8",
+    "cn": [
+        {
+            "type": "Ext.util.Grouper",
+            "reference": {
+                "name": "grouper",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "group_sort",
+                "sortProperty": "group_sort"
+            },
+            "designerId": "28a450ea-d753-4368-a8fd-3af52c5b9505"
+        }
+    ]
+}

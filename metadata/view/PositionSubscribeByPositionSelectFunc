@@ -1,0 +1,199 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "PositionSubscribeByPositionSelectFunc",
+        "designer|userClassName": "PositionSubscribeByPositionSelectFunc",
+        "layout": "fit"
+    },
+    "designerId": "fc891392-273e-40db-96ad-91a632c8a284",
+    "cn": [
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "pos_sub_by_pos_pop_nlist_func",
+                "layout": "fit",
+                "modal": true
+            },
+            "designerId": "a37cec20-4767-4534-9b94-4568b1e5bdeb",
+            "cn": [
+                {
+                    "type": "Ext.dataview.NestedList",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "pos_sub_by_pos_nlist_func",
+                        "itemId": "mynestedlist",
+                        "store": "NestedDataFunction",
+                        "title": "职能"
+                    },
+                    "designerId": "da6a2602-990a-41ff-b126-ddc6dbf1ef75",
+                    "cn": [
+                        {
+                            "type": "Ext.TitleBar",
+                            "reference": {
+                                "name": "toolbar",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "a5c61f33-93e1-4ad6-a468-077b16f3fe9b",
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "align": "right",
+                                        "docked": null,
+                                        "itemId": "mybutton74",
+                                        "text": "取消"
+                                    },
+                                    "designerId": "57f85da5-f50c-4d5f-b0b0-543cca1c9d9f",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMybutton74Tap",
+                                                "implHandler": [
+                                                    "var x$text = x$('pos_sub_by_pos_fe_func');\r",
+                                                    "var x$pop = x$('pos_sub_by_pos_pop_nlist_func');\r",
+                                                    "\r",
+                                                    "x$text.setValue('');\r",
+                                                    "set_data(x$text,'id',null);\r",
+                                                    "\r",
+                                                    "this.up('navigationview').pop();\r",
+                                                    ""
+                                                ],
+                                                "name": "tap"
+                                            },
+                                            "designerId": "b18f652e-6c44-4693-b80c-743623fdf64f"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPos_sub_by_pos_nlist_funcLeafItemTap",
+                                "implHandler": [
+                                    "var x$text = x$('pos_sub_by_pos_fe_func');\r",
+                                    "var x$pop = x$('pos_sub_by_pos_pop_nlist_func');\r",
+                                    "\r",
+                                    "var data = record.data;\r",
+                                    "\r",
+                                    "x$text.setValue(data.record.functionName);\r",
+                                    "set_data(x$text,'id',data.record.functionId);\r",
+                                    "this.up('navigationview').pop();\r",
+                                    ""
+                                ],
+                                "name": "leafitemtap"
+                            },
+                            "designerId": "eacaaa1e-597d-4c07-af5e-7a1adde9de30"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "init_func",
+                "implHandler": [
+                    "var x$nlist = x$('pos_sub_by_pos_nlist_func');\r",
+                    "\r",
+                    "var n_data = make_nested_data(data,0,'functionId','functionName');\r",
+                    "set_store_data( x$nlist,n_data );\r",
+                    ""
+                ]
+            },
+            "designerId": "091b67ac-b46a-418a-91cd-61b1eda87d63"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "send_request( {\r",
+                    "  api:'opt_functions',\r",
+                    "  method:'POST',\r",
+                    "  params:{\r",
+                    "    pageSize:100,\r",
+                    "    parentId:_G._cityId\r",
+                    "  },\r",
+                    "  success:function(result, request){\r",
+                    "    if( result.success ){\r",
+                    "      switch( result.code ){\r",
+                    "        case '0000':\r",
+                    "          //成功\r",
+                    "          _this.init_func(result.data);\r",
+                    "          break;\r",
+                    "        case '1001':\r",
+                    "          //失败\r",
+                    "          break;\r",
+                    "        default:\r",
+                    "          toast(\"errCode:\"+result.code);\r",
+                    "          break;\r",
+                    "      }\r",
+                    "    }else{\r",
+                    "\r",
+                    "    }\r",
+                    "  },\r",
+                    "  fail:function(result){\r",
+                    "    toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "  },\r",
+                    "  text:'加载中',\r",
+                    "  silent:false,\r",
+                    "  trigger:_this,\r",
+                    "  check_login:false,\r",
+                    "  group:'p_s_b_p'\r",
+                    "} );\r",
+                    ""
+                ]
+            },
+            "designerId": "6cd1f545-2fa4-4912-b46e-f11a3b71a010"
+        }
+    ]
+}

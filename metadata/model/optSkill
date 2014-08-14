@@ -1,0 +1,62 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "optSkill"
+    },
+    "designerId": "55e78a80-599a-415a-b415-3f99e4029db5",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "functionId"
+            },
+            "designerId": "707bb9cb-aa08-46f6-a0fc-ab23f1f1bdc7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "functionName"
+            },
+            "designerId": "20bf4c3d-39fc-466a-a04a-ea7ce1db6e0a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "functionType"
+            },
+            "designerId": "64807db2-cc96-4149-a2e3-b94a84eb6602"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "parentId"
+            },
+            "designerId": "8acdf230-49de-437b-8788-5b2662ab25af"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[\r",
+            "        {\r",
+            "            \"vocationalId\": 1,\r",
+            "            \"positionName\": \"技能1\",\r",
+            "            \"positionId\": 1,\r",
+            "            \"positionMaster\": 1,\r",
+            "            \"positionMasterName\": \"熟练\"\r",
+            "        },\r",
+            "        {\r",
+            "            \"vocationalId\": 1,\r",
+            "            \"positionName\": \"技能1\",\r",
+            "            \"positionId\": 1,\r",
+            "            \"positionMaster\": 1,\r",
+            "            \"positionMasterName\": \"熟练\"\r",
+            "        }\r",
+            "    ]"
+        ],
+        "designer|userClassName": "optFunctions",
+        "model": "optFunctions",
+        "storeId": "optFunctions"
+    },
+    "designerId": "30878f7a-e9cc-45f4-9956-a1f2dccee1f9"
+}

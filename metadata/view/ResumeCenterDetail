@@ -1,0 +1,393 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ResumeCenterDetail",
+        "layout": "fit"
+    },
+    "designerId": "4fd61fd7-4b28-4bd0-9661-b2f85edfa2b2",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-blue"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "简历中心",
+                "ui": "zjs"
+            },
+            "designerId": "b6d296d9-f628-42de-8796-c83b29d8255b",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton24",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "61a1304f-bcc6-437d-a9ab-b36a9b330c29",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap1",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "974d8a60-091e-478a-861c-7e7c226378cd"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": false,
+                "itemId": "has_data",
+                "layout": "fit"
+            },
+            "designerId": "7c8207ac-4852-4a14-8657-d065ef7acab0",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "con"
+                    },
+                    "designerId": "1a6cc9c8-d391-495c-a2a3-673bc003e691"
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();"
+                ]
+            },
+            "designerId": "97ebddcb-bb96-4697-9a79-1cc5b3d61de1"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "_this.build_page(_p);"
+                ]
+            },
+            "designerId": "124dbe97-d72d-44d3-aa15-5279ca7978e5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "build_page",
+                "implHandler": [
+                    "\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "var x$con = i$('con',_this);\r",
+                    "\r",
+                    "_this.build_data = data;\r",
+                    "\r",
+                    "var item = data;\r",
+                    "\r",
+                    "_this.down('titlebar').setTitle(item.resumeTitle);\r",
+                    "\r",
+                    "\r",
+                    "var id_sufix = '_'+item.resumeId+'_'+_this.getId();\r",
+                    "\r",
+                    "\r",
+                    "var html = '<div class=\"resume_slide\">'+\r",
+                    "  //'<div class=\"title zjs-bg-blue\">'+item.resumeTitle+'</div>'+\r",
+                    "  '<div class=\"btns\">'+\r",
+                    "  '<a href=\"javascript:;\" class=\"btn_refresh\" data-id=\"'+item.resumeId+'\" id=\"btn_refresh'+id_sufix+'\"><i></i>刷新简历</a>'+\r",
+                    "  '<a href=\"javascript:;\" class=\"btn_preview\" data-id=\"'+item.resumeId+'\" id=\"btn_preview'+id_sufix+'\"><i></i>预览简历</a>'+\r",
+                    "  '<a href=\"javascript:;\" class=\"btn_private\" data-id=\"'+item.resumeId+'\" id=\"btn_private'+id_sufix+'\"><i></i>隐私设置</a>'+\r",
+                    "  '<a href=\"javascript:;\" class=\"btn_delete\" data-id=\"'+item.resumeId+'\" id=\"btn_delete'+id_sufix+'\"><i></i>删除简历</a>'+\r",
+                    "  '</div>'+\r",
+                    "  '<div class=\"qr_code\">'+\r",
+                    "  '<div class=\"box\">'+\r",
+                    "  '<div class=\"side\"></div>'+\r",
+                    "  '<div class=\"code\"><img src=\"'+item.qrCodePath+'\" width=\"180\" height=\"180\" alt=\"\" /></div>'+\r",
+                    "  '</div>'+\r",
+                    "  '</div>'+\r",
+                    "  '</div>';\r",
+                    "\r",
+                    "x$con.setHtml(html);\r",
+                    "\r",
+                    "\r",
+                    "Ext.get( 'btn_refresh'+id_sufix ).on({'tap':function(){\r",
+                    "  var $this_btn = j$(this);\r",
+                    "  resume_refresh( $this_btn.data('id'),_this.getId() );\r",
+                    "  //toast($this_btn.data('id'));\r",
+                    "}});\r",
+                    "\r",
+                    "Ext.get( 'btn_preview'+id_sufix ).on({'tap':function(){\r",
+                    "  var $this_btn = j$(this);\r",
+                    "  resume_preview( $this_btn.data('id'),_this.getId() );\r",
+                    "  //toast($this_btn.data('id'));\r",
+                    "}});\r",
+                    "\r",
+                    "\r",
+                    "Ext.get( 'btn_private'+id_sufix ).on({'tap':function(){\r",
+                    "  var $this_btn = j$(this);\r",
+                    "  \r",
+                    "  var x$pop_private = i$('pop_private',_this);\r",
+                    "  x$pop_private.show();\r",
+                    "  //resume_private( $this_btn.data('id'),_this.getId() );\r",
+                    "  //toast($this_btn.data('id'));\r",
+                    "}});\r",
+                    "\r",
+                    "\r",
+                    "Ext.get( 'btn_delete'+id_sufix ).on({'tap':function(){\r",
+                    "  var $this_btn = j$(this);\r",
+                    "  resume_delete( $this_btn.data('id'),_this.getId() );\r",
+                    "  //toast($this_btn.data('id'));\r",
+                    "}});\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "d482e614-0ccd-4489-9bdd-38f7d4a20ada"
+        },
+        {
+            "type": "Ext.field.Hidden",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "resume_center_resume_id1"
+            },
+            "designerId": "0670aeb2-8b49-4779-af3f-a9d3108e46cd"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": true,
+                "height": 150,
+                "hidden": true,
+                "itemId": "pop_private",
+                "modal": true,
+                "width": 300
+            },
+            "designerId": "c28aec6f-fdfd-4a88-897e-fe26c2eaeb1b",
+            "cn": [
+                {
+                    "type": "Ext.TitleBar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "top",
+                        "title": "隐私设置"
+                    },
+                    "designerId": "21d1b646-1d2f-4b7a-8838-2db4bcbad854",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "right",
+                                "itemId": "mybutton42",
+                                "text": "取消"
+                            },
+                            "designerId": "2fc7b0e9-763c-4569-bf4d-4d585ea499e1",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMybutton42Tap11",
+                                        "implHandler": [
+                                            "button.up('#pop_private').hide();"
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "22954b67-d35c-4f32-8a59-316c874e8995"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "data": [
+                            "[\r",
+                            "  {text: '对所有公开',  value: '2'},\r",
+                            "  {text: '完全保密',  value: '1'}\r",
+                            "]"
+                        ],
+                        "disableSelection": true,
+                        "height": 100,
+                        "itemId": "pop_resume_list",
+                        "width": 300
+                    },
+                    "designerId": "d983d5ea-0cb4-4b39-855e-9b665f83bd5d",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div>{text}</div>"
+                                ]
+                            },
+                            "designerId": "9d69eb1e-4c77-419a-9d13-ee8971a7c03e"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onPop_resume_listItemTap11",
+                                "implHandler": [
+                                    "var _this = this;\r",
+                                    "\r",
+                                    "\r",
+                                    "var resume_id = _this.build_data.resumeId;\r",
+                                    "\r",
+                                    "var newValue = record.data.value;\r",
+                                    "\r",
+                                    "send_request( {\r",
+                                    "\tapi:'resume_set_open_status',\r",
+                                    "\tmethod:'POST',\r",
+                                    "\tparams:{\r",
+                                    "\t\tresumeId:resume_id,\r",
+                                    "\t\topenStatus:newValue\r",
+                                    "\t},\r",
+                                    "\tsuccess:function(result, request){\r",
+                                    "\t\tif( result.success ){\r",
+                                    "\t\t\tswitch( result.code ){\r",
+                                    "\t\t\t\tcase '0000':\r",
+                                    "\t\t\t\t\t//成功\r",
+                                    "\t\t\t\t\t//console.log(result);\r",
+                                    "\t\t\t\t\ttoast(\"你的隐私设置已更新。\");\r",
+                                    "\t\t\t\t\tbreak;\r",
+                                    "\t\t\t\tcase '1001':\r",
+                                    "\t\t\t\t\t//失败\r",
+                                    "\t\t\t\t\tbreak;\r",
+                                    "\t\t\t\tdefault:\r",
+                                    "\t\t\t\t\ttoast(\"errCode:\"+result.code);\r",
+                                    "\t\t\t\t\tbreak;\r",
+                                    "\t\t\t}\r",
+                                    "\t\t}else{\r",
+                                    "\r",
+                                    "\t\t}\r",
+                                    "\t},\r",
+                                    "\tfail:function(result){\r",
+                                    "\t\ttoast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                                    "\t},\r",
+                                    "\ttext:'加载中',\r",
+                                    "\tsilent:false,\r",
+                                    "\ttrigger:_this,\r",
+                                    "\tcheck_login:false\r",
+                                    "} );\r",
+                                    "\r",
+                                    "\r",
+                                    "_this.down('#pop_private').hide();"
+                                ],
+                                "name": "itemtap"
+                            },
+                            "designerId": "9ea86fac-2127-4c40-b37b-0f486489154c"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

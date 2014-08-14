@@ -1,0 +1,253 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs-tabview"
+        ],
+        "container|animation": false,
+        "defaults": null,
+        "designer|uiInterfaceName": "zjs",
+        "designer|userClassName": "TabFrame",
+        "id": "TabFrame",
+        "ui": "zjs"
+    },
+    "designerId": "b2cda65f-18c7-4cb0-9367-de93920432bd",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "zjs-icon-home",
+                "id": "tab_home",
+                "layout": "card",
+                "title": "首页"
+            },
+            "designerId": "b62da6e1-0f7a-461d-b303-3dbf5224c370",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "92dd9a1b-1737-46a0-81db-e2e2d8439b49",
+                    "masterInstanceId": "7330e0a3-e33d-4870-911a-53a0706ec9e6"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "iconCls": "zjs-icon-job",
+                "id": "tab_article",
+                "layout": "card",
+                "title": "求职锦囊"
+            },
+            "designerId": "0d752268-e904-4d8d-bc42-c23a6e5619cf",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "bfc378c7-a53d-44f0-8007-2577556da87c",
+                    "masterInstanceId": "dc06963b-407e-4cac-ae9b-b79f63d4aa20"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "zjs-icon-people",
+                "id": "tab_user",
+                "layout": "card",
+                "title": "个人中心"
+            },
+            "designerId": "3fbebde6-7c42-4892-a7d3-5b7f6e733529",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "3f46c9a7-5a9c-43dc-91db-1f4d7ac246f8",
+                    "masterInstanceId": "90552d38-cddb-4c0f-9bf8-21ee2438983a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "zjs-icon-mail",
+                "id": "tab_msg",
+                "layout": "card",
+                "title": "消息"
+            },
+            "designerId": "bb3d4e50-a318-4c0c-ad3f-89888afbf137",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "d2898666-467c-4291-9353-7f2d8202da29",
+                    "masterInstanceId": "840efee8-5a99-4237-9f97-335ba4f76805"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "zjs-icon-more",
+                "id": "tab_more",
+                "layout": "card",
+                "title": "更多"
+            },
+            "designerId": "5e2de78d-9c56-452f-9495-0eb0473f3586",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "7cdda6ec-2730-4741-a4ab-0697a05321d8",
+                    "masterInstanceId": "7b3128ba-ea27-4985-b520-be56b0d2ca5c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Bar",
+            "reference": {
+                "name": "tabBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-tabview-bar"
+                ],
+                "defaults": [
+                    "{\r",
+                    "    \r",
+                    "    flex:1\r",
+                    "}"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "bottom",
+                "height": 60,
+                "padding": "0 5px",
+                "ui": "zjs"
+            },
+            "designerId": "9471c085-da86-4ca7-8777-0b491d4bef9b"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTabFrameActiveItemChange",
+                "implHandler": [
+                    "console.log(value.id);\r",
+                    "\r",
+                    "\r",
+                    "var items = value.getItems();\r",
+                    "var x$cur_nav = items.items[0];\r",
+                    "\r",
+                    "\r",
+                    "window.CURRENT_TAB = value;\r",
+                    "window.CURRENT_NAV = x$cur_nav;\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "console.log(x$cur_nav);\r",
+                    "\r",
+                    "switch( value.id ){\r",
+                    "  case 'tab_home':\r",
+                    "    x$cur_nav.removeAll();\r",
+                    "    change_page( 'Home',x$cur_nav );\r",
+                    "    break;\r",
+                    "  case 'tab_user':\r",
+                    "    x$cur_nav.removeAll();\r",
+                    "    change_page( 'UserCenter',x$cur_nav );\r",
+                    "    break;\r",
+                    "  case 'tab_msg':\r",
+                    "    x$cur_nav.removeAll();\r",
+                    "    change_page( 'PG_Message',x$cur_nav );\r",
+                    "    break;\r",
+                    "  case 'tab_more':\r",
+                    "    x$cur_nav.removeAll();\r",
+                    "    change_page( 'More',x$cur_nav );\r",
+                    "    break;\r",
+                    "}"
+                ],
+                "name": "activeitemchange"
+            },
+            "designerId": "b63fc06b-1839-420d-8d48-8b392f62bf28"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "\r",
+                    "window.CURRENT_TAB = this.getItems().items[0];\r",
+                    "window.CURRENT_NAV = CURRENT_TAB.getItems().items[0];\r",
+                    "\r",
+                    "\r",
+                    "change_page('Home',window.CURRENT_NAV);"
+                ]
+            },
+            "designerId": "6c951c32-bfbf-463f-99c9-d0bb67154699"
+        }
+    ]
+}

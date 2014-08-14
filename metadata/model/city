@@ -1,0 +1,50 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "city"
+    },
+    "designerId": "3b974455-66bd-4c65-afca-f2b5478e8e02",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "city_name"
+            },
+            "designerId": "bfb26827-8e3b-459a-ab29-429f7f4dc6d8"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "city_id"
+            },
+            "designerId": "fb169e0d-5131-49a0-a46d-1da87932bd86"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "province"
+            },
+            "designerId": "cb57dca2-b218-4140-9049-b5de5baee017"
+        }
+    ]
+}

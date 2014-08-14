@@ -1,0 +1,382 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userClassName": "Register",
+        "layout": "card"
+    },
+    "designerId": "39e024ff-0b4f-41af-8730-0f4569ea56d0",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "scrollable": "vertical"
+            },
+            "designerId": "8daaad56-1328-41e7-bf1c-db0c0151937f",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "2b89dda8-c352-4d15-8d5d-91437a07d762",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Email",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "register.fe_email",
+                                "label": "用户名",
+                                "placeHolder": "email@example.com",
+                                "required": true
+                            },
+                            "designerId": "ba7c8202-2cd5-4a6b-a347-6e95c3d1e3d8"
+                        },
+                        {
+                            "type": "Ext.field.Password",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "register.fe_password",
+                                "label": "密码",
+                                "required": true
+                            },
+                            "designerId": "a4978962-2c17-4ae7-b889-b2a790bfb5e5"
+                        },
+                        {
+                            "type": "Ext.field.Password",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "register.fe_password_2",
+                                "label": "确认密码",
+                                "required": true
+                            },
+                            "designerId": "e0334711-6673-460d-a765-2451a21c36db"
+                        },
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "register.fe_name",
+                                "label": "真实姓名",
+                                "required": true
+                            },
+                            "designerId": "d514096a-3bb5-48cc-aa0e-f7e9d0446194"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "5c11c437-c2d5-4c25-abdd-d31d6668005b",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "register.fe_agreement",
+                                "label": "我已阅读并接受用户协议",
+                                "labelAlign": "right",
+                                "labelWidth": "70%"
+                            },
+                            "designerId": "bfbab00d-290f-4c42-877e-b6fa2192e587"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "confirm",
+                        "itemId": "mybutton25",
+                        "margin": "10px 0.5em 0",
+                        "text": "注册",
+                        "ui": "confirm"
+                    },
+                    "designerId": "95d2b86c-758e-40d4-ba44-200d5697d52b",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton25Tap",
+                                "implHandler": [
+                                    "var fe_email = x$('register.fe_email');\r",
+                                    "var fe_password = x$('register.fe_password');\r",
+                                    "var fe_password_2 = x$('register.fe_password_2');\r",
+                                    "var fe_name = x$('register.fe_name');\r",
+                                    "var fe_agreement = x$('register.fe_agreement');\r",
+                                    "\r",
+                                    "var email_val\t\t\t= fe_email.getValue();\r",
+                                    "var password_val\t= fe_password.getValue();\r",
+                                    "var password_val_2\t= fe_password_2.getValue();\r",
+                                    "var name_val\t\t\t= fe_name.getValue();\r",
+                                    "var agreement_val\t= fe_agreement.getChecked();\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "var email_preg = /^([a-zA-Z0-9]+[_|\\_|\\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\\_|\\.]?)*[a-zA-Z0-9]+\\.[a-zA-Z]{2,3}$/;\r",
+                                    "\r",
+                                    "\r",
+                                    "if( email_val.length === 0 ){\r",
+                                    "  toast('请输入邮箱地址');\r",
+                                    "  return ;\r",
+                                    "}else if( email_val.length < 6 || email_val.length > 50  ){\r",
+                                    "  toast('账户名为长度6-50的邮箱地址');\r",
+                                    "  return ;\r",
+                                    "}else if( !email_preg.test(email_val) ){\r",
+                                    "  toast('请输入正确的邮箱地址');\r",
+                                    "  return ;\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "if( password_val.length === 0 ){\r",
+                                    "  toast('请输入密码');\r",
+                                    "  return ;\r",
+                                    "}else if( password_val.length < 6 || password_val.length > 50  ){\r",
+                                    "  toast('密码为长度6-50的邮箱字符');\r",
+                                    "  return ;\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "if( password_val != password_val_2 ){\r",
+                                    "  toast('您两次输入的密码不同，请修正。');\r",
+                                    "  return ;\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "if(!agreement_val){\r",
+                                    "  toast('您必须接受用户协议才能注册。');\r",
+                                    "  return ;\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "if( email_val && password_val && name_val ){\r",
+                                    "\r",
+                                    "  send_request( {\r",
+                                    "    api:'register',\r",
+                                    "    method:'POST',\r",
+                                    "    params:{\r",
+                                    "      userName:email_val,\r",
+                                    "      password:password_val,\r",
+                                    "      confirmPassword:password_val,\r",
+                                    "      realname:name_val,\r",
+                                    "      agreeResiterProtocol:'on'\r",
+                                    "    },\r",
+                                    "    success:function(result, request){\r",
+                                    "      if( result.success ){\r",
+                                    "        switch( result.code ){\r",
+                                    "          case '0000':\r",
+                                    "            //成功\r",
+                                    "            toast(\"注册成功！\");\r",
+                                    "            //button.up('navigationview').pop();\r",
+                                    "\r",
+                                    "          \r",
+                                    "            send_request( {\r",
+                                    "              api:'login',\r",
+                                    "              method:'POST',\r",
+                                    "              params:{\r",
+                                    "                userName:email_val,\r",
+                                    "                password:password_val\r",
+                                    "              },\r",
+                                    "              success:function(result, request){\r",
+                                    "                if( result.success ){\r",
+                                    "                  switch( result.code ){\r",
+                                    "                    case '0000':\r",
+                                    "                      //成功\r",
+                                    "                      toast(\"登录成功。欢迎回来！\");\r",
+                                    "                      set_s('token',result.token);\r",
+                                    "                      //reload_app();\r",
+                                    "                      go_home();\r",
+                                    "                      break;\r",
+                                    "                    case '1001':\r",
+                                    "                      //失败\r",
+                                    "                      toast(\"登录失败，请输入正确的用户名和密码\");\r",
+                                    "                      break;\r",
+                                    "                    default:\r",
+                                    "                      toast(\"errCode:\"+result.code);\r",
+                                    "                      break;\r",
+                                    "                  }\r",
+                                    "                }else{\r",
+                                    "          \r",
+                                    "                }\r",
+                                    "              },\r",
+                                    "              fail:function(result){\r",
+                                    "                toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                                    "              },\r",
+                                    "              text:'加载中',\r",
+                                    "              silent:false,\r",
+                                    "              trigger:button,\r",
+                                    "              check_login:false\r",
+                                    "            } );\r",
+                                    "                      \r",
+                                    "            \r",
+                                    "            \r",
+                                    "            break;\r",
+                                    "          case '1003':\r",
+                                    "            //失败\r",
+                                    "            toast(\"抱歉，此用户名已被注册。\");\r",
+                                    "            break;\r",
+                                    "          case '1004':\r",
+                                    "            //失败\r",
+                                    "            toast(\"密码不一致，请修正。\");\r",
+                                    "            break;\r",
+                                    "          case '1005':\r",
+                                    "            //失败\r",
+                                    "            toast(\"请先同意注册协议。\");\r",
+                                    "            break;\r",
+                                    "          default:\r",
+                                    "            toast(\"errCode:\"+result.code);\r",
+                                    "            break;\r",
+                                    "        }\r",
+                                    "      }else{\r",
+                                    "\r",
+                                    "      }\r",
+                                    "    },\r",
+                                    "    fail:function(result){\r",
+                                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                                    "    },\r",
+                                    "    text:'加载中',\r",
+                                    "    silent:false,\r",
+                                    "    trigger:button,\r",
+                                    "    check_login:false\r",
+                                    "  } );\r",
+                                    "}else{\r",
+                                    "  toast(\"请输入所以必填项。\");\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "//Ext.Msg.alert(\"恭喜您，注册成功！\");\r",
+                                    "//button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "6b79fcea-f683-49f8-a1f1-44fdf7d32c76"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "注册",
+                "ui": "zjs"
+            },
+            "designerId": "828ff32d-6d7f-4015-99e5-5e8bbf062375",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "611ed6b2-05a3-4fcb-8227-ce11611bc7c1",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "02337caf-07d0-4cda-a951-fd45110d363a"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

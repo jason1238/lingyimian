@@ -1,0 +1,265 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userClassName": "ApplyLog",
+        "layout": "card"
+    },
+    "designerId": "d1b6c875-6711-4096-8d60-e8b9a7ad1cb6",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-blue"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "申请记录",
+                "ui": "zjs"
+            },
+            "designerId": "705b831c-4b75-48e4-becc-8e21f768524f",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton23",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "81f5fc5e-c88d-4b63-8591-5c08f103be47",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "50d731ae-53e2-4c28-999d-3c0aecf52dbc"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.dataview.DataView",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-listview-3line-c"
+                ],
+                "disableSelection": true,
+                "id": "list_uc_apply_log",
+                "itemId": "mydataview4",
+                "minHeight": 180,
+                "scrollable": "vertical"
+            },
+            "designerId": "cf817fb8-66af-41a0-aeff-8aed93b46006",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=\"li\">\r",
+                            "  <div class=\"c list_c_apply_log\">\r",
+                            "    <div class=\"cw\">\r",
+                            "      <h4>{posName}</h4>\r",
+                            "      <div class=\"cp\">\r",
+                            "        <div class=\"cl\">\r",
+                            "          <p>{enterpriseName}</p>\r",
+                            "          <p><em>申请时间：{date_localfulldate}</em></p>\r",
+                            "        </div>\r",
+                            "        <div class=\"cr\">\r",
+                            "          <p>&nbsp;</p>\r",
+                            "          <p>申请人数：{applyCount}</p>\r",
+                            "        </div>\r",
+                            "      </div>\r",
+                            "    </div>\r",
+                            "  </div>\r",
+                            "  <div class=\"i\"> <span></span> </div>\r",
+                            "</div>\r",
+                            ""
+                        ]
+                    },
+                    "designerId": "78555295-dfa7-4b6a-accd-7e1954612979"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onList_uc_apply_logItemTap",
+                        "implHandler": [
+                            "\r",
+                            "var item_data = record.data;\r",
+                            "\r",
+                            "console.log(item_data);\r",
+                            "\r",
+                            "change_page('InternPositionDetail',dataview,{positionId:item_data.posId});\r",
+                            "\r",
+                            ""
+                        ],
+                        "name": "itemtap"
+                    },
+                    "designerId": "c0a448fd-3f5f-49a6-b2c5-c49ffe218e02"
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();"
+                ]
+            },
+            "designerId": "2044db32-84a1-47b3-bd58-b8adfb85c157"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "//if( _p && _p.keywords ){\r",
+                    "\r",
+                    "  send_request( {\r",
+                    "    api:'apply_list',\r",
+                    "    method:'POST',\r",
+                    "    params:{\r",
+                    "      pageSize:100,\r",
+                    "      resumeId:_p.resumeId\r",
+                    "    },\r",
+                    "    success:function(result, request){\r",
+                    "      if( result.success ){\r",
+                    "        switch( result.code ){\r",
+                    "          case '0000':\r",
+                    "            //成功\r",
+                    "            console.log(result);\r",
+                    "            _this.build_list(result.data);\r",
+                    "            break;\r",
+                    "          case '1001':\r",
+                    "            //失败\r",
+                    "            break;\r",
+                    "          default:\r",
+                    "            toast(\"errCode:\"+result.code);\r",
+                    "            break;\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "\r",
+                    "      }\r",
+                    "    },\r",
+                    "    fail:function(result){\r",
+                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "    },\r",
+                    "    text:'加载中',\r",
+                    "    silent:false,\r",
+                    "    trigger:_this,\r",
+                    "    check_login:true\r",
+                    "  } );\r",
+                    "\r",
+                    "//}\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "b156b3ed-c261-4d48-a5ea-5ec495410ec7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "build_list",
+                "implHandler": [
+                    "var x$list = x$('list_uc_apply_log');\r",
+                    "\r",
+                    "if(data && data.length){\r",
+                    "\r",
+                    "  for( var i=0;i<data.length;i++ ){\r",
+                    "    var date_ra = parse_date(data[i].applyTime,'date_');\r",
+                    "    jQuery.extend( data[i],date_ra );\r",
+                    "  }\r",
+                    "\r",
+                    "\r",
+                    "  x$list.removeCls('zj-list-no-data');\r",
+                    "  x$list.setData(data);\r",
+                    "}else{\r",
+                    "  x$list.addCls('zj-list-no-data');\r",
+                    "  x$list.removeAll();\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "refresh_scroll(x$list);"
+                ]
+            },
+            "designerId": "c0e9e6aa-1366-47bd-a2d5-a050b1d79666"
+        }
+    ]
+}

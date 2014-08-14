@@ -1,0 +1,74 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "optFunctions"
+    },
+    "designerId": "200869ad-50f0-4149-b1e1-38f9dc5e65f5",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "vocationalId"
+            },
+            "designerId": "5a60b964-8b78-49b6-80c4-62840ef05030"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "positionName"
+            },
+            "designerId": "7e1def26-87c6-4669-aeae-ab584fa2aa29"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "positionId"
+            },
+            "designerId": "6987562b-7ef0-4880-9909-4980b693ecdb"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "positionMaster"
+            },
+            "designerId": "4bc31f2d-833b-4f18-81d9-d2b85397e8aa"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "positionMasterName"
+            },
+            "designerId": "4c4d65b5-9bea-4781-983c-42ff52d9d8ef"
+        }
+    ]
+}

@@ -1,0 +1,667 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userClassName": "RecruitmentDetail",
+        "layout": "card"
+    },
+    "designerId": "5cf981bf-258e-4268-8c70-533beba36ead",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "  招聘会详情",
+                "ui": "zjs"
+            },
+            "designerId": "b175087d-6279-4dae-8186-eac9e59188c4",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "recruit_detail_back",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "768596f0-e604-4966-87f7-a05ecd8a63e1",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRecruit_detail_backTap",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "5f3592c1-fd56-4fb9-b230-c07bd424a34d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-share",
+                        "itemId": "recruit_detail_share",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "8e2c44b8-82a7-483b-ac8c-fdddac071e2d",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRecruit_detail_shareTap",
+                                "implHandler": [
+                                    "var _this = this;\r",
+                                    "var x$pop = _this.down('#recruit_pop_share_sns');\r",
+                                    "x$pop.show();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "460bd79d-b567-4ec6-bedd-24e8c59a4d8d"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "",
+                "itemId": "r_d_scp",
+                "scrollable": "vertical"
+            },
+            "designerId": "993ef1cc-83dc-48d0-8edc-32974a9b29c2",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "article-headline"
+                        ],
+                        "html": "载入中，请稍候...",
+                        "itemId": "recruit_detail_title",
+                        "padding": "0.5em",
+                        "style": "text-align:center;font-size:20px;"
+                    },
+                    "designerId": "8cd050b4-23d7-4bb0-b66f-43d5bc6e3320"
+                },
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "detail_panel"
+                        ],
+                        "layout": "hbox",
+                        "padding": "0.2em 0.5em 0.2em 0.8em"
+                    },
+                    "designerId": "25803646-7112-4cb9-9808-e03d2aaa1f36",
+                    "cn": [
+                        {
+                            "type": "Ext.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "col-content"
+                                ],
+                                "itemId": "recruit_detail_info",
+                                "layout|flex": 1,
+                                "padding": "0 1em 0 0"
+                            },
+                            "designerId": "3b53614b-d866-4f9a-b508-5077577a662c"
+                        },
+                        {
+                            "type": "Ext.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "col-button"
+                                ],
+                                "height": 40,
+                                "width": 40
+                            },
+                            "designerId": "75fab45d-767d-4760-a5c8-4b788494356e",
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "cls": [
+                                            "x-ns-alarm"
+                                        ],
+                                        "itemId": "mybutton43"
+                                    },
+                                    "designerId": "ba2516d3-dc87-4518-8602-605de990d330",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onMybutton42Tap1",
+                                                "implHandler": [
+                                                    "var _this = this;\r",
+                                                    "\r",
+                                                    "_this.down('#cnl_pop_alerttime').show();"
+                                                ],
+                                                "name": "tap"
+                                            },
+                                            "designerId": "64551f7b-7138-4d57-8f13-f72d99a86031"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "detail_content"
+                        ],
+                        "itemId": "recruit_detail_desc",
+                        "padding": "1em"
+                    },
+                    "designerId": "58de882d-9505-4365-bb27-1497d0ac5e0b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": true,
+                "cls": [
+                    "recruit_pop_share_sns"
+                ],
+                "height": 130,
+                "hidden": true,
+                "hideOnMaskTap": true,
+                "html": "<div class=\"sns_share_list\"> <a href=\"javascript:;\" class=\"btn_sina\"><i></i>   <p>新浪微博</p>   </a> <!--<a href=\"javascript:;\" class=\"btn_qq\"><i></i>   <p>腾讯微博</p>   </a> <a href=\"javascript:;\" class=\"btn_renren\"><i></i>   <p>人人网</p>   </a>--> </div>",
+                "itemId": "recruit_pop_share_sns",
+                "modal": true,
+                "width": 100
+            },
+            "configAlternates": {
+                "masked": "boolean"
+            },
+            "designerId": "6db26afa-51ad-4c69-b829-1d465bf284b8"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "\r",
+                    "var x$pop_sns = _this.down('#recruit_pop_share_sns');\r",
+                    "\r",
+                    "x$pop_sns.on('show',function(){\r",
+                    "\r",
+                    "  var _pop = this;\r",
+                    "\r",
+                    "  var x$pop = _this.down('#recruit_pop_share_sns');\r",
+                    "\r",
+                    "\r",
+                    "  var $pop = j$(x$pop);\r",
+                    "\r",
+                    "  var $btn_sina = $pop.find('.btn_sina');\r",
+                    "  var $btn_qq = $pop.find('.btn_qq');\r",
+                    "  var $btn_renren = $pop.find('.btn_renren');\r",
+                    "\r",
+                    "\r",
+                    "  $btn_sina.unbind('click').click(function(){\r",
+                    "\r",
+                    "    x$pop.hide();\r",
+                    "\r",
+                    "    get_access_token(function( result,success ){\r",
+                    "      if(success){\r",
+                    "        if( result && result.sina){\r",
+                    "          //x$pop.hide();\r",
+                    "          change_page('ShareFormSina',_this,{sns:result.sina,data:_this.result_data});\r",
+                    "        }else{\r",
+                    "          toast('您尚未绑定新浪微博账号，请先到“更多”中绑定新浪微博账号。');\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "        toast('获取账号绑定信息失败，请检查网络或稍候再试。');\r",
+                    "      }\r",
+                    "    },'sina');\r",
+                    "  });\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "  $btn_qq.unbind('click').click(function(){\r",
+                    "\r",
+                    "    x$pop.hide();\r",
+                    "\r",
+                    "    get_access_token(function( result,success ){\r",
+                    "      if(success){\r",
+                    "        if( result && result.qq ){\r",
+                    "          //x$pop.hide();\r",
+                    "          change_page('ShareFormQQ',_this,{sns:result.sina,data:_this.result_data});\r",
+                    "        }else{\r",
+                    "          toast('您尚未绑定腾讯微博账号，请先到“更多”中绑定腾讯微博账号。');\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "        toast('获取账号绑定信息失败，请检查网络或稍候再试。');\r",
+                    "      }\r",
+                    "    },'qq');\r",
+                    "  });\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "  $btn_renren.unbind('click').click(function(){\r",
+                    "\r",
+                    "    x$pop.hide();\r",
+                    "\r",
+                    "    get_access_token(function( result,success ){\r",
+                    "      if(success){\r",
+                    "        if( result && result.renren ){\r",
+                    "          //x$pop.hide();\r",
+                    "          change_page('ShareFormRenren',_this,{sns:result.sina,data:_this.result_data});\r",
+                    "        }else{\r",
+                    "          toast('您尚未绑定人人网账号，请先到“更多”中绑定人人网账号。');\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "        toast('获取账号绑定信息失败，请检查网络或稍候再试。');\r",
+                    "      }\r",
+                    "    },'renren');\r",
+                    "  });\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "});"
+                ]
+            },
+            "designerId": "09135bf5-c300-48c4-99bf-45faf47e049a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "//console.log(_p);\r",
+                    "\r",
+                    "var _this = this;\r",
+                    "\r",
+                    "var x$title = _this.down('#recruit_detail_title');\r",
+                    "var x$info = _this.down('#recruit_detail_info');\r",
+                    "var x$desc = _this.down('#recruit_detail_desc');\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "if( _p && _p.id ){\r",
+                    "\r",
+                    "  send_request( {\r",
+                    "    api:'recruit_detail',\r",
+                    "    method:'POST',\r",
+                    "    params:{\r",
+                    "      recruitmentId:_p.id\r",
+                    "    },\r",
+                    "    success:function(result, request){\r",
+                    "      if( result.success ){\r",
+                    "        switch( result.code ){\r",
+                    "          case '0000':\r",
+                    "            //成功\r",
+                    "            //console.log(result);\r",
+                    "\r",
+                    "            if( result.data ){\r",
+                    "\r",
+                    "              var info_html = '<p>时间：'+(result.data.beginTime||'暂无')+'</p> <p>城市：'+(result.data.cityName||'暂无')+'</p> <p>学校：'+(result.data.schoolName||'暂无')+'</p> <p>地点：'+(result.data.place||'暂无')+'</p>';\r",
+                    "\r",
+                    "              x$title.setHtml(result.data.recruitmentTitle);\r",
+                    "              x$info.setHtml(info_html);\r",
+                    "              x$desc.setHtml(result.data.recruitmentDescription);\r",
+                    "\r",
+                    "              _this.result_data = result.data;\r",
+                    "\r",
+                    "              refresh_scroll(_this.down('#r_d_scp'));\r",
+                    "\r",
+                    "            }else{\r",
+                    "              x$title.setHtml('无数据');\r",
+                    "            }\r",
+                    "\r",
+                    "            break;\r",
+                    "          case '1001':\r",
+                    "            //失败\r",
+                    "            break;\r",
+                    "          default:\r",
+                    "            toast(\"errCode:\"+result.code);\r",
+                    "            break;\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "\r",
+                    "      }\r",
+                    "    },\r",
+                    "    fail:function(result){\r",
+                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "    },\r",
+                    "    text:'加载中',\r",
+                    "    silent:false,\r",
+                    "    trigger:_this,\r",
+                    "    check_login:true\r",
+                    "  } );\r",
+                    "\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "var reminde_options = [\r",
+                    "  {\r",
+                    "    text:'提前30分钟',\r",
+                    "    value:30\r",
+                    "  },\r",
+                    "  {\r",
+                    "    text:'提前1小时',\r",
+                    "    value:60\r",
+                    "  },\r",
+                    "  {\r",
+                    "    text:'提前2小时',\r",
+                    "    value:120\r",
+                    "  },\r",
+                    "  {\r",
+                    "    text:'提前5小时',\r",
+                    "    value:300\r",
+                    "  },\r",
+                    "  {\r",
+                    "    text:'提前12小时',\r",
+                    "    value:720\r",
+                    "  },\r",
+                    "  {\r",
+                    "    text:'提前24小时',\r",
+                    "    value:1440\r",
+                    "  }\r",
+                    "];\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "var x$pop =  _this.down('#cnl_pop_alerttime');\r",
+                    "var x$list = _this.down('#cnl_alerttime');\r",
+                    "\r",
+                    "_this.CNL_pushtime = new LD_Nested_List( x$list,reminde_options,'items',function(data){\r",
+                    "  var newValue = data.value;\r",
+                    "\r",
+                    "  window.setTimeout(function(){\r",
+                    "    x$pop.hide();\r",
+                    "  },320);\r",
+                    "\r",
+                    "\r",
+                    "  if(newValue > 0){\r",
+                    "\r",
+                    "    var start_time = parse_date(_this.result_data.beginTime).dateobj;\r",
+                    "\r",
+                    "    var remind_time = new Date(start_time - newValue*60000);\r",
+                    "\r",
+                    "    var remind_date = parse_date(remind_time);\r",
+                    "\r",
+                    "    var remind_date_str = remind_date.fullyeardatetime;\r",
+                    "\r",
+                    "    send_request( {\r",
+                    "      api:'recruit_remind_add',\r",
+                    "      method:'POST',\r",
+                    "      params:{\r",
+                    "        recruitmentId:_this.result_data.recruitmentId,\r",
+                    "        remindTime:remind_date_str,\r",
+                    "        aheadOfTime:newValue\r",
+                    "      },\r",
+                    "      success:function(result, request){\r",
+                    "        if( result.success ){\r",
+                    "          switch( result.code ){\r",
+                    "            case '0000':\r",
+                    "              //成功\r",
+                    "              //console.log(result);\r",
+                    "              toast('添加提醒成功！');\r",
+                    "              break;\r",
+                    "            case '1001':\r",
+                    "              //失败\r",
+                    "              break;\r",
+                    "            default:\r",
+                    "              toast(\"errCode:\"+result.code);\r",
+                    "              break;\r",
+                    "          }\r",
+                    "        }else{\r",
+                    "          toast(\"添加失败，请稍候再试。\");\r",
+                    "        }\r",
+                    "      },\r",
+                    "      fail:function(result){\r",
+                    "        toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "      },\r",
+                    "      text:'加载中',\r",
+                    "      silent:false,\r",
+                    "      trigger:_this,\r",
+                    "      check_login:true\r",
+                    "    } );\r",
+                    "\r",
+                    "  }\r",
+                    "  \r",
+                    "  \r",
+                    "\r",
+                    "} );\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "99c11d28-40cb-41ba-a296-44716a46f6ab"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": true,
+                "height": 200,
+                "hidden": true,
+                "itemId": "cnl_pop_alerttime",
+                "layout": "fit",
+                "modal": true,
+                "width": 280
+            },
+            "designerId": "2914cd0e-19d8-4d98-8497-fa5b4539022d",
+            "cn": [
+                {
+                    "type": "Ext.TitleBar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "top",
+                        "title": "推送时间"
+                    },
+                    "designerId": "6be38645-10ae-4b2f-9ec7-ec06a343f663",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "cnl_btn_back",
+                                "text": "返回"
+                            },
+                            "designerId": "52291d63-700e-4724-82ca-7725fc399a9a",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMybutton23Tap3111111121",
+                                        "implHandler": [
+                                            "var _this = this;\r",
+                                            "\r",
+                                            "if( !_this.CNL_pushtime.pop() ){\r",
+                                            "  window.setTimeout(function(){\r",
+                                            "    _this.down('#cnl_pop_alerttime').hide();\r",
+                                            "  },320);\r",
+                                            "}\r",
+                                            ""
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "5f462a21-942f-4ba0-b7f0-06f218b31a5c"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disableSelection": true,
+                        "itemCls": "leaf_list",
+                        "itemId": "cnl_alerttime"
+                    },
+                    "designerId": "60d941fd-d2f1-4255-8c53-18d311ee8b5d",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div class=\"{__leaf_cls}\">{text}</div>"
+                                ]
+                            },
+                            "designerId": "e1f17b59-b1a2-4ec3-8511-bd47c13888e7"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

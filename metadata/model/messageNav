@@ -1,0 +1,53 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "messageNav",
+        "identifier": [
+            "{\"type\":\"simple\"}"
+        ]
+    },
+    "designerId": "139adba9-7e20-4e93-abce-39e11771eb3f",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "title"
+            },
+            "designerId": "d8346365-59cc-449a-8f3c-7614e1ca1241"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "action"
+            },
+            "designerId": "07cc3d42-54b8-4ef1-aa8e-7d6b492318f4"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "badge"
+            },
+            "designerId": "5c5aadb2-e64f-4165-a461-3ca3a326a6e3"
+        }
+    ]
+}

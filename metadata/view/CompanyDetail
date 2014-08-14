@@ -1,0 +1,360 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "zjs"
+        ],
+        "designer|userClassName": "CompanyDetail",
+        "layout": "fit"
+    },
+    "designerId": "0a5872c3-a3d5-4628-9a86-7bfced76fa1d",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "zjs-bg-green"
+                ],
+                "designer|uiInterfaceName": "zjs",
+                "docked": "top",
+                "title": "企业详情",
+                "ui": "zjs"
+            },
+            "designerId": "fc47c163-0e4f-40f5-92b1-9a8e315afa8d",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|uiInterfaceName": "plain",
+                        "height": 30,
+                        "icon": "",
+                        "iconCls": "zjs-icon-back",
+                        "itemId": "mybutton24",
+                        "text": "back",
+                        "ui": "plain",
+                        "width": 30
+                    },
+                    "designerId": "9ba1faae-ee33-4bd7-aa96-cb3bbca6d89c",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton23Tap3111",
+                                "implHandler": [
+                                    "button.up('navigationview').pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "757b8dd2-d0e6-4039-88b4-9c20b6a23099"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "activeItem": 1,
+                "cls": [
+                    "zjs-tab-top"
+                ],
+                "hidden": false,
+                "id": "co_detail_tab",
+                "itemId": "co_detail_tab"
+            },
+            "designerId": "2668a4e4-c8c3-46e1-bd56-133a36d7bc08",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "fit",
+                        "title": "企业简介"
+                    },
+                    "designerId": "95b73854-b0f4-4a64-a1ea-27948f1e5016",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "designerId": "f326238b-37b7-463e-aa1d-a3844edde919",
+                            "masterInstanceId": "e147884f-f229-42b6-953c-a1c89d627e75"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true
+                    },
+                    "designerId": "99a2e97a-bdd2-4eef-b6af-1e9547bc84f3"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "fit",
+                        "title": "企业职位"
+                    },
+                    "designerId": "8aa41c94-292d-4461-89cd-80182a3f7a53",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "designerId": "3531de2a-093d-497f-a826-12d20c3106c4",
+                            "masterInstanceId": "4417c13b-e0e4-4c10-81f9-24a91a1d89b0"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Bar",
+                    "reference": {
+                        "name": "tabBar",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "zjs-bg-green"
+                        ],
+                        "defaults": [
+                            "{\r",
+                            "  flex:1\r",
+                            "}"
+                        ],
+                        "designer|uiInterfaceName": "zjs",
+                        "docked": "top",
+                        "itemId": "mytabbar",
+                        "ui": "zjs"
+                    },
+                    "designerId": "b8221c08-872e-4f0e-ae9d-5b2de0e1745a"
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();\r",
+                    "\r",
+                    "\r",
+                    "var x$tab = x$('co_detail_tab');\r",
+                    "x$tab.setActiveItem(0);"
+                ]
+            },
+            "designerId": "196ba126-1369-4924-b9a8-164c1249bfdb"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "_p"
+                ],
+                "fn": "update",
+                "implHandler": [
+                    "var _this = this;\r",
+                    "\r",
+                    "if( _p && _p.companyId ){\r",
+                    "\r",
+                    "  send_request( {\r",
+                    "    api:'c_detail',\r",
+                    "    method:'POST',\r",
+                    "    params:{\r",
+                    "      pageSize:100,\r",
+                    "      companyId:_p.companyId\r",
+                    "    },\r",
+                    "    success:function(result, request){\r",
+                    "      if( result.success ){\r",
+                    "        switch( result.code ){\r",
+                    "          case '0000':\r",
+                    "            //成功\r",
+                    "            console.log(result);\r",
+                    "            _this.build_detail(result.data);\r",
+                    "            break;\r",
+                    "          case '1001':\r",
+                    "            //失败\r",
+                    "            break;\r",
+                    "          default:\r",
+                    "            toast(\"errCode:\"+result.code);\r",
+                    "            break;\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "\r",
+                    "      }\r",
+                    "    },\r",
+                    "    fail:function(result){\r",
+                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "    },\r",
+                    "    text:'加载中',\r",
+                    "    silent:false,\r",
+                    "    trigger:_this,\r",
+                    "    check_login:true\r",
+                    "  } );\r",
+                    "\r",
+                    "\r",
+                    "  send_request( {\r",
+                    "    api:'p_list',\r",
+                    "    method:'POST',\r",
+                    "    params:{\r",
+                    "      pageSize:100,\r",
+                    "      companyId:_p.companyId\r",
+                    "    },\r",
+                    "    success:function(result, request){\r",
+                    "      if( result.success ){\r",
+                    "        switch( result.code ){\r",
+                    "          case '0000':\r",
+                    "            //成功\r",
+                    "            console.log(result);\r",
+                    "            _this.build_poslist(result.data);\r",
+                    "            break;\r",
+                    "          case '1001':\r",
+                    "            //失败\r",
+                    "            break;\r",
+                    "          default:\r",
+                    "            toast(\"errCode:\"+result.code);\r",
+                    "            break;\r",
+                    "        }\r",
+                    "      }else{\r",
+                    "\r",
+                    "      }\r",
+                    "    },\r",
+                    "    fail:function(result){\r",
+                    "      toast(\"您的网络似乎有点问题，请稍候再试！\");\r",
+                    "    },\r",
+                    "    text:'加载中',\r",
+                    "    silent:false,\r",
+                    "    trigger:_this,\r",
+                    "    check_login:true\r",
+                    "  } );\r",
+                    "\r",
+                    "\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "eee69d0e-1bbc-48ab-9866-383878003fc7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "build_detail",
+                "implHandler": [
+                    "//update company detail\r",
+                    "var x$content = x$('content_c_detail');\r",
+                    "\r",
+                    "var html = ' <p><strong>企业名称</strong>：'+(data.companyName||'')+'</p> <p><strong>企业介绍</strong>：'+(data.profile||'')+'</p> <p><strong>联系方式</strong><br>   联系人：'+(data.linkmanName||'')+'<br>   电话：'+(data.phone||'')+'<br>   email：'+(data.email||'')+'<br>   地址：'+(data.address||'')+'</p>';\r",
+                    "x$content.setHtml(html);\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "refresh_scroll(x$('content_c_detail'));"
+                ]
+            },
+            "designerId": "f86dd458-b62b-4ba3-9bbd-6790af115a2f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "build_poslist",
+                "implHandler": [
+                    "//update position list\r",
+                    "var x$list = x$('list_c_detail_pos_list');\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "if(data && data.length){\r",
+                    "\r",
+                    "  for( var i=0;i<data.length;i++ ){\r",
+                    "    var date_ra = parse_date(data[i].publishTime,'date_');\r",
+                    "    jQuery.extend( data[i],date_ra );\r",
+                    "  }\r",
+                    "\r",
+                    "  x$list.removeCls('zj-list-no-data');\r",
+                    "  set_store_data( x$list,data );\r",
+                    "}else{\r",
+                    "  x$list.addCls('zj-list-no-data');\r",
+                    "  set_store_data( x$list,[] );\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "refresh_scroll(x$list);"
+                ]
+            },
+            "designerId": "d1667ab9-f07a-469c-b549-0f064f37ee61"
+        }
+    ]
+}

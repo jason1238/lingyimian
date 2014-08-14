@@ -1,0 +1,236 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "BootSlider",
+        "id": "view_boot_slider",
+        "layout": "fit"
+    },
+    "designerId": "4ab69969-4071-4ef0-a193-f3269d5e2844",
+    "cn": [
+        {
+            "type": "Ext.carousel.Carousel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "boot_carousel",
+                "itemId": "mycarousel1"
+            },
+            "designerId": "04a8ae0e-5fdc-4e29-a805-fccad56d09f3",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null,
+                        "src": "images/boot_slider_01.jpg",
+                        "width": null
+                    },
+                    "designerId": "9ba2e41e-0a06-4a6d-b76f-41ed9b163ab2"
+                },
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null,
+                        "src": "images/boot_slider_02.jpg",
+                        "width": null
+                    },
+                    "designerId": "ffd1b194-b38f-4f76-8e36-0cfa6c7c57f7"
+                },
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "fit"
+                    },
+                    "designerId": "be1f7ee2-1a51-4cd4-abde-da5a8901930b",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "src": "images/boot_slider_03.jpg",
+                                "width": null
+                            },
+                            "designerId": "25f787ba-d03e-4022-a183-45397cb9949d"
+                        },
+                        {
+                            "type": "Ext.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout": "vbox"
+                            },
+                            "designerId": "3824a8b6-2763-4528-928d-eaf3ad4d261b",
+                            "cn": [
+                                {
+                                    "type": "Ext.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 3
+                                    },
+                                    "designerId": "c16637bf-7b1e-4fe7-9625-11a7811e7e54"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": null,
+                                        "html": "",
+                                        "id": "btn_boot_slider_enter",
+                                        "layout|flex": 1,
+                                        "margin": "",
+                                        "style": [
+                                            "background:none;border:0 none;\r",
+                                            ""
+                                        ],
+                                        "top": "",
+                                        "width": ""
+                                    },
+                                    "configAlternates": {
+                                        "style": "object"
+                                    },
+                                    "designerId": "3b73801f-f40b-4fc7-ba2c-4a347a0cad97"
+                                },
+                                {
+                                    "type": "Ext.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 2
+                                    },
+                                    "designerId": "080ab497-e381-4baa-ab1d-d02e80b55eff"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null,
+                        "id": "boot_slider_enter",
+                        "src": "images/boot_slider_04.jpg",
+                        "width": null
+                    },
+                    "designerId": "648cee23-89cc-49b1-a28b-e8c05b7b8a2a"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onBoot_carouselActiveItemChange",
+                        "implHandler": [
+                            "\r",
+                            "\r",
+                            "if( 'boot_slider_enter' == value.id ){\r",
+                            "  this.show_home();\r",
+                            "}"
+                        ],
+                        "name": "activeitemchange"
+                    },
+                    "designerId": "8a761fa0-c294-45a3-8083-91d0dfdd1cf1"
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();"
+                ]
+            },
+            "designerId": "cee773b6-b057-404c-91da-c1fde6e8cc20"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onView_boot_sliderPainted",
+                "implHandler": [
+                    "if( navigator.splashscreen ){\r",
+                    "  window.setTimeout(function(){\r",
+                    "    navigator.splashscreen.hide();\r",
+                    "  },3000);\r",
+                    "}"
+                ],
+                "name": "painted"
+            },
+            "designerId": "a186beb4-6fe1-41dd-a8c2-56cae0b6b701"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "show_home",
+                "implHandler": [
+                    "var page_home = Ext.create('ZJ02.view.TabFrame', {fullscreen: true});\r",
+                    "Ext.Viewport.animateActiveItem(page_home,{ type: 'fade', direction: 'down' });"
+                ]
+            },
+            "designerId": "b1e9ddf3-5b5b-4114-9707-5251c1fde750"
+        }
+    ]
+}
